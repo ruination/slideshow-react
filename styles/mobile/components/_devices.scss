@@ -1,0 +1,41 @@
+.devices-list {
+	list-style: none;
+	padding: 0;
+}
+
+.devices-list .device form {
+	display: none;
+}
+
+.devices-list .device.editing form {
+	display: block;
+}
+
+.device-editing {
+	margin-top: $grid-gutter-width*2;
+}
+
+.device-editing.well {
+	margin-top: 2*$padding-base-vertical;
+	margin-bottom: -2*$padding-base-vertical;	
+	border-left-width: 0;
+	border-right-width: 0;
+	border-bottom-width: 0;
+}
+
+.device-editing.well.well-info {
+	background: lighten($brand-info, 30%);
+}
+
+.device-editing.well.well-quaternary {
+	background: lighten($brand-quaternary, 10%);
+}
+.devices-list .headline {
+	margin-top: 0;
+	margin-bottom: 0;	
+}
+
+.devices-list .headline span {
+	line-height: $line-height-computed;
+}
+

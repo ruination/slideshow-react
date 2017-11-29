@@ -1,0 +1,166 @@
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin button-variant($color, $background, $border, $darken: 10%, $linkColor: $link-color) {
+	color: $color;
+	background-color: $background;
+	border-color: $border;
+	outline: none;
+	
+	&.btn-link {
+		color: $linkColor;
+	}
+
+	&:focus,
+	&.focus {
+		color: $color;
+		background-color: darken($background, $darken);
+				border-color: darken($border, min(100, $darken*2.5));
+		outline: none;
+
+		&.btn-link {
+			color: darken($linkColor, 15%);
+			background-color: transparent;
+		}
+	}
+	&:hover {
+		color: $color;
+		background-color: darken($background, $darken);
+				border-color: darken($border, min(100, $darken*1.2));
+		outline: none;
+
+		&.btn-link {
+			color: darken($linkColor, 15%);
+			background-color: transparent;
+		}    
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		color: $color;
+		background-color: darken($background, $darken);
+				border-color: darken($border, min(100, $darken*1.2));
+		outline: none;
+
+		&.btn-link {
+			background-color: transparent;
+		}
+
+		&:hover,
+		&:focus,
+		&.focus {
+			color: $color;
+			background-color: darken($background, min(100, $darken*1.7));
+					border-color: darken($border, min(100, $darken*2.5));
+			outline: none;
+
+			&.btn-link {
+				background-color: transparent;
+			}      
+		}
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		background-image: none;
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&,
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			background-color: $background;
+					border-color: $border;
+			outline: none;
+		}
+
+		&.btn-link {
+			background-color: transparent;
+		}
+	}
+
+	.badge {
+		color: $background;
+		background-color: $color;
+	}
+}
+
+@mixin button-variant-inverse($color, $background, $border, $lighten: 10%, $lightenBorder: 10%, $linkColor: $link-color) {
+	color: $color;
+	background-color: $background;
+	border-color: $border;
+	outline: none;
+ 
+	&.btn-link {
+		color: $linkColor;
+	}
+
+	&:focus,
+	&.focus {
+		color: $background;
+		background-color: lighten($border, $lighten);
+				border-color: lighten($color, min(100, $lightenBorder*2.5));
+		outline: none;
+	}
+	&:hover {
+		color: $background;
+		background-color: lighten($border, $lighten);
+				border-color: lighten($color, min(100, $lightenBorder*1.2));
+		outline: none;
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		color: $background;
+		background-color: lighten($border, $lighten);
+				border-color: lighten($color, min(100, $lightenBorder*1.2));
+		outline: none;
+
+		&:hover,
+		&:focus,
+		&.focus {
+			color: $background;
+			background-color: lighten($border, min(100, $lighten*1.3));
+					border-color: lighten($color, min(100, $lightenBorder*2.5));
+			outline: none;
+		}
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		background-image: none;
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&,
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			background-color: $background;
+					border-color: $border;
+		}
+	}
+
+	.badge {
+		color: $background;
+		background-color: $color;
+	}
+}
+
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+	padding: $padding-vertical $padding-horizontal;
+	font-size: $font-size;
+	line-height: $line-height;
+	border-radius: $border-radius;
+}

@@ -1,0 +1,22 @@
+{
+  	"presets" : ["es2015", "stage-0", "react"],
+	"plugins": ["add-module-exports"],
+  	"env": {
+		"development": {
+			 "plugins": [["react-transform", {
+				"superClasses": ["EventComponent", "BaseComponent", "Component", "ViewComponent", "PageContent", "WindowComponent"],
+				"transforms": [{
+					"transform": "react-transform-hmr",
+					"imports": ["react"],
+					"locals": ["module"]
+				}]
+			}]]
+		},
+		"stage": {
+			 "plugins": [["react-transform", {
+				"superClasses": ["EventComponent", "BaseComponent", "Component", "ViewComponent", "PageContent", "WindowComponent"],
+				"transforms": []
+			}]]
+		}
+  	}
+}

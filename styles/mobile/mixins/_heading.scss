@@ -1,0 +1,5 @@
+@mixin heading-size-variant($size: $font-size-base){
+	font-size: $size;
+	padding: $size*$heading-padding-factor $size*$heading-padding-factor*3;
+	border-top-width: $size/4;
+}

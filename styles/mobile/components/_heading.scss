@@ -1,0 +1,28 @@
+.heading {
+	border-top: $heading-border-width solid $heading-border-color;
+	background-color: $heading-background;
+	display: inline-block;
+	color: $heading-color;
+
+	@include heading-size-variant;
+}
+
+.heading.heading-super {
+	@include heading-size-variant($font-size-super);
+}
+
+.heading.heading-jumbo {
+	@include heading-size-variant($font-size-jumbo);
+}
+
+.heading.heading-xl {
+	@include heading-size-variant($font-size-xlarge);
+}
+
+.heading.heading-lg {
+	@include heading-size-variant($font-size-large);
+}
+
+.heading.heading-sm {
+	@include heading-size-variant($font-size-small);
+}

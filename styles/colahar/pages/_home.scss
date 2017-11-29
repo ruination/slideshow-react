@@ -1,0 +1,51 @@
+
+///////////////////////////////////////////
+// NAVBAR
+///////////////////////////////////////////
+.page.home .navbar .navbar-brand.logo {
+    /*margin-top: sp(20);*/
+    /*margin-left: $grid-gutter-width;*/
+    /*width: ($navbar-link-height-computed - $navbar-brand-border-width * 2) * $navbar-brand-logo-aspect;*/
+}
+
+/*.page.home .navbar .navbar-brand.logo .navbar-brand-image {
+    padding: 1.5 * $navbar-brand-logo-padding 1.5 * 50%;
+}*/
+
+.page .navbar-default .navbar-brand.logo .navbar-brand-image {
+    border: none;
+}
+
+.page .navbar-inverse .navbar-brand.logo .navbar-brand-image {
+    border: none;
+}
+
+
+.page .navbar-default .navbar-brand.logo .navbar-brand-image::before {
+    border: none;
+}
+
+.page .navbar-inverse .navbar-brand.logo .navbar-brand-image::before {
+    border: none;
+}
+
+@media (max-width: $screen-sm-max) {
+    .page.home .navbar .navbar-brand.logo {
+        /*width: $navbar-link-height-computed * $navbar-brand-logo-aspect;*/
+        margin-top: 0;
+        /*margin-left: $grid-gutter-width/2;*/
+    }
+
+    .page.home .navbar .navbar-brand.logo .navbar-brand-image {
+        padding: $navbar-brand-logo-padding 0;
+    }
+}
+
+.page.home .navbar.navbar-scroll-below .navbar-brand.logo {
+    width: $navbar-link-height-computed * $navbar-brand-logo-aspect;
+    margin-top: 0;
+}
+
+.page.home .navbar.navbar-scroll-below .navbar-brand.logo .navbar-brand-image {
+    padding: $navbar-brand-logo-padding 0;
+}

@@ -1,0 +1,91 @@
+@mixin preference-grayscale() {
+	fill: lighten($brand-quaternary, 15%);
+	color: lighten($brand-quaternary, 15%);
+}
+
+@mixin preference-black() {
+	fill: #000;
+	color: #000;
+}
+
+@mixin preference-white() {
+	fill: #fff;
+	color: #fff;
+}
+
+@mixin preference-secondary() {
+	fill: $brand-secondary;
+	color: $brand-secondary;
+}
+
+
+@mixin preference-success() {
+	fill: $brand-success;
+	color: $brand-success;
+}
+
+
+@mixin preference($color, $background, $border, $flux: 10%, $active-color: $color, $active-background: $background, $active-border: $border) {
+	color: $color;
+	fill: $color;
+	background-color: $background;
+	border-color: $border;
+	outline: none;
+
+	&:focus,
+	&.focus {
+		color: darken($color, min(100, $flux*2.5));
+		fill: darken($color, min(100, $flux*2.5));
+		background-color: darken($background, min(100, $flux*2.5));
+			border-color: darken($border, min(100, $flux*2.5));
+		outline: none;
+	}
+
+	&:hover {
+		color: darken($color, min(100, $flux*1.2));
+		fill: darken($color, min(100, $flux*1.2));
+		background-color: darken($background, min(100, $flux*1.2));
+			border-color: darken($border, min(100, $flux*1.2));
+		outline: none;
+	}
+
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		color: $active-color;
+		fill: $active-color;
+		background-color: $active-background;
+			border-color: $active-border;
+		outline: none;
+
+		&:hover,
+		&:focus,
+		&.focus {
+		color: darken($active-color, min(100, $flux*1.2));
+		fill: darken($active-color, min(100, $flux*1.2));
+		background-color: darken($active-background, min(100, $flux*1.2));
+			border-color: darken($active-border, min(100, $flux*1.2));
+			outline: none;
+		}
+	}
+
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		background-image: none;
+	}
+
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&,
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			background-color: $background;
+				border-color: $border;
+		}
+	}
+}

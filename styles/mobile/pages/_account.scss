@@ -1,0 +1,13 @@
+.settings-account-welcome .name {
+	color: $text-color;
+}
+
+.settings-account-welcome h3 {
+	padding-bottom: 0;
+	border-bottom: none;
+	margin-bottom: $grid-gutter-width/4;
+}
+
+.settings-account-status {
+	margin-top: $grid-gutter-width*3;
+}

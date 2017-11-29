@@ -1,0 +1,106 @@
+.video-filter-list {
+	padding: stovp($grid-gutter-width) $page-padding-right 0 $page-padding-left;
+	margin: stovp(4*$grid-gutter-width) (-$video-filter-spacing) 2*stovp($grid-gutter-width) (-$video-filter-spacing);
+	@include clearfix;
+	text-align: left;
+}
+
+
+.page-content-view-navbar-offset .video-filter-list {
+	margin-top: stovp(2*$grid-gutter-width);
+}
+
+.video-filter-divider.divider-horizontal {
+	margin: $grid-gutter-width 2*$page-padding-right $grid-gutter-width 2*$page-padding-left;
+	@include opacity(0.25);
+}
+
+.video-filter {
+    float: left;
+	position: relative;
+    padding: sp(0) $video-filter-spacing sp(0) $video-filter-spacing;
+}
+
+.filter-target {
+	margin-left: 0.25em;
+}
+
+.video-filter > h3 {
+	font-weight: 300;
+	font-size: stovp($font-size-h2);
+	margin-top: 0;
+}
+
+.video-filter + .video-filter:before {
+	content: '&';
+	font-size: stovp($font-size-jumbo*2);
+	position: absolute;
+	left: -$video-filter-spacing/2;
+	margin-left: 0.1em;
+	top: $video-filter-spacing*3.5;
+	@include opacity(0.5);
+}
+
+.video-filter-star {
+	width: 26%;
+}
+
+.video-filter-category {
+	width: 37%;
+}
+
+.video-filter-studio {
+	width: 37%;
+}
+
+.viewport-lg .video-filter .filter-target,
+.viewport-md .video-filter .filter-target,
+.viewport-sm .video-filter .filter-target {
+	display: none;
+}
+
+.viewport-sm .video-filter-divider.divider-horizontal,
+.viewport-xs .video-filter-divider.divider-horizontal,
+.viewport-ss .video-filter-divider.divider-horizontal {
+	margin: $grid-gutter-width $page-padding-right $grid-gutter-width $page-padding-left;
+}
+
+.viewport-sm .video-filter-list,
+.viewport-xs .video-filter-list,
+.viewport-ss .video-filter-list {
+	margin: 0;
+}
+
+.viewport-sm .video-filter:before,
+.viewport-xs .video-filter:before,
+.viewport-ss .video-filter:before {
+	font-size: stovp($font-size-h3)*2;
+	top: -0.2em;
+	left: 0;
+}
+
+.viewport-sm .video-filter-list,
+.viewport-xs .video-filter-list,
+.viewport-ss .video-filter-list {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.viewport-sm .video-filter,
+.viewport-xs .video-filter,
+.viewport-ss .video-filter {
+	/*width: 100%;*/
+	/*padding-left: $grid-gutter-width;*/
+}
+
+.viewport-sm .video-filter > h3,
+.viewport-xs .video-filter > h3,
+.viewport-ss .video-filter > h3 {
+	font-size: stovp($font-size-h3)*2;
+}
+
+.viewport-sm .video-filter-list > h2,
+.viewport-xs .video-filter-list > h2,
+.viewport-ss .video-filter-list > h2 {
+	font-size: stovp($font-size-h2)*2;
+}

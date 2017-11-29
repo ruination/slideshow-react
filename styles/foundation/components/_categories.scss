@@ -1,0 +1,75 @@
+.grid-content {
+	padding-top: $grid-padding-top;
+	padding-right: ($page-padding-right - $grid-item-separation-horizontal/2 - $grid-item-border-size/2);
+	height: 100%;
+	width: 100%;
+	overflow-y: auto;
+}
+
+.grid-list {
+	margin: 0;
+	padding: $page-padding-top 0 $page-padding-bottom ($grid-gutter-width - $grid-item-separation-horizontal/2 - $grid-item-border-size/2);
+	width: 100%;
+	display: block;
+
+	@include clearfix;
+}
+
+.grid-list .grid-item,
+.grid-list > * {
+	float: left;
+	list-style: none;
+}
+
+.grid-list .grid-item {
+	margin: 0 $grid-item-separation-horizontal $grid-item-separation-vertical 0;
+}
+
+.grid-list .grid-item:nth-child(3n) {
+	margin-right: 0;
+}
+
+.grid-item .grid-item-border {
+	padding: $grid-item-border-size;
+}
+
+.grid-item:hover .grid-item-border {
+	background: $grid-item-border-color;
+}
+
+
+.grid-item-img-container {
+	width: 100%;
+	display: block;
+	position: relative;
+}
+
+.grid-item-img-container img {
+	width: 100%;
+}
+
+.grid-item-img {
+	width: 100%;
+	display: block;
+	height: 100%;	
+	position: absolute;
+	top: 0;
+	background-size: cover;
+}
+
+.grid-item-title {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: $grid-item-bg;
+	text-align: center;
+	color: $white;
+	font-size: $grid-item-font-size;
+	letter-spacing: -0.04em;
+	line-height: $line-height-large;
+	text-transform: uppercase;
+}
+
+.grid-item:hover .grid-item-title {
+	color: $grid-item-hover-color;
+}

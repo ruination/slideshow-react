@@ -1,0 +1,14 @@
+/* FONT PATH
+ * -------------------------- */
+
+@font-face {
+  font-family: 'colahar-icons';
+  src: url('#{$font-path}/colahar-icons.eot?78542897');
+  src: url('#{$font-path}/colahar-icons.eot?78542897#iefix') format('embedded-opentype'),
+       url('#{$font-path}/colahar-icons.woff2?78542897') format('woff2'),
+       url('#{$font-path}/colahar-icons.woff?78542897') format('woff'),
+       url('#{$font-path}/colahar-icons.ttf?78542897') format('truetype'),
+       url('#{$font-path}/colahar-icons.svg?78542897#colahar-icons') format('svg');       
+  font-weight: normal;
+  font-style: normal;
+}

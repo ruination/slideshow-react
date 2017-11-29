@@ -1,0 +1,6 @@
+// Base Class Definition
+// -------------------------
+
+.#{$icon-css-prefix} {
+	@include icon-base;
+}

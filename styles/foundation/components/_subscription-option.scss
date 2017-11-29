@@ -1,0 +1,598 @@
+.subscription-list {
+	@include clearfix;
+}
+
+.subscription-list .subscription-option.last-child {
+	margin-right: 0;
+}
+
+.subscription-list .subscription-option:last-child {
+	margin-right: 0;
+}
+
+.subscription-radio {
+	display: none;
+}
+
+.subscription-option:hover {
+	color: $subscription-option-hover-color;
+	cursor: pointer;
+}
+
+input[type="radio"].subscription-radio:checked + .subscription-option,
+.subscription-option.selected {
+	color: $subscription-option-selected-color;
+	box-shadow: 0 0 $subscription-option-shadow-spread $subscription-option-shadow-size $subscription-option-selected-shadow-color;
+}
+
+.subscription-border {
+	padding: $subscription-option-border-width;
+	background: $subscription-option-border-color;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	@include transition(background-color 500ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.chosen-subscription .subscription-option {
+	box-shadow: 0 0 $subscription-option-shadow-spread $subscription-option-shadow-size $subscription-option-selected-shadow-color;
+}
+
+.chosen-subscription .subscription-option {
+	display: block;
+	margin: auto;
+	float: none;
+}
+
+.chosen-subscription .subscription-border {
+	position: relative;
+}
+
+.chosen-subscription .subscription-option .subscription-info {
+	padding-bottom: 0;
+}
+
+.chosen-subscription .subscription-option .promotional-image-container {
+	margin-top: $grid-gutter-width;
+	position: relative;
+	display: block;
+}
+
+.promotion-description {
+	@include transition(background-color 400ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.chosen-subscription .promotion-description {
+	position: relative;
+	display: block;
+}
+
+input[type="radio"].subscription-radio:checked + .subscription-option,
+.subscription-option.selected .subscription-container {
+	padding: $subscription-option-padding;
+}
+
+.subscription-container {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background: $subscription-option-bg;
+	padding: $subscription-option-padding + ($subscription-option-selected-border-width - $subscription-option-border-width);
+	@include transition(background-color 400ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+
+input[type="radio"].subscription-radio:checked + .subscription-option .subscription-border,
+.subscription-option.selected .subscription-border {
+	background-color: $subscription-option-selected-color;
+}
+
+.subscription-option:hover .subscription-border {
+	background-color: $subscription-option-hover-color;
+}
+
+.subscription-active {
+	font-weight: $subscription-option-header-font-weight;
+	margin-bottom: 0.70em;
+}
+
+.subscription-option.active .subscription-active {
+	color: lighten($subscription-option-active-color, 50%);
+}
+
+.subscription-option.active.selected .subscription-active {
+	color: $subscription-option-active-color;
+}
+
+.subscription-active .current {
+	padding-bottom: 0.25em;
+	@include transition(border-color, color);
+	@include transition-duration(500ms);
+}
+
+.subscription-option.active .current {
+	border-bottom: sp(1) solid lighten($subscription-option-active-color, 50%);
+}
+
+.subscription-option.selected .current {
+	border-bottom: sp(1) solid $subscription-option-active-color;
+}
+
+
+.subscription-update {
+	margin-bottom: 0.70em;
+}
+
+.subscription-option.update .subscription-update {
+}
+
+.subscription-option.update.selected .subscription-update {
+}
+
+.subscription-update .update {
+	padding-bottom: 0.25em;
+    line-height: 2;
+}
+
+.subscription-option.update .update {
+	border-bottom: sp(1) solid lighten($subscription-option-border-color, 50%);
+}
+
+.subscription-option.selected .update {
+	border-bottom: sp(1) solid $subscription-option-border-color;
+}
+
+.subscription-option.active .subscription-border {
+	background-color: $subscription-option-active-color;
+}
+
+.subscription-option:hover .subscription-container,
+.subscription-option:hover .promotion-description {
+	background: $subscription-option-hover-bg;
+}
+
+input[type="radio"].subscription-radio:checked + .subscription-option .subscription-container,
+input[type="radio"].subscription-radio:checked + .subscription-option .promotion-description,
+.subscription-option.selected .subscription-container,
+.subscription-option.selected .promotion-description {
+	background: $subscription-option-selected-bg;
+}
+
+input[type="radio"].subscription-radio:checked + .subscription-option .subscription-border,
+.subscription-option.selected .subscription-border {
+	padding: $subscription-option-selected-border-width;
+}
+
+.subscription-option {
+	box-shadow: 0 0 $subscription-option-shadow-spread $subscription-option-shadow-size $subscription-option-shadow-color;
+	width: $subscription-option-width-computed;
+	margin-right: $subscription-option-separation;
+	margin-bottom: sp(30);
+	float: left;
+	height: 100%;
+	color: $subscription-option-color;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	@include transition(border 500ms);
+	@include transition(color 500ms);
+}
+
+.minus-sub .subscription-option {
+	width: $subscription-option-minus-width-computed;	
+}
+
+
+.subscription-option .subscription-info {
+	height: 60%;
+	width: 100%;
+	top: 0;
+	/*overflow: hidden;*/
+	padding-bottom: $subscription-option-padding;
+}
+
+
+.subscription-option .promotional-image-container {
+	bottom: 0;
+	left: 0;
+	height: 40%;
+	width: 100%;
+	position: absolute;
+	overflow: hidden;
+	padding: $subscription-option-border-width;
+}
+
+.promotion-description {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	color: $subscription-option-hover-color;
+	padding: $grid-gutter-width/4;
+	background: $subscription-option-color;
+	font-size: $font-size-small;
+	@include transition(background-color 500ms);
+}
+
+.promotion-description h3 {
+	margin-top: 0;
+	margin-bottom: $grid-gutter-width/4;
+	font-size: $font-size-h4;
+}
+
+.subscription-option .promotional-image {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	@include transition(opacity 500ms cubic-bezier(0.42,0,0.58,1));
+	@include transition(transform 100ms ease-in);
+	@include translate3d(0, 0, 1);
+}
+
+input[type="radio"].subscription-radio:checked + .subscription-option .promotional-image,
+.subscription-option.selected .promotional-image {
+	@include scale($subscription-option-selected-image-scale);
+}
+
+.subscription-option .promotional-image.grayscale {
+	@include opacity(0.5);
+}
+
+input[type="radio"].subscription-radio:checked + .subscription-option .promotional-image.grayscale,
+.subscription-option .promotional-image,
+.subscription-option.selected .promotional-image.grayscale,
+.subscription-option:hover .promotional-image.grayscale {
+	@include opacity(0);
+}
+
+input[type="radio"].subscription-radio:checked + .subscription-option .promotional-image,
+.subscription-option:hover .promotional-image,
+.subscription-option.selected .promotional-image {
+	@include opacity(1);
+}
+
+.subscription-option:hover .btn-select {
+	background-color: $subscription-option-hover-color;
+}
+
+input[type="radio"].subscription-radio:checked + .subscription-option .btn-select,
+.subscription-option.selected .btn-select {
+	background-color: $subscription-option-selected-color;
+}
+
+.subscription-option .btn-select {
+	display: block;
+	margin: sp(15) auto;
+	width: 80%;
+	@include transition(background-color 500ms);
+	@include transition(color 500ms);
+}
+
+.subscription-info .price {
+	font-size: $subscription-option-header-font-size;
+	font-weight: $subscription-option-header-font-weight;
+	line-height: ($headings-line-height * dps($subscription-option-header-font-size));
+	margin-top: $subscription-option-padding;
+	color: inherit;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.subscription-info sup {
+	font-size: 0.5em;
+	vertical-align: super;
+	color: inherit;
+	top: 0;
+}
+	
+.subscription-info small {
+	font-size: 0.25em;
+	color: inherit;
+}
+
+.subscription-option .discount,
+.subscription-option .pitch {
+	font-weight: $subscription-option-header-font-weight;
+	font-size: ($subscription-option-header-font-size * 0.34);
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	line-height: 1;
+}
+
+.subscription-option .pitch {
+	margin-top: 1em;
+}
+
+.subscription-option .discount {
+	@include opacity(0.8);
+	font-style: italic;
+}
+
+.subscription-option .bill-frequency {
+	font-size: 90%;	
+	line-height: 1.25;
+	display: flex;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+}
+
+
+
+////////////////////////////////
+// Alternate Style
+////////////////////////////////
+.subscription-list.alternate input[type="radio"].subscription-radio:checked + .subscription-option .subscription-border,
+.subscription-list.alternate .subscription-option.selected .subscription-border,
+.subscription-list.alternate .subscription-option:hover .subscription-border {
+	background-color: lighten($subscription-option-border-color, 0%);
+}
+
+.subscription-list.alternate .subscription-option .promotional-image {
+	/*@include opacity(1);*/
+}
+
+.subscription-list.alternate .promotional-image-container {
+	top: 28%;
+	height: $subscription-option-image-height-alternate;
+}
+
+.subscription-list.alternate .promotion-description,
+.subscription-list.alternate .subscription-option .promotional-image,
+.subscription-list.alternate .subscription-option,
+.subscription-list.alternate .subscription-border {
+	@include transition(background-color 0ms);
+	@include transition(border 0ms);
+	@include transition(color 0ms);
+}
+
+.subscription-list.alternate .subscription-option .subscription-container > * {
+	/*@include opacity(0.5);*/
+}
+
+.subscription-list.alternate .subscription-border {
+	/*background-color: lighten($subscription-option-border-color, 50%);*/
+}
+
+.subscription-list.alternate input[type="radio"].subscription-radio:checked + .subscription-option .subscription-container > *,
+.subscription-list.alternate .subscription-option.selected .subscription-container > *,
+.subscription-list.alternate .subscription-option:hover .subscription-container > * {
+	/*@include opacity(1);*/
+}
+
+.subscription-list.alternate .subscription-option {
+	@include transition(transform 500ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+	text-decoration: none;
+}
+
+.subscription-list.alternate input[type="radio"].subscription-radio:checked + .subscription-option,
+.subscription-list.alternate .subscription-option.selected,
+.subscription-list.alternate .subscription-option:hover {
+	@include scale($subscription-option-selected-image-scale);
+	z-index: 2;
+}
+
+.subscription-list.alternate .subscription-option {
+	margin: 0;
+	width: $subscription-option-width-computed + $subscription-option-separation * (4/5);
+}
+
+.subscription-list.alternate.minus-sub .subscription-option {
+	margin: 0;
+	width: $subscription-option-minus-width-computed + $subscription-option-separation * (3/4);
+}
+
+.subscription-list.alternate .subscription-option .subscription-info {
+	height: 100%;
+	padding-bottom: 0;
+}
+
+.subscription-list.alternate .subscription-border {
+	position: absolute;
+}
+
+
+.subscription-list.alternate .subscription-option .bill-frequency {
+	font-size: $font-size-small;
+	position: absolute;
+	padding: $subscription-option-padding $subscription-option-padding;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 70% - $subscription-option-image-height-alternate;
+}
+
+.subscription-list.alternate .subscription-info .price {
+	line-height: 1.1;
+}
+
+.subscription-list.alternate .subscription-info .pitch {
+	margin-top: $grid-gutter-width/4;
+}
+
+
+
+////////////////////////////////
+// Status Messages
+////////////////////////////////
+.subscription-list .status {
+	display: block;
+	padding: $grid-gutter-width/4;
+	margin-left: -$subscription-option-padding;
+	margin-right: -$subscription-option-padding;
+	margin-bottom: $grid-gutter-width/2;
+	background: $subscription-option-hover-bg;
+}
+
+
+
+
+
+////////////////////////////////
+// Responsive Media Queries
+////////////////////////////////
+@media (min-width: $screen-sm-min) {
+	.subscription-list.alternate .subscription-option {
+		min-height: $subscription-option-min-height;
+	}
+}
+
+.subscriptions .subscription-list .subscription-option {
+	min-height: sp(600);
+}
+
+@media (max-width: $screen-md-max) {
+	.subscriptions .subscription-list .subscription-option {
+		min-height: sp(600);
+	}
+
+	.subscriptions .subscription-list .subscription-info {
+		height: 65%;
+	}
+
+	.subscriptions .subscription-option .promotional-image-container {
+		height: 35%;
+	}
+}
+
+@media (max-width: $screen-sm-max) {
+	.subscriptions .subscription-list .subscription-option {
+		min-height: sp(600);
+	}
+
+	.subscriptions .subscription-list .subscription-info {
+		height: 70%;
+	}
+
+	.subscriptions .subscription-option .promotional-image-container {
+		height: 30%;
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.subscriptions .subscription-list .subscription-option {
+		min-height: sp(600);
+	}
+
+	.subscriptions .subscription-list .subscription-info {
+		height: 80%;
+	}
+
+	.subscriptions .subscription-option .promotional-image-container {
+		height: 20%;
+	}
+}
+
+@media (max-width: $screen-sm-max) {
+	.subscription-list.alternate .subscription-option,
+	.subscriptions .subscription-list .subscription-option,
+	.subscription-list .subscription-option {
+		width: 100%;
+		min-height: auto;
+		margin: 0 0 $grid-gutter-width/2 0;
+		height: auto;
+	}
+
+	.subscription-list.alternate .subscription-border,
+	.subscription-list.alternate .subscription-container,
+	.subscription-container,
+	.subscription-border {
+		height: auto;
+		position: relative;
+	}
+
+	.subscription-list.alternate .subscription-option .subscription-info,
+	.subscription-list .subscription-option .subscription-info {
+		height: auto;
+		padding: 0;
+		width: 100%;				
+	}
+
+	.subscription-list.alternate .subscription-option .subscription-info-text,
+	.subscription-list .subscription-option .subscription-info-text {
+		display: table;
+		width: 100%;
+		table-layout: fixed;
+		border-collapse: separate;
+	}
+
+	.subscription-list.alternate .subscription-option .subscription-info-text > *,
+	.subscription-list .subscription-option .subscription-info-text > * {
+		float: none;
+		display: table-cell;
+	}
+
+	.subscription-list.alternate .subscription-option .subscription-info-text .pitch_price,
+	.subscription-list.alternate .subscription-option .subscription-info-text .select_plan,
+	.subscription-list .subscription-option .subscription-info-text .pitch_price,
+	.subscription-list .subscription-option .subscription-info-text .select_plan {
+		width: 50%;
+		vertical-align: top;
+	}
+
+	.subscription-list.alternate .subscription-info-text .pitch_price > *,
+	.subscription-list.alternate .subscription-info-text .select_plan > *,
+	.subscription-info-text .pitch_price > *,
+	.subscription-info-text .select_plan > * {
+		width: 100%;
+		float: none;
+		display: block;
+		margin: 0 0 $grid-gutter-width/4 0;
+		line-height: $line-height-base;
+	}
+	
+	.subscription-list.alternate .subscription-info-text .select_plan > *,
+	.subscription-info-text .select_plan > * {
+		padding: $grid-gutter-width/4;
+	}
+
+	.subscription-list.alternate .subscription-info-text .pitch_price > *:last-child,
+	.subscription-list.alternate .subscription-info-text .select_plan > *:last-child,
+	.subscription-info-text .pitch_price > *:last-child,
+	.subscription-info-text .select_plan > *:last-child {
+		margin-bottom: 0;
+	}
+
+	.subscription-list.alternate .subscription-info-text .pitch_price .price,
+	.subscription-info-text .pitch_price .price {
+		margin-bottom: 0;
+	}
+
+	.subscription-list.alternate .subscription-info-text .select_plan .bill-frequency,
+	.subscription-info-text .select_plan .bill-frequency {
+		position: relative;
+		background: $brand-default;
+	}
+
+	.subscription-list.alternate .subscription-option .promotional-image-container,
+	.subscription-list .subscription-option .promotional-image-container {
+		width: 100%;
+		display: block;
+		position: relative;		
+		padding: 0;
+		margin-top: $grid-gutter-width;
+	}
+
+	.subscription-list.alternate .subscription-option .promotional-image-container.no-promotion,
+	.subscription-list .subscription-option .promotional-image-container.no-promotion {
+		display: none;
+	}
+
+	.subscription-list .subscription-option .promotion-description {
+		position: relative;		
+	}
+
+	.subscription-list.alternate input[type="radio"].subscription-radio:checked + .subscription-option,
+	.subscription-list.alternate .subscription-option.selected,
+	.subscription-list.alternate .subscription-option:hover {
+		@include scale(max(1, $subscription-option-selected-image-scale * 0.92));
+	}
+}

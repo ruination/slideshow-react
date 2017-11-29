@@ -1,0 +1,133 @@
+// Pages
+.page-layout-default .page-content {
+	min-height: $page-min-height;
+	width: 100vw;
+}
+
+.page-landing .page-layout-default .page-layout {
+	margin-top: auto;
+}
+
+.page-layout-default .container-fluid {
+	padding-left: $page-padding-left + $grid-gutter-width/2;
+	padding-right: $page-padding-right + $grid-gutter-width/2;
+}
+
+@mixin layout-size($parent, $size, $size-factor, $orientation: '')
+{
+	#{$orientation}.viewport-#{$size} #{$parent} {
+		.page-content {
+			min-height: $size-factor*($page-min-height);
+		}
+
+		.container,
+		.container-fluid {
+			padding-left: $size-factor*($page-padding-left + $grid-gutter-width/2);
+			padding-right: $size-factor*($page-padding-right + $grid-gutter-width/2);
+		}
+
+		.row {
+			@include make-row($size-factor*$grid-gutter-width);
+		}
+
+		.navbar-content {
+			margin: 0 $size-factor*(-$navbar-padding-horizontal);
+		}
+
+        .nav-menu-item {
+			padding-left: $size-factor*($page-padding-left);
+        }
+
+        @include make-grid-columns($size-factor*$grid-gutter-width);
+
+		.grid-row-content {
+			padding: 0 $size-factor*($page-padding-right - 2) 0 $size-factor*($page-padding-left - 2);
+		}
+
+		.video-details .video-details-profile .video-overlay {
+			padding-left:  $size-factor*($page-padding-left);
+		}
+		
+		.categorys-grid .grid-row-content {
+			padding: 0;
+		}
+
+		.categorys-grid .grid-items {
+		    margin: 0 $size-factor*sp(-2) 0 $size-factor*sp(-2);
+		}
+
+		.categorys-grid .grid-row {
+			margin: 0;
+		}
+		
+		.categorys-grid .grid-item {
+		    padding: $size-factor*sp(0) $size-factor*sp(2) $size-factor*sp(4) $size-factor*sp(2);
+		}
+
+		.studios-grid .grid-items {
+		    margin: 0 $size-factor*sp(-2) 0 $size-factor*sp(-2);
+		}
+
+		.studios-grid .grid-row-content {
+			padding: 0;
+		}
+
+		.studios-grid .grid-row {
+			margin: 0;
+		}
+
+		.studios-grid .grid-item {
+		    padding: $size-factor*sp(0) $size-factor*sp(2) $size-factor*sp(4) $size-factor*sp(2);
+		}
+
+		.section-header {
+			padding: 0 $size-factor*($page-padding-right) 0 $size-factor*($page-padding-left);
+		}		
+
+		.nav-video-hud  .nav-video-hud-toggle {
+			right: $size-factor*($page-padding-right);
+		}
+    }
+}
+
+
+@mixin layout-mobile-size($parent, $size, $size-factor, $orientation: '')
+{
+	#{$orientation}.viewport-#{$size} #{$parent} {
+		.grid-row-content {
+			padding: 0 0 0 0;
+		}
+    }
+}
+
+// [SIZE: Large]
+// Layout
+// --------------------------------------------------
+@include layout-size('.page-layout-default', 'lg', $layout-lg-size-factor);
+
+
+// [SIZE: Medium]
+// Layout
+// --------------------------------------------------
+@include layout-size('.page-layout-default', 'md', $layout-md-size-factor);
+
+
+// [SIZE: Small]
+// Layout
+// --------------------------------------------------
+@include layout-size('.page-layout-default', 'sm', $layout-sm-size-factor);
+@include layout-mobile-size('.page-layout-default', 'sm', $layout-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// Layout
+// --------------------------------------------------
+@include layout-size('.page-layout-default', 'xs', $layout-xs-size-factor);
+@include layout-mobile-size('.page-layout-default', 'xs', $layout-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// Layout
+// --------------------------------------------------
+@include layout-size('.page-layout-default', 'ss', $layout-ss-size-factor);
+@include layout-mobile-size('.page-layout-default', 'ss', $layout-ss-size-factor);

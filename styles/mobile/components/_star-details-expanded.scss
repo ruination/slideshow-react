@@ -1,0 +1,155 @@
+
+.grid-item-focus-locked .star .star-overlay,
+.slide-focus-locked .star .star-overlay {
+	background: transparent;
+}
+
+.grid-item-focus-locked .star .star-overlay > *,
+.slide-focus-locked .star .star-overlay > * {
+	display: none;
+}
+
+.grid-item-focus-locked .star .star-content,
+.slide-focus-locked .star .star-content {
+	overflow: visible;
+}
+
+.grid-row-rolledout .grid-row-content .grid-item-focus-locked .star .star-overlay,
+.slideshow-rolledout .slideshow-content .slide-focus-locked .star .star-overlay {
+	@include box-shadow(none);
+	top: vp(-4);
+	left: vp(-4);
+	right: vp(-4);
+	bottom: vp(-4);
+	width: auto;
+	height: auto;
+	border: vp(4) solid rgba($brand-secondary, 0.0);
+	background: rgba($brand-quaternary, 0.5);
+	@include opacity(1);
+	@include transition(border-color 700ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.grid-row-rolledout .grid-row-content .grid-item-focus-locked .star .star-overlay,
+.slideshow-rolledout .slideshow-content .slide-focus-locked .star .star-overlay {
+	border-color: rgba($brand-secondary, 0.8);
+}
+
+
+@mixin star-details-expanded-size($parent, $size, $size-factor, $orientation: '')
+{
+	#{$orientation}.viewport-#{$size} #{$parent} {
+		.star-details-profile {
+			margin-bottom: $size-factor*stovp(4*$grid-gutter-width);
+		}
+
+		.star-details-profile .star-overlay .star-overlay-name > * {
+			font-size: $size-factor*stovp($star-details-name-font-size);
+		}
+
+		.star-details-profile .star-overlay-stats > * {
+			font-size: $size-factor*stovp($star-details-stats-font-size);
+		}
+
+		.star-details-profile .star-overlay {
+			padding-bottom: $size-factor*stovp(1.2*$statmenu-height);
+		}
+	}
+}
+
+
+@mixin star-details-expanded-mobile-size($parent, $size, $size-factor)
+{
+	.viewport-portrait.viewport-#{$size} #{$parent} {
+		.star-details-profile {
+			flex-flow: column nowrap;
+		}
+
+		.star-details-profile .star-image {
+			width: 100%;
+		}
+
+		.star-details-profile .star-overlay {
+			padding-bottom: 0;
+			margin-top: $size-factor*stovp(-10*$grid-gutter-width);
+		}
+
+		.star-details-profile .details-menu {
+			order: 2;
+		}
+
+		.statmenu {
+			position: relative;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			align-items: flex-end;
+		}
+
+		.statmenu > * {
+			width: auto;
+			flex: 1 0 33%;
+		}
+
+		.statmenu > *:nth-child(2n) {
+			text-align: center;
+		}
+
+		.statmenu > *:nth-child(3n) {
+			text-align: right;
+		}
+
+		.statmenu > *:nth-child(4n) {
+			text-align: left;
+			margin-top: $size-factor*stovp($grid-gutter-width/2);
+		}
+
+		.statmenu > *:last-child {
+			text-align: right;
+		}		
+
+		.star-details-profile .star-image:before {
+			display: block;
+			@include gradient-vertical-five-colors(
+		       rgba($brand-quaternary, 0.0), 60%,
+		       rgba($brand-quaternary, 0.85), 80%, 
+		       rgba($brand-quaternary, 0.98), 
+		       rgba($brand-quaternary, 1.00), 95% 
+		   	);
+		}		
+	}
+}
+
+
+
+
+// [SIZE: Large]
+// Star Details (Expanded)
+// --------------------------------------------------
+@include star-details-expanded-size('.star-details-expanded', 'lg', 0.7*$star-details-lg-size-factor);
+
+
+// [SIZE: Medium]
+// Star Details (Expanded)
+// --------------------------------------------------
+@include star-details-expanded-size('.star-details-expanded', 'md', 0.7*$star-details-md-size-factor);
+
+
+// [SIZE: Small]
+// Star Details (Expanded)
+// --------------------------------------------------
+@include star-details-expanded-size('.star-details-expanded', 'sm', 0.7*$star-details-sm-size-factor);
+@include star-details-expanded-mobile-size('.star-details-expanded', 'sm', 0.7*$star-details-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// Star Details (Expanded)
+// --------------------------------------------------
+@include star-details-expanded-size('.star-details-expanded', 'xs', 0.7*$star-details-xs-size-factor);
+@include star-details-expanded-mobile-size('.star-details-expanded', 'xs', 0.7*$star-details-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// Star Details (Expanded)
+// --------------------------------------------------
+@include star-details-expanded-size('.star-details-expanded', 'ss', 0.7*$star-details-ss-size-factor);
+@include star-details-expanded-mobile-size('.star-details-expanded', 'ss', 0.7*$star-details-ss-size-factor);

@@ -1,0 +1,156 @@
+///////////////////////////
+// Video
+///////////////////////////
+.video {
+	width: $video-image-width;
+	display: block;
+	position: relative;
+}
+
+.video .video-content {
+	text-decoration: none;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	display: block;
+	background-color: $video-bg;
+	@include transition(background-color 200ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+	@include box-shadow($video-shadow);
+}
+
+.video .video-border {
+	background-color: transparent;
+	padding: $video-border-size;
+	height: 100%;
+	width: 100%;
+}
+
+.video-placeholder {
+	width: 100%;
+	background-size: 90%;
+	background-position: center center;
+	background-repeat: no-repeat;	
+}
+
+.video:hover * {
+	cursor: pointer;
+}
+
+.video:hover .video-border {
+	background-color: $video-highlight-color;
+}
+
+.video:hover .video-content {
+	background-color: $video-highlight-color;
+	@include box-shadow(none);
+}
+
+.video:hover {
+	@include box-shadow($video-shadow-hover);
+}
+
+.video-img-container {
+	@include text-hide;
+
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	@include box-shadow($video-shadow);
+}
+
+.video .video-content .video-img-container {
+	@include box-shadow(none);
+}
+
+.video-img-container img {
+	width: 100%;
+}
+
+.video-footer {
+	bottom: 0;
+	width: 100%;
+}
+
+.video:hover .video-img {
+	/*@include scale(1.05);*/
+}
+
+.video-img {
+	width: 100%;
+	display: block;
+	height: 100%;	
+	position: absolute;
+	top: 0;
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+.video-footer > * {
+	color: $video-footer-color;
+	font-size: $video-font-size;
+	letter-spacing: sp(-1);
+	margin: 0;
+	padding: $video-footer-padding 1.5*$video-footer-padding;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.video.sm .video-footer > * {
+	font-size: $video-font-size-sm;
+}
+
+.video-footer .rental-time,
+.video-footer .expiration-time {
+	border-top: $video-footer-separator-width solid $video-footer-separator-color;
+    font-size: $video-font-size * $video-footer-extended-factor-rg;
+    height: $video-footer-extended-height-rg;
+    text-align: left;
+}
+
+.video.sm .video-footer .rental-time,
+.video.sm .video-footer .expiration-time {
+    white-space: normal;
+    font-size: $video-font-size-sm * $video-footer-extended-factor-sm;
+    height: $video-footer-extended-height-sm;
+}
+
+.hover-context {
+	text-align: right;
+	position: absolute;
+	top: -100%;
+	z-index: 2;
+	width: 100%;
+	right: -$video-border-size;
+
+	@include transition(top 250ms)
+}
+
+.video:hover .hover-context {
+	top: -$video-border-size;
+}
+
+.carousel.horizontal .hover-context {
+	font-size: 125%;
+} 
+
+.video-header {
+	position: absolute;
+	top: 20%;
+	left: 0;
+	z-index: 1;
+	background-color: $video-bg;
+	padding: 0.7% 1.5%;
+}
+
+.video-title {
+	position: absolute;
+	bottom: 20%;
+	right: 0;
+	z-index: 1;
+	background-color: $video-bg;
+	padding: 0.7% 1.5%;
+}

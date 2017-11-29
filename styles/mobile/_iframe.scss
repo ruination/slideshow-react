@@ -1,0 +1,8 @@
+.billing-frame {
+	@include opacity(1);
+	@include transition(opacity 500ms cubic-bezier(0.365, 0.45, 0.23, 0.95) 500ms);
+}
+
+.billing-frame-empty {
+	@include opacity(0);
+}

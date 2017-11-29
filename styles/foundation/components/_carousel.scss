@@ -1,0 +1,29 @@
+.carousel {
+	margin-top: $carousel-margin-top;
+	padding-bottom: $carousel-margin-top + $carousel-margin-bottom;
+}
+
+.carousel-content {
+	padding-top: $carousel-padding-top;
+	height: 100%;
+	width: 100%;
+	overflow-y: auto;
+}
+
+.carousel-list {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+.carousel-list .video,
+.carousel-list > * {
+	float: left;
+	list-style: none;
+	margin: 0 $carousel-item-separation-horizontal/2 $carousel-item-separation-vertical;
+}
+
+.carousel.horizontal .carousel-list {
+	height: 100%;
+}
+

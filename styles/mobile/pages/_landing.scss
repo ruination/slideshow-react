@@ -1,0 +1,513 @@
+// 
+// Slideshow
+// --------------------------------------------------
+.landing.slideshow .image-slide-content {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.landing.slideshow .image-slide-content h1 {
+	margin-bottom: stovp($grid-gutter-width);
+	margin-top: auto;
+}
+
+.landing.slideshow .image-slide-content h1.inverse {
+	color: lighten($brand-quaternary, 10%);
+}
+
+.landing.slideshow .image-slide-content .landing-text .btn {
+	margin-bottom: stovp($navbar-height);
+}
+
+.landing.slideshow .sshow-slide {
+	padding: 0;
+}
+
+
+.landing.slideshow .image-slide-content {
+	overflow: hidden;
+}
+
+.landing.slideshow .sshow-slide.slide-hidden {
+	@include opacity(0);
+}
+
+.landing-text {
+	color: $brand-tertiary;
+	text-transform: uppercase;
+	margin-top: ($line-height-computed / 2);
+	margin-bottom: ($line-height-computed / 2);
+	font-size: $font-size-h3;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	line-height: $headings-line-height * 0.8;
+	letter-spacing: $headings-letter-spacing;
+	text-shadow: vp(1) vp(1) vp(2) rgba(0,0,0,0.30), vp(0) vp(0) vp(4) rgba(0,0,0,0.10);
+}
+
+
+//
+// Slideshow - Slide1 (Videos)
+// --------------------------------------------------
+@include keyframes(scroll) {
+	0%   { background-position: 200% center; }
+	100% { background-position: 0% center; }
+}
+
+.landing-videos > .image-slide-content {
+	@include perspective(sp(2500));
+	@include perspective-origin(50% 70%);
+}
+
+.landing-videos .perspective {
+	background-position: 100% center;
+	background-size: auto 50%;
+	background-repeat: repeat;
+	@include rotateY(-35deg);
+	position: absolute;
+	top: -100%;
+	left: -100%;
+	right: -100%;
+	bottom: -100%;
+	z-index: -2;
+}
+
+.landing-videos .perspective::before  {
+	display: block;
+	content: ' ';
+	position: absolute;
+	top: -1%;
+	left: -1%;
+	right: -1%;
+	bottom: -1%;
+	@include gradient-horizontal-five-colors(
+		rgba(darken($brand-quaternary, 0%), 1.00), 1%, 
+		rgba(darken($brand-quaternary, 0%), 0.92), 5%, 
+		rgba(darken($brand-quaternary, 0%), 0.60), 
+		rgba(darken($brand-quaternary, 0%), 0.30), 20%
+	);
+	z-index: 1;
+}
+
+.slide-visible .landing-videos  .perspective {
+	background-position: 0 center;
+	@include animation-duration(420000ms);
+	@include animation-timing-function(linear);
+	/*@include animation-name(scroll);*/
+	@include animation-iteration-count(infinite);
+}
+
+.landing-center-content {
+	width: 50%;
+	text-align: center;
+}
+
+.landing-top-content {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+}
+
+.landing-bottom-content {
+	width: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-end;
+}
+
+.landing-right-content {
+	flex: 1 1 50%;
+	align-self: flex-end;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.landing-topright-content {
+	height: 50%;
+	width: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+
+
+//
+// Slideshow - Slide1 (Videos) -> Channels
+// --------------------------------------------------
+.landing-channels {
+	width: 60%;
+	margin: auto;
+	overflow: hidden;
+}
+
+.landing-channels,
+.landing-channels.channels .channel,
+.landing-channels.channels .channel:hover,
+.landing-channels.channels .channel .channel-border,
+.landing-channels.channels .channel:hover .channel-border {
+	background-color: transparent;
+	@include box-shadow(none);
+}
+
+.landing-channels.channels .channel-img {
+	left: 0;
+	width: 100%;
+}
+
+
+
+
+//
+// Slideshow - Slide2 (Devices)
+// --------------------------------------------------
+.landing-devices .landing-right-content {
+	width: 50%;
+}
+
+.landing-devices .landing-topright-content {
+	padding: $grid-gutter-width 2*$grid-gutter-width 0 $grid-gutter-width;
+}
+
+.landing-devices .landing-text {
+	text-align: center;
+}
+
+.landing-devices-links {
+	width: 100%;
+	text-align: center;
+	white-space: nowrap;
+	@include gradient-vertical-five-colors(
+	   rgba($brand-quaternary, 0.0), 5%,
+	   rgba($brand-quaternary, 0.80), 85%, 
+	   rgba($brand-quaternary, 0.98), 
+	   rgba($brand-quaternary, 1.00), 95% 
+   	);}
+
+.landing-devices-links > * {
+	display: inline-block;
+	position: relative;
+	text-transform: uppercase;
+	padding: 2*$grid-gutter-width $grid-gutter-width 2*$grid-gutter-width $grid-gutter-width;
+	text-shadow: vp(1) vp(1) vp(2) rgba(0,0,0,0.30), vp(0) vp(0) vp(4) rgba(0,0,0,0.10);
+}
+
+.landing-devices-links > * + *:before {
+	content: '|';
+	font-size: $font-size-h1;
+	color: $brand-tertiary;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+
+
+
+//
+// Slideshow - Slide5 (Categorys)
+// --------------------------------------------------
+.landing-categorys .categorys-flipboard-container {
+    position: absolute;
+	top: 100% * (55/758);
+	bottom: 100% * (114/758);
+	left: 100% * (40/1192);
+	right: 100% * (44/1192);
+	@include opacity(0.7);
+}
+
+.categorys-flipboard-background .flipboard-reflection {
+	content: '';
+    position: absolute;
+	top: 100% * (24/758);
+	bottom: 100% * (114/758);
+	left: 100% * (40/1192);
+	right: 100% * (44/1192);
+	background-size: cover;
+	background-position: top center;
+	pointer-events: none;
+}
+
+.landing-categorys .categorys-tv {
+    /*position: absolute;*/
+    padding-top: $grid-gutter-width*3;
+    width: 75%;
+}
+
+.categorys-flipboard-background {
+    position: relative;
+	padding: 50% / (1192/758) 0;
+    background-size: contain;
+    background-repeat: no-repeat;    
+}
+
+.landing-categorys .landing-top-content {
+	align-items: center;
+	justify-content: center;
+}
+
+.landing-categorys .landing-bottom-content {
+	z-index: 1;
+	align-items: center;
+	padding-bottom: $grid-gutter-width*2;
+	pointer-events: none;
+}
+
+.landing-categorys .landing-bottom-content > * {
+	pointer-events: auto;
+}
+
+.categorys-flipboard {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-content: flex-start;
+	overflow: hidden;
+}
+
+.categorys-flipboard .preference-container {
+	width: 20%;
+	margin-bottom: 0;
+	padding: 0;
+	@include perspective(sp(1000));
+}
+
+.categorys-flipboard .preference-spacing {
+	padding: $preferences-grid-horizontal-separation;
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.categorys-flipboard .preference-container .preference-border {
+	padding: 50% / (210/118) 0;
+	position: relative;
+}
+
+.categorys-flipboard .preference-container .preference-flip {
+	position: relative;
+    height: 100%;
+    width: 100%;
+	@include transition(transform 2000ms cubic-bezier(0.365, 0.45, 0.23, 0.95) 1000ms);
+			transform-style: preserve-3d;
+	@include transform-origin(50% 50%);
+	-webkit-transform-style: preserve-3d;
+}
+
+.preference-flip.flipX.flipActive .preference,
+.preference-flip.flipY.flipActive .preference {
+	background-color: rgba($brand-secondary, 0.8);
+}
+
+.preference-flip.flipY.flipActive {
+	@include rotateY(180deg);
+}
+
+.preference-flip.flipY.flipReverse.flipActive {
+	@include rotateY(-180deg);
+}
+
+.preference-flip.flipY .preference {
+	@include rotateYtranslateZ(0deg, 2px);
+}
+
+.preference-flip.flipY .preference-category {
+	@include rotateYtranslateZ(180deg, 1px);
+}
+
+
+.preference-flip.flipX.flipActive {
+	@include rotateX(180deg);
+}
+
+.preference-flip.flipX.flipReverse.flipActive {
+	@include rotateX(-180deg);
+}
+
+.preference-flip.flipX .preference {
+	@include rotateXtranslateZ(0deg, 2px);
+}
+
+.preference-flip.flipX .preference-category {
+	@include rotateXtranslateZ(180deg, 1px);
+}
+
+.categorys-flipboard .preference-flip .preference,
+.categorys-flipboard .preference-flip .preference-category {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.categorys-flipboard .preference-flip .preference {
+	display: flex;
+	flex-flow: column nowrap;
+	overflow: hidden;
+	z-index: 2;
+}
+
+.categorys-flipboard .preference-flip .preference-category {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+	backface-visibility: hidden;
+}
+
+.categorys-flipboard .preference-container .preference-type {
+	flex: 0 0 auto;
+}
+
+.categorys-flipboard .preference-container .preference-icon-container {
+	position: relative;
+	flex: 1 1 0;
+	width: 100%;
+	padding: 0;
+}
+
+.categorys-flipboard .preference-container .preference-icon {
+	height: 100%;
+	width: auto;
+}
+
+
+
+
+
+
+//
+// Devices Slideshow
+// --------------------------------------------------
+.devices-slideshow {
+	margin-top: $grid-gutter-width;
+	margin-bottom: 3*$grid-gutter-width;
+}
+
+.device-icon-container {
+	padding: 10% 0;
+	position: relative;
+    width: 75%;
+    margin: auto;
+    @include opacity(0.9);
+}
+
+.device-icon-container .device-icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.devices-slideshow .device-name {
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+@mixin landing-page-size($parent, $viewport, $size-factor)
+{
+	#{$parent}-#{$viewport} {
+		.landing.slideshow .image-slide-content h1 {
+			font-size: $size-factor*stovp(2*$font-size-h1);
+			margin-bottom: $size-factor*stovp($grid-gutter-width);
+			text-shadow: $size-factor*vp(1) $size-factor*vp(1) $size-factor*vp(2) rgba($brand-quaternary, 0.7);
+		}
+
+		.landing.slideshow .image-slide-content h1.inverse {
+			text-shadow: $size-factor*vp(1) $size-factor*vp(1) $size-factor*vp(2) rgba($black, 0.4);
+		}
+
+		.landing.slideshow .image-slide-content .landing-text .btn {
+			margin-bottom: $size-factor*stovp($navbar-height);
+		}
+
+		.landing-text {
+			font-size: $size-factor*stovp($font-size-h2);
+			text-shadow: $size-factor*vp(1) $size-factor*vp(1) $size-factor*vp(2) rgba(0,0,0,0.30), $size-factor*vp(0) $size-factor*vp(0) $size-factor*vp(4) rgba(0,0,0,0.10);
+		}
+
+		.landing-devices .landing-topright-content {
+			padding: $size-factor*stovp($grid-gutter-width) $size-factor*stovp(2*$grid-gutter-width) 0 $size-factor*stovp($grid-gutter-width);
+		}
+
+		.landing-devices-links > * {
+			padding: $size-factor*stovp(2*$grid-gutter-width) $size-factor*stovp($grid-gutter-width) $size-factor*stovp(2*$grid-gutter-width) $size-factor*stovp($grid-gutter-width);
+			text-shadow: $size-factor*vp(1) $size-factor*vp(1) $size-factor*vp(2) rgba(0,0,0,0.30), $size-factor*vp(0) $size-factor*vp(0) $size-factor*vp(4) rgba(0,0,0,0.10);
+		}
+
+		.landing-devices-links > * + *:before {
+			font-size: $size-factor*stovp($font-size-h1);
+		}
+
+		.devices-slideshow .device-name {
+			font-size: $size-factor*stovp($font-size-h3);
+		}
+
+		.categorys-flipboard .preference-flip .preference { 
+			padding: $size-factor*stovp($grid-gutter-width/5) $size-factor*stovp($grid-gutter-width/3);
+		}
+
+		.categorys-flipboard .preference-container .preference-type {
+			font-size: $size-factor*stovp($font-size-large);
+			margin: 0 auto $size-factor*stovp($grid-gutter-width/4) auto;
+		}
+	}
+}
+
+
+
+// [SIZE: Large]
+// Landing Page
+// --------------------------------------------------
+@include landing-page-size('.viewport', 'lg', $landing-lg-size-factor);
+
+
+// [SIZE: Medium]
+// Landing Page
+// --------------------------------------------------
+@include landing-page-size('.viewport', 'md', $landing-md-size-factor);
+
+
+// [SIZE: Small]
+// Landing Page
+// --------------------------------------------------
+@include landing-page-size('.viewport', 'sm', $landing-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// Landing Page
+// --------------------------------------------------
+@include landing-page-size('.viewport', 'xs', $landing-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// Landing Page
+// --------------------------------------------------
+@include landing-page-size('.viewport', 'ss', $landing-ss-size-factor);

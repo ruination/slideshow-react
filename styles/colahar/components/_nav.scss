@@ -1,0 +1,24 @@
+.nav > li > a span + .icon {
+	vertical-align: middle;
+}
+
+.navbar-header-mobile .navbar-brand.logo {
+	/*right: $grid-gutter-width;*/
+	right: 0;
+	top: 0;
+	width: ($navbar-height - $navbar-brand-border-width * 0) * $navbar-brand-logo-aspect;
+}
+
+.nav {
+	// Open dropdowns
+	.open > a:not(.btn),
+	.open > .btn-link {
+		&,
+		&:hover,
+		&:focus {
+			background-color: transparent;
+			border-color: transparent;
+			color: $brand-secondary;
+		}
+	}
+}

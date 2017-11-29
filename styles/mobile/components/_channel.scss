@@ -1,0 +1,326 @@
+///////////////////////////
+// Channel
+///////////////////////////
+.channel {
+	display: block;
+	position: relative;
+}
+
+.channels {
+	margin-top: stovp($grid-gutter-width);
+	background-color: $channel-bg;
+	@include box-shadow($channel-shadow);
+}
+
+.channels.channels-overlay {
+	background-color: rgba($channel-bg, 0.0);
+	@include box-shadow(none);
+}
+
+.channels .sshow-slide {
+	padding: 0;
+}
+
+.channel .channel-content {
+	text-decoration: none;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	/*overflow: hidden;*/
+	display: block;
+}
+
+.channel .channel-border {
+	background-color: transparent;
+	padding: $channel-border-size;
+	height: 100%;
+	width: 100%;
+	@include transition(border-color, background-color);
+	@include transition-duration(300ms);
+	@include transition-timing-function(cubic-bezier(0.365, 0.45, 0.23, 0.95));	
+}
+
+.channel:hover * {
+	cursor: default;
+}
+
+.channels .channel:hover .channel-border {
+	background-color: $channel-highlight-color;
+}
+
+.channels .channel:hover .channel-content {
+	@include box-shadow(none);
+}
+
+.channels .channel:hover {
+	@include box-shadow($channel-shadow-hover);
+}
+
+.channels.channels-overlay .channel:hover .channel-border {
+	background-color: rgba($channel-highlight-color, 0.5);
+}
+
+.channels.channels-overlay .channel:hover .channel-content {
+	@include box-shadow(none);
+}
+
+.channels.channels-overlay .channel:hover {
+	@include box-shadow($channel-shadow-hover);
+}
+
+
+//
+// Channel -> Actions
+// --------------------------------------------------
+.channel-actions {
+	position: absolute;
+	top: stovp($grid-gutter-width/2);
+	left: stovp($grid-gutter-width);
+	line-height: $line-height-base;
+}
+
+.channel-status {
+	position: absolute;
+	top: stovp($grid-gutter-width/2);
+	right: stovp($grid-gutter-width);
+	line-height: $line-height-base;
+}
+
+.channel-actions .icon-glasses {
+	font-size: 120%;
+	@include scale(1.20);
+	line-height: 0.80;
+}
+
+.channel-action-item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.channel-status-item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+	color: $channel-subscribed-color;
+}
+
+.channel-list .channel:hover .channel-status-item .icon,
+.channel-list .channel-status-item .icon {
+	border-color: transparent;
+}
+
+.channel-status > * + * {
+	margin-right: 0.5em;
+}
+
+.channel-action-item > * + * {
+	margin-left: 0.5em;
+	font-weight: 400;
+	font-size: 2rem;
+}
+
+.channel-actions > * + * {
+	margin-left: 0.5em;
+}
+
+
+.channel-img-container {
+	@include text-hide;
+
+	width: 100%;
+	display: block;
+	/*overflow: hidden;*/
+	position: relative;
+	@include box-shadow($channel-shadow);
+}
+
+.channel .channel-content .channel-img-container {
+	@include box-shadow(none);
+}
+
+.channels .channel-img {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 60%;
+	left: 20%;
+}
+
+.channel-img.logo-square {
+	width: 50%;
+	left: 25%;
+}
+
+.channels .channel.colahar .channel-img.colahar-logo {
+	width: 80%;
+	left: 10%;
+}
+
+.channels .channel.screenersstraight .channel-img.screeners-straight-logo {
+	width: 80%;
+	left: 10%;
+}
+
+.channels .channel.screenersgay .channel-img.screeners-gay-logo {
+	width: 80%;
+	left: 10%;
+}
+
+.channel.channel-unselected .channel-img {
+	@include logo-grayscale();
+}
+
+
+
+//
+// Channel List
+// --------------------------------------------------
+.channel-list {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.channel-list .channel {
+	flex: 0 1 auto;
+	width: sp(350);
+	height: sp(150);
+	margin-bottom: $grid-gutter-width*1.35;
+}
+
+.channel-list .channel .channel-border {
+	border: $channel-border-size solid $channel-border-color;
+	padding: sp(40) sp(40);
+}
+
+.channel-list .channel:hover .channel-border {
+	border-color: $channel-hover-color;
+	color: $channel-hover-color;
+}
+
+.channel-list .channel.channel-subscribed .channel-border,
+.channel-list .channel.channel-subscribed:hover .channel-border {
+	border-color: $channel-subscribed-color;
+}
+
+.channel-list .channel.channel-selected .channel-actions .icon,
+.channel-list .channel.channel-selected .channel-actions,
+.channel-list .channel.channel-selected .channel-status-item,
+.channel-list .channel.channel-selected .channel-border {
+	border-color: darken($channel-selected-color, 15%);
+	color: lighten($channel-selected-color, 15%);
+}
+
+.channel-list .channel.channel-selected:hover .channel-actions .icon,
+.channel-list .channel.channel-selected:hover .channel-actions,
+.channel-list .channel.channel-selected:hover .channel-status-item,
+.channel-list .channel.channel-selected:hover .channel-border {
+	border-color: lighten($channel-selected-color, 10%);
+	color: lighten($channel-selected-color, 30%);
+}
+
+
+.channel-list .channel.channel-remove .channel-actions .icon,
+.channel-list .channel.channel-remove .channel-actions,
+.channel-list .channel.channel-remove .channel-status-item,
+.channel-list .channel.channel-remove .channel-border {
+	border-color: darken($channel-remove-color, 15%);
+	color: lighten($channel-remove-color, 15%);
+}
+
+.channel-list .channel.channel-remove:hover .channel-actions .icon,
+.channel-list .channel.channel-remove:hover .channel-actions,
+.channel-list .channel.channel-remove:hover .channel-status-item,
+.channel-list .channel.channel-remove:hover .channel-border {
+	border-color: lighten($channel-remove-color, 10%);
+	color: lighten($channel-remove-color, 30%);
+}
+
+.channel-list .channel.channel-subscribed .channel-img {
+	@include logo-secondary();
+}
+
+.channel-list .channel .channel-border {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.channel-list .channel .channel-content {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	margin-top: sp(15);
+}
+
+.channel-list .channel .channel-image {
+	flex: 1 1 auto;
+}
+
+.channel-list .channel .channel-img {
+	height: auto;
+	width: 100%;	
+	@include transition-duration(300ms);
+}
+
+.channel-list .channel .logo {
+	@include transition-duration(250ms);
+}
+
+.channel-list .icon {
+	border: $channel-border-size solid $channel-border-color;
+	border-radius: $btn-border-radius-base;
+	width: 2em;
+	height: 2em;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	flex-flow: column nowrap;
+}
+
+.channel-list .channel-actions {
+	position: absolute;
+	top: ($grid-gutter-width/3);
+	left: ($grid-gutter-width/3);
+	line-height: $line-height-base;
+}
+
+.channel-list .channel-actions,
+.channel-list .channel .icon {
+	@include transition(border-color, background-color, color);
+	@include transition-duration(300ms);
+	@include transition-timing-function(cubic-bezier(0.365, 0.45, 0.23, 0.95));	
+}
+
+.channel-list .channel:hover .icon {
+	border-color: $channel-hover-color;
+	color: $channel-hover-color;
+}
+
+.channel-list .channel:hover .channel-img {
+	@include logo-secondary();
+}
+
+.channel-list .channel.channel-selected .channel-img,
+.channel-list .channel.channel-selected:hover .channel-img {
+	@include logo-success();
+}
+
+
+.subsidiary-channels-list .section-title {
+	padding-bottom: $grid-gutter-width/2;
+}
+
+
+
+
+
+
+
+.viewport-md .channel-list .channel {
+	width: sp(315);
+}

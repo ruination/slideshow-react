@@ -1,0 +1,174 @@
+$nav-player-aspectRatio:        1920 / 1080 !default;
+$nav-player-padding:            50% / $nav-player-aspectRatio !default;
+
+//
+// NavPlayer
+// --------------------------------------------------
+.nav-player {
+    position: static;
+    line-height: $line-height-base;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.nav-player.window-entered,
+.nav-player.window-exited,
+.nav-player.window-exiting,
+.nav-player.window-exit,
+.nav-player.window-entering,
+.nav-player.window-enter {
+    @include transition-duration(300ms);
+}
+
+.nav-player.window-exiting,
+.nav-player.window-exit,
+.nav-player.window-entering {
+    .nav-video-player,
+    .nav-video-player .engine,
+    .nav-video-player .engine video {
+        height: 100%;
+    }
+}
+
+.nav-player.window-exited {
+    .nav-video-player .engine .ui,
+    .nav-video-player .engine video {
+        height: auto;
+    }
+}
+
+.nav-player-content {
+    @include transition(all);
+    @include transition-duration(500ms);
+    @include transition-timing-function(cubic-bezier(0.365, 0.45, 0.23, 0.95));
+    @include transition-delay(300ms);
+    background-color: rgba($navbar-inverse-bg, 1);
+    position: static;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-player-animation .animation-zoom-container {
+    background-color: rgba($navbar-inverse-bg, 1);
+    /*@include box-shadow(vp(20) vp(20) vp(30) rgba($black, 0.60))*/
+}
+
+/*.nav-player.window-entered,*/
+/*.nav-player.window-exited,*/
+.nav-player.window-exiting,
+.nav-player.window-exit,
+.nav-player.window-entering,
+.nav-player.window-enter {
+    .video-player .video-player-overlay .ui {
+        @include opacity(0);
+    }
+}
+
+//
+// NavPlayer -> Header
+// --------------------------------------------------
+.nav-player-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: stovp($grid-gutter-width/2) stovp($grid-gutter-width/2);
+    display: flex;
+    flex-flow: column nowrap;
+    align-self: flex-start;
+    @include gradient-vertical-four-colors(
+       rgba($navbar-inverse-bg, 0.85), 
+       rgba($navbar-inverse-bg, 0.55), 
+       40%, 
+       rgba($navbar-inverse-bg, 0.40),
+       rgba($navbar-inverse-bg, 0.0), 
+       60%
+   );
+   text-shadow: vp(1) vp(1) vp(2) rgba(#000, 0.7);
+   color: $navbar-inverse-link-color;
+}
+
+.nav-player-button-fullscreen {
+    align-self: flex-end;
+}
+
+
+
+//
+// NavPlayer -> Rollout
+// --------------------------------------------------
+.nav-player-rollout {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include transition(all);
+    @include transition-duration(500ms);
+    @include transition-timing-function(cubic-bezier(0.365, 0.45, 0.23, 0.95));
+    @include transition-delay(300ms);
+    @include opacity(0);
+}
+
+.nav-player-rollout-visible {
+    @include opacity(1);
+}
+
+.nav-player-rollout-mini {
+    position: static;
+    @include opacity(1);
+}
+
+.nav-player-menu {
+    flex: 1;
+    overflow: auto;
+}
+
+
+
+//
+// NavMenu -> Rollout -> Menu Item
+// --------------------------------------------------
+.nav-player-menu-item {
+    padding-left: $page-padding-left;
+    display: block;
+    fill: $brand-tertiary;
+    text-align: left;
+    position: relative;
+    @include transition(background-color);
+    @include transition-duration(250ms);
+    @include transition-timing-function(cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.nav-player-menu-item:hover {
+    background-color: rgba(darken($brand-quaternary, 20%), 1);
+}
+
+.nav-player-menu-item.active {
+    background-color: rgba(darken($brand-quaternary, 10%), 1);
+}
+
+.nav-player-menu-item.active > .icon {
+    color: $brand-secondary;
+    fill: $brand-secondary;
+}
+
+.nav-player-menu-item > .icon {
+    @include transition(color, fill);
+    @include transition-duration(250ms);
+    @include transition-timing-function(cubic-bezier(0.365, 0.45, 0.23, 0.95));
+    width: 1em;
+    text-align: center;
+    margin-right: 1em;
+}
+
+.nav-player-menu-item > .stars-icon {
+    height: 1.5em;
+    margin-bottom: -0.35em;
+}

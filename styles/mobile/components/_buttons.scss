@@ -1,0 +1,115 @@
+.btn-primary,
+.btn-secondary,
+.btn-tertiary,
+.btn-quaternary,
+.btn-info,
+.btn-default,
+.btn-warning,
+.btn-danger {
+    @media (min-width: $screen-sm-min) {
+		min-width: sp(200);
+    }
+}
+
+.btn {
+	cursor: default;
+	@include transition(background-color, border-color, color);
+	@include transition-duration(250ms);
+	@include transition-timing-function(cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.btn-group .btn {
+}
+
+.btn.btn-inherit {
+	font-weight: inherit;
+	font-size: inherit;
+	/*display: inline;*/
+}
+
+.btn.btn-link {
+	border: none;
+	min-width: auto;
+	padding: 0;
+}
+
+/*.navbar-inverse .navbar-nav > li > .btn-link:hover:not(.btn), 
+.navbar-inverse .navbar-nav > li > .btn-link:focus:not(.btn), 
+.navbar-inverse .navbar-nav > li > a:hover:not(.btn), 
+.navbar-inverse .navbar-nav > li > a:focus:not(.btn) {
+	background-color: rgba($brand-tertiary, 0.5);
+}
+*/
+.btn-link.focus:active,
+.btn-link:active:focus,
+.btn-link.hover,
+.btn-link:hover,
+.btn-link.focus,
+.btn-link:focus {
+	outline: none;
+	text-decoration: none;
+	cursor: default;
+	/*background-color: rgba($brand-tertiary, 0.5);*/
+}
+
+.add-favorite,
+.remove-favorite { 
+	background: transparent;
+	padding: 0;
+}
+
+.menu-action .icon {
+	width: 1.5em;
+	overflow: visible;
+	margin-right: 0.5em;
+	padding: 0 0.2em;
+	text-align: center;
+}
+
+.menu-action .icon:before {
+	overflow: visible;
+}
+
+.menu-action .icon.icon-play-2 {
+	position: relative;
+}
+
+.menu-action.button-icononly .icon {
+	margin-right: 0;
+}
+
+.menu-action.button-icononly .icon:before {
+    text-shadow: spw(1) spw(1) spw(2) rgba(0,0,0,0.30), spw(0) spw(0) spw(4) rgba(0,0,0,0.10);
+}
+
+// Button Sizes
+// --------------------------------------------------
+/*.btn,
+.btn-md,
+.btn-medium {
+	@include button-size(stovp($padding-base-vertical), stovp($padding-base-horizontal), stovp($font-size-base), $line-height-base, stovp($btn-border-radius-base));
+}
+
+.btn-large,
+.btn-lg {
+	@include button-size(stovp($padding-large-vertical), stovp($padding-large-horizontal), stovp($font-size-large), $line-height-large, stovp($btn-border-radius-large));
+}
+
+.btn-jumbo {
+	@include button-size(stovp($padding-jumbo-vertical), stovp($padding-jumbo-horizontal), stovp($font-size-jumbo), $line-height-jumbo, stovp($btn-border-radius-jumbo));
+}
+
+.btn-super {
+	@include button-size(stovp($padding-super-vertical), stovp($padding-super-horizontal), stovp($font-size-super), $line-height-super, stovp($btn-border-radius-super));
+}
+
+.btn-small,
+.btn-sm {
+	@include button-size(stovp($padding-small-vertical), stovp($padding-small-horizontal), stovp($font-size-small), $line-height-small, stovp($btn-border-radius-small));
+}
+
+.btn-xsmall,
+.btn-xs {
+	@include button-size(stovp($padding-xsmall-vertical), stovp($padding-xsmall-horizontal), stovp($font-size-small), $line-height-small, stovp($btn-border-radius-small));
+}
+*/

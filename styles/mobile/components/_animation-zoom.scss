@@ -1,0 +1,48 @@
+.animation-zoom {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+.animation-zoom-container {
+
+}
+
+.animation-zoom-exited {
+	position: relative;
+}
+
+.electron .animation-zoom {
+	top: $titlebar-height;
+}
+
+.electron .animation-zoom.animation-zoom-enter,
+.electron .animation-zoom.animation-zoom-exiting,
+.electron .animation-zoom.animation-zoom-exited {
+	top: 0;
+}
+
+
+.animation-zoom-track-y {
+	height: 100%;
+    @include transition(transform);
+    @include transition-duration(0);
+    @include transition-timing-function(cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.animation-zoom-track-x {
+	height: 100%;
+    @include transition(transform);
+    @include transition-duration(0);
+    @include transition-timing-function(cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.animation-zoom-container {
+	@include transform-origin(0 0);
+    @include transition(all);
+    @include transition-duration(0);
+    @include transition-timing-function(cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}

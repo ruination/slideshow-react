@@ -1,0 +1,12 @@
+.validation-feedback {
+	overflow-y: hidden;
+	max-height: sp(1000);
+
+	@include transition(max-height);
+	@include transition-duration(500ms);
+	@include transition-timing-function(cubic-bezier(1, 0, 0, 0.5));
+}
+
+.validation-feedback.validation-feedback-empty {
+	max-height: 0;
+}

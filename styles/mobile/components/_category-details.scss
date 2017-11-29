@@ -1,0 +1,298 @@
+.category-details {
+	position: relative;
+	color: $brand-tertiary;
+	text-shadow: vp(1) vp(1) vp(1) rgba(#000, 0.3);
+	margin-bottom: stovp(5*$grid-gutter-width);
+}
+
+.category-details-overlay {
+	color: $brand-tertiary;
+	text-shadow: vp(1) vp(1) vp(3) rgba(#000, 0.7);
+}
+
+.category-overlay-frame {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.category-details-frame > * {
+	flex: 1 1 auto;
+}
+
+.category-overlay-frame .category-overlay-frame-sizer {
+	flex: 0;
+}
+
+
+.category-overlay-layout {
+	position: relative;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;	
+	display: flex;
+	align-self: flex-end;
+	flex-flow: column nowrap;
+}
+
+.category-overlay-layout > * {
+	flex: 0 1 auto;
+	position: relative;
+}
+
+.category-overlay-layout .category-overlay {
+	flex: 1 1 auto;
+}
+
+.category-overlay-layout .statmenu {
+}
+
+.category-overlay-layout .details-menu {
+}
+
+.category-details .category-image {
+	display: none;
+}
+
+.category-image.category-image-backdrop {
+	position: absolute;
+	width: 100%;
+	z-index: 0;
+	/*display: none;*/
+}
+
+.category-image.category-image-backdrop:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	height: 101%;
+	width: 100%;
+	z-index: 2;
+	display: none;
+	@include gradient-vertical-five-colors(
+       rgba($brand-quaternary, 0.0), 70%,
+       rgba($brand-quaternary, 0.85), 90%, 
+       rgba($brand-quaternary, 0.98), 
+       rgba($brand-quaternary, 1.00), 95% 
+   	);
+	pointer-events: none;
+}
+
+
+.category-details:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: '';
+	z-index: 0;
+	/*display: none;*/
+	background-color: darken(rgba($brand-quaternary, 0.2), 10%);
+/*	@include gradient-vertical-five-colors(
+       rgba($brand-quaternary, 0.0), 65%,
+       rgba($brand-quaternary, 0.85), 90%, 
+       rgba($brand-quaternary, 0.95), 
+       rgba($brand-quaternary, 1.00), 98% 
+   	);*/
+	pointer-events: none;
+}
+
+
+.page-content-category-details .details-menu {
+	background-color: darken(rgba($brand-quaternary, 0.7), 10%);
+	position: relative;
+}
+
+.page-content-category-details .notifications {
+	display: none;
+}
+
+
+
+//
+// Category (Details) -> Overlay
+// --------------------------------------------------
+.category-details-overlay .category-overlay {
+	height: auto;
+	width: 70%;
+	margin-bottom: stovp(2*$grid-gutter-width);
+	left: 0;
+	padding: 0 $page-padding-right 0 $page-padding-left;
+	background-color: transparent;
+	background-image: none;
+	@include opacity(1);
+	z-index: 1;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-end;
+}
+
+.category-details-overlay .category-overlay > * {
+	flex: 0 1 auto;
+	width: 100%;
+}
+
+
+//
+// Category (Details) -> Overlay -> Title
+// --------------------------------------------------
+.category-details-overlay .category-overlay-name {
+	margin-top: stovp($category-overlay-name-spacing);
+	margin-bottom: 0;
+	padding: 0;
+	flex: 1 1 auto;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-end;
+}
+
+.category-details-overlay .category-overlay-name > h3 {
+	line-height: $line-height-jumbo;
+	font-size: stovp($category-details-overlay-name-font-size);
+	font-weight: bold;
+	flex: 0 1 auto;
+	width: 100%;
+	margin-bottom: 0;
+}
+
+
+//
+// Category (Details) -> Overlay -> Description
+// --------------------------------------------------
+.category-details-overlay .category-overlay-description {
+	padding: 0;
+	font-size: stovp($category-details-description-font-size);	
+}
+
+.category-details-overlay .category-overlay-description > * {
+	margin-bottom: 0;
+}
+
+
+//
+// Category (Details) -> Overlay -> Description -> Phonetic
+// --------------------------------------------------
+.category-details-overlay .category-overlay-phonetic {
+	margin-left: 0.15em;
+}
+
+
+//
+// Category (Details) -> Overlay -> Description -> Synonyms
+// --------------------------------------------------
+.category-details-overlay .category-overlay-synonyms {
+	padding-left: stovp($category-details-description-indentation);
+}
+
+
+//
+// Category (Details) -> Overlay -> Description -> Definition
+// --------------------------------------------------
+.category-details-overlay .category-overlay-definition {
+	padding-left: stovp($category-details-description-indentation);
+}
+
+
+
+
+
+
+@mixin category-details-size($parent, $size, $size-factor, $orientation: '')
+{
+	#{$orientation}.viewport-#{$size} #{$parent} {
+		text-shadow: $size-factor*vp(1) $size-factor*vp(1) $size-factor*vp(1) rgba(#000, 0.3);
+		margin-bottom: $size-factor*stovp(5*$grid-gutter-width);
+
+		.category-overlay {
+			margin-top: $size-factor*stovp(5*$grid-gutter-width);
+			margin-bottom: $size-factor*stovp(2*$grid-gutter-width);
+			padding: 0 $size-factor*stovp($page-padding-right) 0 $size-factor*stovp($page-padding-left);
+		}
+
+		.category-overlay-name {
+			margin-top: $size-factor*stovp($category-overlay-name-spacing);
+		}
+
+		.category-overlay-name > h3 {
+			font-size: $size-factor*stovp($category-details-overlay-name-font-size);
+		}
+
+		.category-overlay-description {
+			font-size: $size-factor*stovp($category-details-description-font-size);	
+		}
+
+		.category-overlay-synonyms {
+			padding-left: $size-factor*stovp($category-details-description-indentation);
+		}
+
+		.category-overlay-definition {
+			padding-left: $size-factor*stovp($category-details-description-indentation);
+		}
+	}
+}
+
+
+
+@mixin category-details-mobile-size($parent, $size, $size-factor)
+{
+	.viewport-portrait.viewport-#{$size} {
+		.category-image.category-image-backdrop:before {
+			display: block;
+		}		
+	}
+		
+	.viewport-portrait.viewport-#{$size} #{$parent} {
+	}
+}
+
+
+@mixin category-details-tablet-size($parent, $size, $size-factor)
+{
+	@include category-details-size($parent, $size, $category-details-landscape-factor*$size-factor, '.viewport-landscape');
+
+	.viewport-landscape.viewport-#{$size} #{$parent} {
+		
+	}
+}
+
+
+// [SIZE: Large]
+// Category (Details)
+// --------------------------------------------------
+@include category-details-size('.category-details', 'lg', $category-details-lg-size-factor);
+
+
+// [SIZE: Medium]
+// Category (Details)
+// --------------------------------------------------
+@include category-details-size('.category-details', 'md', $category-details-md-size-factor);
+
+
+// [SIZE: Small]
+// Category (Details)
+// --------------------------------------------------
+@include category-details-size('.category-details', 'sm', $category-details-sm-size-factor);
+@include category-details-tablet-size('.category-details', 'sm', $category-details-sm-size-factor);
+@include category-details-mobile-size('.category-details', 'sm', $category-details-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// Category (Details)
+// --------------------------------------------------
+@include category-details-size('.category-details', 'xs', $category-details-xs-size-factor);
+@include category-details-tablet-size('.category-details', 'xs', $category-details-xs-size-factor);
+@include category-details-mobile-size('.category-details', 'xs', $category-details-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// Category (Details)
+// --------------------------------------------------
+@include category-details-size('.category-details', 'ss', $category-details-ss-size-factor);
+@include category-details-tablet-size('.category-details', 'ss', $category-details-ss-size-factor);
+@include category-details-mobile-size('.category-details', 'ss', $category-details-ss-size-factor);

@@ -1,0 +1,345 @@
+//== CORE ==//
+$font-path: 			"../../../fonts";
+
+////////////////////////////////
+// Branding
+////////////////////////////////
+$black:								#000 !default;
+$white:								#fff !default;
+
+$gray-base:							#000 !default;							// #000
+$gray-darkest:						lighten($gray-base, 13.5%) !default; 	// #222
+$gray-darker:						lighten($gray-base, 20.0%) !default; 	// #333
+$gray-dark:							lighten($gray-base, 35.0%) !default;   	// #555
+$gray:								lighten($gray-base, 45.0%) !default; 	// #777
+$gray-light:						lighten($gray-base, 58.0%) !default; 	// #999
+$gray-lighter:						lighten($gray-base, 70.0%) !default; 	// #bbb
+$gray-lightest:						lighten($gray-base, 93.5%) !default; 	// #eee
+
+$brand-primary:						#0f3d5b;
+$brand-secondary:       			#90d9f0;
+$brand-tertiary:					#3f3f3f;
+$brand-quaternary:					#151515;
+
+$brand-default:						#dadfe2;
+$brand-success:						#5cb85c;
+$brand-info:						#31a1c2;
+$brand-warning:						#9d8900;
+$brand-danger:						#ad0d01;
+
+$link-color:						#0f3d5b;
+$link-hover-color:					darken($link-color, 15%);
+$link-inverse-color:				$brand-tertiary;
+$link-inverse-hover-color:			lighten($link-inverse-color, 15%);
+
+@if $device == www {	
+	$body-bg:               			#EAEDF1 !global;
+}
+@else {
+	$body-bg:               			$brand-quaternary !global;
+}
+
+$text-color:						#0f3d5b;
+$text-color-inverse:				$brand-quaternary;
+
+
+
+///////////////////////////////////////////
+// Layout
+///////////////////////////////////////////
+
+//== Grid system ==//
+// 
+//## Define your custom responsive grid. ##//
+
+//** Number of columns in the grid. **//
+$grid-columns:              			12;
+//** Padding between columns. Gets divided in half for the left and right. **//
+$grid-gutter-width:         			sp(30);
+
+// Pages
+$page-min-height:						sp(720) !default;
+$page-padding-left:						sp(60);
+$page-padding-right:					sp(60);
+$page-padding-mobile-left:				sp(60);
+$page-padding-mobile-right:				sp(60);
+$page-padding-top:						sp(20);
+$page-padding-bottom:					sp(20);
+
+@if $device == www {	
+	$page-bg: 								$body-bg !global;
+}
+
+// Header
+$header-main-link-separation:			sp(50) !default;
+$headings-color:						lighten($text-color, 15%) !default;
+
+////////////////////////////////
+// Typography
+////////////////////////////////
+$font-family-sans-serif: 			"Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-monospace:   			"Droid Sans Mono", Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-size-base:					dp(14) !default;
+$font-size-ssmall:					($font-size-base * 0.50 * 0.90) !default;
+$font-size-xsmall:					($font-size-base * 0.60 * 0.90) !default;
+$font-size-small:					($font-size-base * 0.85 * 0.90) !default;
+$font-size-large:					($font-size-base * 1.25 * 0.90) !default;
+$font-size-xlarge:					($font-size-base * 1.5 * 0.90) !default;
+$font-size-super: 					($font-size-base * 1.8 * 0.90) !default;
+$font-size-jumbo: 					($font-size-base * 2.25 * 0.90) !default;
+
+$font-size-h1:						($font-size-base * 2.6 * 0.90) !default;
+$font-size-h2:						($font-size-base * 2.15 * 0.90) !default;
+$font-size-h3:						($font-size-base * 1.7 * 0.90) !default;
+$font-size-h4:						($font-size-base * 1.25 * 0.90) !default;
+$font-size-h5:						($font-size-base * 1.0 * 0.90) !default;
+$font-size-h6:						($font-size-base * 0.85 * 0.90) !default;
+
+////////////////////////////////
+// Components
+////////////////////////////////
+//** Global color for active items (e.g., navs or dropdowns). **//
+$component-active-color:			transparent !default;
+//** Global background color for active items (e.g., navs or dropdowns). **//
+$component-active-bg:				$brand-primary !default;
+
+//** Unit-less `line-height` for use in components like buttons. **//
+$line-height-base:					1.428571429 !default;
+$line-height-large:					1.3333333 !default;
+$line-height-small:					1.5 !default;
+$line-height-xlarge:				1.25 !default;
+$line-height-super:					1.20 !default;
+$line-height-jumbo:					1.15 !default;
+
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc. **//
+$line-height-computed:				dps($font-size-base * $line-height-base);
+
+
+
+////////////////////////////////
+// Buttons
+////////////////////////////////
+$btn-border-width:				 	spw(2);
+$btn-fixed-width:					dp(250);
+
+$btn-default-color:					lighten($brand-default, 1%) !default;
+$btn-default-bg:					$brand-quaternary !default;
+$btn-default-border:				#fff !default;
+
+$btn-primary-color:					darken($brand-tertiary, 2%) !default;
+$btn-primary-bg:					darken($brand-primary, 28%) !default;
+$btn-primary-border:				darken($brand-primary, 18%) !default;
+
+$btn-secondary-color:				#fff !default;
+$btn-secondary-bg:					darken(desaturate($brand-secondary, 40%), 40%) !default;
+$btn-secondary-border:				lighten($btn-secondary-bg, 40%) !default;
+
+$btn-tertiary-color:				$brand-quaternary !default;
+$btn-tertiary-bg:					$brand-tertiary !default;
+$btn-tertiary-border:				darken($btn-tertiary-bg, 40%) !default;
+
+$btn-quaternary-color:				lighten($brand-tertiary, 30%) !default;
+$btn-quaternary-bg:					darken($brand-quaternary, 8%) !default;
+$btn-quaternary-border:				darken($btn-quaternary-color, 40%) !default;
+
+$btn-success-color:					#fff !default;
+$btn-success-bg:					$brand-success !default;
+$btn-success-border:				lighten($btn-success-bg, 20%) !default;
+
+$btn-info-color:					#fff !default;
+$btn-info-bg:						$brand-info !default;
+$btn-info-border:					lighten($btn-info-bg, 40%) !default;
+
+$btn-warning-color:					#fff !default;
+$btn-warning-bg:					$brand-warning !default;
+$btn-warning-border:				lighten($btn-warning-bg, 40%) !default;
+
+$btn-danger-color:					#fff !default;
+$btn-danger-bg:						$brand-danger !default;
+$btn-danger-border:					lighten($btn-danger-bg, 40%) !default;
+
+// Inverse
+$btn-default-inverse-color:			darken($brand-default, 10%) !default;
+$btn-default-inverse-bg:			lighten($brand-default, 50%) !default;
+$btn-default-inverse-border:   		$brand-default !default;
+
+$btn-primary-inverse-color:			darken($brand-primary, 10%) !default;
+$btn-primary-inverse-bg:			lighten($brand-primary, 50%) !default;
+$btn-primary-inverse-border:   		$brand-primary !default;
+
+$btn-secondary-inverse-color:		darken($brand-secondary, 10%) !default;
+$btn-secondary-inverse-bg:			lighten($brand-secondary, 50%) !default;
+$btn-secondary-inverse-border:   	$brand-secondary !default;
+
+$btn-tertiary-inverse-color:		darken($brand-tertiary, 10%) !default;
+$btn-tertiary-inverse-bg:			lighten($brand-tertiary, 50%) !default;
+$btn-tertiary-inverse-border:   	$brand-tertiary !default;
+
+$btn-quaternary-inverse-color:		darken($brand-quaternary, 10%) !default;
+$btn-quaternary-inverse-bg:			lighten($brand-quaternary, 50%) !default;
+$btn-quaternary-inverse-border:   	$brand-quaternary !default;
+
+$btn-success-inverse-color:			darken($brand-success, 10%) !default;
+$btn-success-inverse-bg:			lighten($brand-success, 50%) !default;
+$btn-success-inverse-border:		$brand-success !default;
+
+$btn-info-inverse-color:			darken($brand-info, 10%) !default;
+$btn-info-inverse-bg:				lighten($brand-info, 50%) !default;
+$btn-info-inverse-border:			$brand-info !default;
+
+$btn-warning-inverse-color:			darken($brand-warning, 10%) !default;
+$btn-warning-inverse-bg:			lighten($brand-warning, 50%) !default;
+$btn-warning-inverse-border:   		$brand-warning !default;
+
+$btn-danger-inverse-color:			darken($brand-danger, 10%) !default;
+$btn-danger-inverse-bg:				lighten($brand-danger, 50%) !default;
+$btn-danger-inverse-border:			$brand-danger !default;
+
+
+////////////////////////////////
+// Navbar
+////////////////////////////////
+$navbar-height:								sp(90) !default;
+$navbar-font-size:							$font-size-super !default;
+$navbar-line-height:						$line-height-super !default;
+$navbar-border-radius:						0;
+$navbar-default-color:						$black;
+$navbar-default-bg:							$brand-quaternary;
+$navbar-default-border:						transparent;
+$navbar-default-link-color:					$brand-tertiary;
+$navbar-default-link-hover-color:			$brand-primary;
+$navbar-default-link-hover-bg:				transparent;
+$navbar-default-link-active-color:	   		$brand-quaternary;
+$navbar-default-link-active-bg:				lighten($brand-secondary, 11.5%);
+$navbar-default-shadow:						sp(3) sp(2) sp(3) sp(0) rgba($black, 0.2) !default;
+
+$navbar-default-separation-border:			$brand-primary;
+$navbar-separation-border-width:			sp(3);
+
+$navbar-inverse-border:						transparent;
+$navbar-inverse-separation-border:			$navbar-inverse-border;
+
+$navbar-brand-border-width:					sp(6) !default;
+$navbar-brand-scroll-border-width:			sp(0);
+
+$navbar-brand-logo-aspect:					742/88 !default;
+$navbar-brand-logo-padding:					(50% / $navbar-brand-logo-aspect) !default;
+
+//=== Inverted navbar ==//
+// Reset inverted navbar basics
+$navbar-inverse-color:						$brand-tertiary !default;
+$navbar-inverse-bg:							rgba(darken($brand-quaternary, 0*1.25*6.3%), 0.8) !default;
+$navbar-inverse-active-bg:					rgba($navbar-inverse-bg, 1) !default;
+$navbar-inverse-border:						transparent !default;
+$navbar-inverse-left-bg:					transparent !default;
+$navbar-inverse-right-bg:					transparent !default;
+$navbar-inverse-shadow:						none !default;
+
+// Inverted navbar links
+$navbar-inverse-link-color:					$white !default;
+$navbar-inverse-link-hover-color:			#fff !default;
+$navbar-inverse-link-hover-bg:				rgba($brand-tertiary, 0.0) !default;
+$navbar-inverse-link-active-color:			$navbar-inverse-link-hover-color !default;
+$navbar-inverse-link-active-bg:				darken($navbar-inverse-bg, 0%) !default;
+$navbar-inverse-link-disabled-color:		#444 !default;
+$navbar-inverse-link-disabled-bg:			transparent !default;
+
+// Inverted navbar brand label
+$navbar-inverse-brand-color:				$navbar-inverse-link-color !default;
+$navbar-inverse-brand-hover-color:			#fff !default;
+$navbar-inverse-brand-hover-bg:				transparent !default;
+
+// Inverted navbar toggle
+$navbar-inverse-toggle-hover-bg:			#333 !default;
+$navbar-inverse-toggle-icon-bar-bg:			#fff !default;
+$navbar-inverse-toggle-border-color:		#333 !default;
+
+////////////////////////////////
+// Forms
+////////////////////////////////
+$input-border-width: 			spw(2) !default;
+
+
+
+
+////////////////////////////////
+// Modal
+////////////////////////////////
+$modal-content-bg:								darken(#202124, 2%);
+$modal-backdrop-bg:								#111111;
+$modal-backdrop-opacity:						0.6;
+
+
+
+
+
+//
+//== Dropdowns ==//
+//
+//## Dropdown menu container and contents. ##//
+
+//** Background for the dropdown menu.	**//
+$dropdown-bg:					lighten($modal-content-bg, 0%) !default;
+//** Dropdown menu `border-color`.	**//
+$dropdown-border:				rgba(darken($modal-content-bg, 15%), .15) !default;
+//** Dropdown menu `border-color` **for IE8**.	**//
+$dropdown-fallback-border:		#ccc !default;
+//** Divider color for between dropdown items.	**//
+$dropdown-divider-bg:			rgba($brand-tertiary, 0.15) !default;
+
+//** Dropdown link text color.	**//
+$dropdown-link-color:			$brand-tertiary !default;
+//** Hover color for dropdown links.	**//
+$dropdown-link-hover-color:		darken($gray-dark, 5%) !default;
+//** Hover background for dropdown links.	**//
+$dropdown-link-hover-bg:		#f5f5f5 !default;
+
+//** Active dropdown menu item text color.	**//
+$dropdown-link-active-color:	$component-active-color !default;
+//** Active dropdown menu item background color.	**//
+$dropdown-link-active-bg:		$component-active-bg !default;
+
+//** Disabled dropdown menu item background color.	**//
+$dropdown-link-disabled-color:   $gray-light !default;
+
+//** Text color for headers within dropdown menus.	**//
+$dropdown-header-color:			$gray-light !default;
+
+//** Deprecated `$dropdown-caret-color` as of v3.1.0	**//
+$dropdown-caret-color:			#000 !default;
+
+
+
+//== Close ==//
+//
+//## ##//
+
+$close-font-weight:			bold;
+$close-color:				$brand-tertiary;
+$close-hover-color:			$brand-primary;
+$close-text-shadow:			0 dp(1) 0 $brand-tertiary;
+
+
+// Video
+$video-highlight-color:					lighten($brand-quaternary, 6%) !default;
+
+$video-bg:								darken($brand-quaternary, 9%) !default;
+$video-height:							dp(450) !default;
+$video-border-size:						spw(0) !default;
+$video-font-size:						$font-size-large !default;
+$video-font-size-sm:					$font-size-base !default;
+$video-shadow:							spw(1) spw(1) spw(4) spw(0) rgba(#000, 0.4) !default;
+$video-shadow-hover:					$video-shadow !default;
+
+$video-footer-color:					$white !default;
+$video-footer-padding:					sp(10) !default;
+
+$video-image-width:						dp(234) !default;
+
+$video-footer-separator-width: 			dp(1) !default;
+$video-footer-separator-color: 			rgba(255, 255, 255, 0.2) !default;
+
+$video-footer-extended-factor-sm:		0.7 !default;
+$video-footer-extended-factor-rg:		0.55 !default;
+$video-footer-extended-height-sm: 		(dps(2 * $video-footer-extended-factor-sm * $video-font-size * $line-height-base) + 2 * $video-footer-padding) !default;
+$video-footer-extended-height-rg: 		(dps(1 * $video-footer-extended-factor-rg * $video-font-size * $line-height-base) + 2 * $video-footer-padding) !default;

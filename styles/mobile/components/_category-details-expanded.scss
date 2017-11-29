@@ -1,0 +1,130 @@
+
+.grid-item-focus-locked .category .category-overlay,
+.slide-focus-locked .category .category-overlay {
+	background: transparent;
+}
+
+.grid-item-focus-locked .category .category-overlay > *,
+.slide-focus-locked .category .category-overlay > * {
+	display: none;
+}
+
+.grid-item-focus-locked .category .category-content,
+.slide-focus-locked .category .category-content {
+	overflow: visible;
+}
+
+.grid-row-rolledout .grid-row-content .grid-item-focus-locked .category .category-overlay,
+.slideshow-rolledout .slideshow-content .slide-focus-locked .category .category-overlay {
+	@include box-shadow(none);
+	top: vp(-4);
+	left: vp(-4);
+	right: vp(-4);
+	bottom: vp(-4);
+	width: auto;
+	height: auto;
+	border: vp(4) solid rgba($brand-secondary, 0.0);
+	background: rgba($brand-quaternary, 0.5);
+	@include opacity(1);
+	@include transition(border-color 700ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.grid-row-rolledout .grid-row-content .grid-item-focus-locked .category .category-overlay,
+.slideshow-rolledout .slideshow-content .slide-focus-locked .category .category-overlay {
+	border-color: rgba($brand-secondary, 0.8);
+}
+
+
+.grid-row-rollout .category-overlay-layout,
+.slideshow-rollout .category-overlay-layout {
+	height: auto;
+	align-self: stretch;
+}
+
+.grid-row.grid-row-focusable .grid-row-content .grid-item-focus-locked.grid-item-focused .category .category-title,
+.slideshow.slideshow-focusable .slideshow-content .slide-focus-locked.slide-focused .category .category-title {
+	@include opacity(1);
+}
+
+
+@mixin category-details-expanded-size($parent, $size, $size-factor, $orientation: '')
+{
+	#{$orientation}.viewport-#{$size} #{$parent} {
+		text-shadow: $size-factor*vp(1) $size-factor*vp(1) $size-factor*vp(1) rgba(#000, 0.3);
+		margin-bottom: $size-factor*stovp(5*$grid-gutter-width);
+
+		.category-overlay {
+			margin-top: $size-factor*stovp(5*$grid-gutter-width);
+			margin-bottom: $size-factor*stovp(2*$grid-gutter-width);
+			padding: 0 $size-factor*stovp($page-padding-right) 0 $size-factor*stovp($page-padding-left);
+		}
+
+		.category-overlay-name {
+			margin-top: $size-factor*stovp($category-overlay-name-spacing);
+		}
+
+		.category-overlay-name > h3 {
+			font-size: $size-factor*stovp($category-details-overlay-name-font-size);
+		}
+
+		.category-overlay-description {
+			font-size: $size-factor*stovp($category-details-description-font-size);	
+		}
+
+		.category-overlay-synonyms {
+			padding-left: $size-factor*stovp($category-details-description-indentation);
+		}
+
+		.category-overlay-definition {
+			padding-left: $size-factor*stovp($category-details-description-indentation);
+		}
+	}
+}
+
+
+
+@mixin category-details-expanded-mobile-size($parent, $size, $size-factor)
+{
+	.viewport-portrait.viewport-#{$size} {
+		.category-image.category-image-backdrop:before {
+			display: block;
+		}		
+	}
+		
+	.viewport-portrait.viewport-#{$size} #{$parent} {
+	}
+}
+
+
+
+// [SIZE: Large]
+// Category Details (Expanded)
+// --------------------------------------------------
+@include category-details-expanded-size('.category-details-expanded', 'lg', 0.7*$category-details-lg-size-factor);
+
+
+// [SIZE: Medium]
+// Category Details (Expanded)
+// --------------------------------------------------
+@include category-details-expanded-size('.category-details-expanded', 'md', 0.7*$category-details-md-size-factor);
+
+
+// [SIZE: Small]
+// Category Details (Expanded)
+// --------------------------------------------------
+@include category-details-expanded-size('.category-details-expanded', 'sm', 0.7*$category-details-sm-size-factor);
+@include category-details-expanded-mobile-size('.category-details-expanded', 'sm', 0.7*$category-details-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// Category Details (Expanded)
+// --------------------------------------------------
+@include category-details-expanded-size('.category-details-expanded', 'xs', 0.7*$category-details-xs-size-factor);
+@include category-details-expanded-mobile-size('.category-details-expanded', 'xs', 0.7*$category-details-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// Category Details (Expanded)
+// --------------------------------------------------
+@include category-details-expanded-size('.category-details-expanded', 'ss', 0.7*$category-details-ss-size-factor);
+@include category-details-expanded-mobile-size('.category-details-expanded', 'ss', 0.7*$category-details-ss-size-factor);

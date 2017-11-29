@@ -1,0 +1,68 @@
+.list-starred > li:before {
+	color: $brand-primary;
+}
+
+@media (min-width: $screen-sm-min) {
+	.well .list-inline.list-starred > li:first-child:before {
+		display: none;
+	}
+}
+
+.well-full,
+.well-full > ul,
+.well-full .container-fluid > ul,
+.well-full .container > ul {
+	margin-bottom: 0;
+	border: none;
+}
+
+.copyright {
+	font-size: $font-size-small * 0.90;
+	color: $gray-lighter;
+}
+
+.social .btn + .btn {
+	margin-left: $grid-gutter-width/2;
+}
+
+.social .icon,
+.social .btn,
+.social.btn-link.btn {
+	font-size: $font-size-base * 1.5;
+	padding: 0;
+}
+
+.social.well-small .icon,
+.social .btn.btn-small,
+.social.btn.btn-small {
+	font-size: $font-size-small * 1.5;
+}
+
+.social.well-large .icon,
+.social .btn.btn-large,
+.social.btn.btn-large {
+	font-size: $font-size-large * 1.5;
+}
+
+.social.well-super .icon,
+.social .btn.btn-super,
+.social.btn.btn-super {
+	font-size: $font-size-super * 1.5;
+}
+
+.social.well-jumbo .icon,
+.social .btn.btn-jumbo,
+.social.btn.btn-jumbo {
+	font-size: $font-size-jumbo * 1.5;
+}
+
+.heading-break {
+	margin-top: 3*$grid-gutter-width;
+	margin-bottom: 2*$grid-gutter-width;
+	text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	text-transform: uppercase;
+}

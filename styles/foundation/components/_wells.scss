@@ -1,0 +1,92 @@
+//
+// Wells
+// --------------------------------------------------
+
+
+// Base class
+.well {
+	min-height: 20px;
+	padding: 2*$padding-base-vertical $grid-gutter-width/2;
+	margin-bottom: 20px;
+	color: $text-color-inverse;
+	background-color: $well-bg;
+	border: $well-border-width solid $well-border;
+	border-radius: $well-border-radius-base;
+	@include box-shadow(inset 0 1px 1px rgba(0,0,0,.05));
+	blockquote {
+		border-color: #ddd;
+		border-color: rgba(0,0,0,.15);
+	}
+}
+
+
+// Sizes
+.well-lg {
+	padding: 2*$padding-large-vertical $padding-large-horizontal;
+	border-radius: $well-border-radius-large;
+	font-size: $font-size-large;
+}
+
+.well-super {
+	padding: 2*$padding-super-vertical $padding-super-horizontal;
+	border-radius: $well-border-radius-super;
+	font-size: $font-size-super;
+}
+
+.well-jumbo {
+	padding: 2*$padding-jumbo-vertical $padding-jumbo-horizontal;
+	border-radius: $well-border-radius-jumbo;
+	font-size: $font-size-jumbo;
+}
+
+.well-sm {
+	padding: 2*$padding-small-vertical $padding-small-horizontal;
+	border-radius: $well-border-radius-small;
+	font-size: $font-size-small;
+}
+
+.well-full {
+	border: none;
+	padding-left: 0;
+	padding-right: 0;
+	margin: auto;
+	text-align: center;
+}
+
+.well-default {
+	@include well-variant($well-default-bg, $well-default-border, $well-default-text);
+}
+
+.well-success {
+	@include well-variant($well-success-bg, $well-success-border, $well-success-text);
+}
+
+.well-info {
+	@include well-variant($well-info-bg, $well-info-border, $well-info-text);
+}
+
+.well-warning {
+	@include well-variant($well-warning-bg, $well-warning-border, $well-warning-text);
+}
+
+.well-danger {
+	@include well-variant($well-danger-bg, $well-danger-border, $well-danger-text);
+}
+
+.well-primary {
+	@include well-variant($well-primary-bg, $well-primary-border, $well-primary-text);
+}
+
+.well-secondary {
+	@include well-variant($well-secondary-bg, $well-secondary-border, $well-secondary-text);
+}
+
+.well-tertiary {
+	@include well-variant($well-tertiary-bg, $well-tertiary-border, $well-tertiary-text);
+}
+
+.well-quaternary {
+	@include well-variant($well-quaternary-bg, $well-quaternary-border, $well-quaternary-text);
+}
+
+

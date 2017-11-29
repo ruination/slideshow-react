@@ -1,0 +1,170 @@
+.titlebar {
+	display: block;
+	position: relative;
+	height: $titlebar-height;
+	padding: 0;
+	background-color: $titlebar-dark-bg;
+	padding: $titlebar-icon-separation;
+}
+
+.titlebar.draggable .titlebar-content {
+	-webkit-app-region: drag;
+}
+
+.titlebar-controls {
+	float: right;
+	text-align: left;
+}
+
+.titlebar .titlebar-content:after,
+.titlebar-controls:after {
+	content: ' ';
+	display: table;
+	clear: both;
+}
+
+.titlebar .logo {
+	margin-left: sp(10);
+	margin-top: 2*$titlebar-icon-separation;
+	height: $titlebar-icon-height - 1*$titlebar-icon-separation;
+	float: left;
+}
+
+.titlebar.fullscreen .logo {
+
+}
+
+.titlebar-content  {
+	position: relative;
+	z-index: 0;
+}
+
+.titlebar-content .titlebar-name {
+	width: 100%;
+	position: absolute;
+	top: $titlebar-icon-separation;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: -1;
+}
+
+.titlebar-name .titlebar-name-content {
+    vertical-align: bottom;
+    line-height: 1;
+}
+
+.titlebar-minimize,
+.titlebar-resize,
+.titlebar-close {
+	float: left;
+	width: $titlebar-icon-width;
+	height: $titlebar-icon-height;
+	margin: 0 0 0 $titlebar-icon-separation;
+	text-align: center;
+	line-height: $titlebar-icon-height - 0*$titlebar-icon-separation;
+
+	-webkit-transition: background-color .2s;
+	-moz-transition: background-color .2s;
+	-ms-transition: background-color .2s;
+	-o-transition: background-color .2s;
+	transition: background-color .2s;
+}
+
+.titlebar.draggable .titlebar-minimize,
+.titlebar.draggable .titlebar-resize,
+.titlebar.draggable .titlebar-close {
+	-webkit-app-region: no-drag;
+}
+
+.titlebar-minimize svg,
+.titlebar-resize svg.maximize-svg,
+.titlebar-resize svg.fullscreen-svg,
+.titlebar-close svg {
+	width: $titlebar-fullscreen-icon-width;
+	height: $titlebar-fullscreen-icon-width;
+	shape-rendering: crispEdges;
+}
+
+
+
+.titlebar-close svg polygon {
+	-webkit-transition: fill .2s;
+	-moz-transition: fill .2s;
+	-ms-transition: fill .2s;
+	-o-transition: fill .2s;
+	transition: fill .2s;
+}
+
+
+.titlebar:not(.fullscreen) svg.maximize-svg {
+	display: none;
+}
+
+.titlebar.fullscreen svg.fullscreen-svg {
+	display: none;
+}
+
+
+
+.titlebar-minimize:hover,
+.titlebar-resize:hover,
+.titlebar-fullscreen:hover {
+	background-color: $titlebar-dark-hover-bg;
+}
+
+
+.titlebar-close:hover {
+	background-color: $titlebar-close-hover-bg;
+}
+
+.titlebar-close:hover svg polygon {
+	fill: $titlebar-dark-color;
+}
+
+
+
+.titlebar svg polygon,
+.titlebar svg rect,
+.titlebar svg > path {
+	fill: $titlebar-dark-color;
+}
+
+.titlebar-close:hover {
+	fill: $titlebar-dark-inverse-color;
+}
+
+.titlebar-light {
+	background-color: $titlebar-light-bg;
+}
+
+.titlebar-light .titlebar-minimize:hover,
+.titlebar-light .titlebar-resize:hover,
+.titlebar-light .titlebar-fullscreen:hover {
+	background-color: $titlebar-light-hover-bg;
+}
+
+
+.titlebar-light .titlebar-close:hover {
+	fill: $titlebar-light-inverse-color;
+}
+
+.titlebar-light svg polygon,
+.titlebar-light svg rect,
+.titlebar-light svg > path {
+	fill: $titlebar-light-color;
+}
+
+.titlebar-light .titlebar-close:hover {
+	background-color: $titlebar-close-hover-bg;
+}
+
+
+
+
+.electron [role="dialog"] .modal-backdrop,
+.electron [role="dialog"] .modal {
+	margin-top: $titlebar-height;
+}
+

@@ -1,0 +1,28 @@
+.rating .icon {
+	display: inline-block;
+	width: 1em;
+	color: $starrating-color;
+	font-size: 150%;
+	@include transition(transform 150ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.rating.rating-modify .icon {
+	color: $starrating-modify-color;
+}
+
+.rating.rating-userset .icon {
+	color: $starrating-set-color;
+}
+
+p.rating {
+	white-space: nowrap;
+}
+
+p.stars,
+p.rating {
+	margin: sp(12) 0;
+}
+
+.icon-enlarge {
+	@include scale(1.2);
+}

@@ -1,0 +1,24 @@
+.icon-measurements:before {
+	@include icon-svg;
+	background-image: url('#{$font-path}/icon-measurements.svg');
+}
+
+.icon-height:before {
+	@include icon-svg;
+	background-image: url('#{$font-path}/icon-height.svg');
+}
+
+.icon-weight:before {
+	@include icon-svg;
+	background-image: url('#{$font-path}/icon-scale.svg');
+}
+
+.icon-nav-left:before {
+	@include icon-svg;
+	background-image: url('#{$ImagePath}/icon-nav-left.svg');
+}
+
+.icon-nav-right:before {
+	@include icon-svg;
+	background-image: url('#{$ImagePath}/icon-nav-right.svg');
+}

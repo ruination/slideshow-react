@@ -1,0 +1,113 @@
+$ps-theme-default: (
+	border-radius: $ps-border-radius,
+	rail-default-opacity: $ps-rail-default-opacity,
+	rail-container-hover-opacity: $ps-rail-container-hover-opacity,
+	rail-hover-opacity: $ps-rail-hover-opacity,
+	bar-bg: $ps-bar-bg,
+	bar-container-hover-bg: $ps-bar-container-hover-bg,
+	bar-hover-bg: $ps-bar-hover-bg,
+	rail-hover-bg: $ps-rail-hover-bg,
+	scrollbar-x-rail-bottom: $ps-scrollbar-x-rail-bottom,
+	scrollbar-x-rail-height: $ps-scrollbar-x-rail-height,
+	scrollbar-x-bottom: $ps-scrollbar-x-bottom,
+	scrollbar-x-height: $ps-scrollbar-x-height,
+	scrollbar-y-rail-right: $ps-scrollbar-y-rail-right,
+	scrollbar-y-rail-width: $ps-scrollbar-y-rail-width,
+	scrollbar-y-right: $ps-scrollbar-y-right,
+	scrollbar-y-width: $ps-scrollbar-y-width,
+);
+
+// Default theme
+.ps-container {
+	@include ps-container($ps-theme-default);
+}
+
+.scroll-native,
+.scrollbar,
+[data-scrollbar] {
+	display: block;
+	position: relative;
+
+	.scroll-content {
+		transform: translate3d(0, 0, 0);
+	}
+
+	&.sticky .scrollbar-track {
+		background: $scrollbar-track-bg;
+	}
+
+	&.scrolling .scrollbar-track {
+		pointer-events: none;
+	}
+
+	.scrollbar-track {
+		position: absolute;
+		@include opacity($scrollbar-track-default-opacity);
+		z-index: 1;
+		background: none;
+		user-select: none;
+		@include transition(opacity, background);
+		@include transition-duration(500ms);
+		@include transition-timing-function(cubic-bezier(0.365, 0.45, 0.23, 0.95));		
+	}
+
+	.scrollbar-track.show {
+		@include opacity($scrollbar-track-container-hover-opacity);
+	}
+
+	.scrollbar-track:hover {
+		@include opacity($scrollbar-track-hover-opacity);
+		background: $scrollbar-track-hover-bg;
+	}
+
+	.scrollbar-track-x {
+		bottom: $scrollbar-x-bottom;
+		left: 0;
+		width: 100%;
+		height: $scrollbar-x-height;
+	}
+
+	.scrollbar-track-y {
+		top: 0;
+		right: $scrollbar-y-right;
+		width: $scrollbar-y-width;
+		height: 100%;
+	}
+
+	.scrollbar-thumb {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: $scrollbar-thumb-size;
+		height: $scrollbar-thumb-size;
+		background: $scrollbar-thumb-bg;
+		border-radius: $scrollbar-thumb-border-radius;
+	}
+
+	.overscroll-glow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&:hover {
+		.scrollbar-track {
+			@include opacity($scrollbar-track-container-hover-opacity);
+		}
+
+		.scrollbar-track.show,
+		.scrollbar-track:hover {
+			@include opacity($scrollbar-track-hover-opacity);
+		}
+
+		.scrollbar-thumb {
+			background-color: $scrollbar-thumb-hover-bg;
+		}
+
+		.scrollbar-track-x,
+		.scrollbar-track-y {
+		}
+	}	
+}

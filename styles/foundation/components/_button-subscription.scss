@@ -1,0 +1,52 @@
+.add-subscription,
+.remove-subscription { 
+	border: none;
+	width: auto;
+	display: inline-block;
+	background: $video-highlight-color;
+	color: $video-footer-color;
+	padding: 1% 2%;
+	text-decoration: none;
+}
+
+.button-subscription {
+	background: transparent;
+	text-decoration: none;
+	padding: 1% 2%;
+	width: auto;
+	display: inline-block;
+	border: none;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.button-subscription:hover .icon {
+    -webkit-transform-origin: 50% 80%;
+    transform-origin: 50% 80%;
+  	-webkit-animation: icon-shake 1.5s infinite linear;
+  	animation: icon-shake 1.5s infinite linear;
+}
+
+.button-subscription.subscription-progress .icon {
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+	-webkit-animation: icon-spin 2s infinite linear;
+	animation: icon-spin 2s infinite linear;
+}
+
+.button-subscription .icon {
+	margin-right: 0.5em;
+	padding: 0 0.2em;
+}
+
+.subscription-remove .icon {
+	color: $brand-secondary;
+}
+
+.button-subscription.subscription-icononly .icon {
+	margin-right: 0;
+}
+
+.button-subscription.subscription-icononly .icon:before {
+    text-shadow: spw(1) spw(1) spw(2) rgba(0,0,0,0.30), spw(0) spw(0) spw(4) rgba(0,0,0,0.10);
+}

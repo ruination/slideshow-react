@@ -1,0 +1,126 @@
+.modal {
+	pointer-events: none;
+}
+
+.modal > * {
+	pointer-events: auto;
+}
+
+.modal .alert {
+	margin-top: $grid-gutter-width;
+}
+
+.modal.scroll-native {
+	position: fixed;
+}
+
+.modal button.close {
+	position: absolute;
+	top: 0;
+	right: $modal-inner-padding;
+	width: $modal-inner-padding;
+	font-size: 2*$modal-inner-padding;
+	line-height: 1;
+	z-index: 1;
+}
+
+.modal-backdrop.modal-disabled,
+.modal.modal-disabled {
+	display: none !important;
+}
+
+.modal > .view-scroll,
+.modal .view-scroll-x {
+	pointer-events: none;
+	position: relative;
+}
+
+.modal .view-scroll-x {
+	position: absolute;
+	min-height: 100%;
+	width: 100%;
+}
+
+.modal > .view-scroll .ps-scrollbar-x-rail,
+.modal > .view-scroll .ps-scrollbar-y-rail,
+.modal > .view-scroll .view-content > * {
+	pointer-events: auto;
+}
+
+.modal > .view-scroll .scrollbar-track,
+.modal > .view-scroll .scroll-content .view-content > * {
+	pointer-events: auto;
+}
+
+.modal-title {
+	margin: 0;
+	font-weight: 300;
+	color: darken($brand-tertiary, 0%);
+	text-transform: uppercase;
+	letter-spacing: 0.01em;
+	text-align: center;
+}
+
+.modal-dialog {
+	margin-bottom: vp(50);
+	margin-top: vp(50);
+	margin-left: auto;
+	margin-right: auto;
+	outline: 0;
+	background-clip: padding-box;
+	border-radius: $border-radius-large;
+	@include box-shadow(vp(18) vp(18) vp(12) rgba(0,0,0,.75), vp(0) vp(0) vp(8) rgba(0,0,0,.25));
+	border: vp(1) solid $modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
+	border: vp(1) solid $modal-content-border-color;
+	background-color: $modal-content-bg;
+}
+
+.modal-content {
+	position: static;
+	border: none;
+	border-radius: 0;
+	@include box-shadow(none);
+	margin: $modal-inner-padding 2*$modal-inner-padding;
+}
+
+.dialog-draggable {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	border: sp(2) solid rgba($black, 0.05);
+}
+
+.dialog-draggable:before {
+	content: "";
+	position: absolute;
+	top:  $modal-inner-padding/2;
+	right:  $modal-inner-padding;
+	bottom: $modal-inner-padding/2;
+	left: $modal-inner-padding;
+	border: sp(2) solid rgba($black, 0.05);
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+	padding: $modal-inner-padding 0;
+}
+
+.modal.slim .modal-body {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.modal-header {
+	padding-top: 0*$grid-gutter-width/2;
+	padding-bottom: $grid-gutter-width/2;
+}
+
+.modal-footer {
+	padding-bottom: 0;
+}

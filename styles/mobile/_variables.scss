@@ -1,0 +1,650 @@
+////////////////////////////////
+// Media
+////////////////////////////////
+$base-jm-size-factor:						((2/5)*1) !default;
+$base-su-size-factor:						((2.5/5)*1) !default;
+$base-xl-size-factor:						((3/5)*1) !default;
+$base-lg-size-factor:						((4/5)*1) !default;
+$base-md-size-factor:						((3/4)*1.35) !default;
+$base-sm-size-factor:						((2/3)*2) !default;
+$base-xs-size-factor:						2 !default;
+$base-ss-size-factor:						3 !default;
+
+$base-lg-columns:							5 !default;
+$base-md-columns:							4 !default;
+$base-sm-columns:							3 !default;
+$base-xs-columns:							2 !default;
+$base-ss-columns:							1 !default;
+
+
+////////////////////////////////
+// Layout
+////////////////////////////////
+$layout-lg-size-factor:						1.25*$base-lg-size-factor !default;
+$layout-md-size-factor:						0.9*$base-md-size-factor !default;
+$layout-sm-size-factor:						0.7*$base-sm-size-factor !default;
+$layout-xs-size-factor:						0.20*$base-xs-size-factor !default;
+$layout-ss-size-factor:						0.10*$base-ss-size-factor !default;
+
+
+////////////////////////////////
+// Navbar
+////////////////////////////////
+$navbar-default-separation-border:			$navbar-default-border !default;
+$navbar-separation-border-width:			sp(3) !default;
+
+$navbar-inverse-separation-border:			$navbar-inverse-border !default;
+
+$navbar-brand-border-width:					sp(6)	!default;
+$navbar-brand-scroll-border-width:			sp(0)	!default;
+$navbar-brand-default-bg:					$navbar-default-bg !default;
+$navbar-brand-inverse-bg:					$navbar-inverse-bg !default;
+$navbar-brand-default-shadow:				$navbar-default-shadow !default;
+$navbar-brand-inverse-shadow:				$navbar-inverse-shadow !default;
+$navbar-brand-logo-aspect:					272/74 !default;
+$navbar-brand-logo-padding:					(50% / $navbar-brand-logo-aspect) !default;
+
+$navbar-lg-size-factor:						0.9*$base-lg-size-factor !default;
+$navbar-md-size-factor:						0.7*$base-md-size-factor !default;
+$navbar-sm-size-factor:						0.7*$base-sm-size-factor !default;
+$navbar-xs-size-factor:						1.3*$base-xs-size-factor !default;
+$navbar-ss-size-factor:						1.1*$base-ss-size-factor !default;
+
+////////////////////////////////
+// Instruction
+////////////////////////////////
+$instruction-number-width:					8% !default;
+$instruction-separation-width:				3% !default;
+$instruction-showcase-bg:					lighten($brand-quaternary, 50%) !default;
+
+
+
+////////////////////////////////
+// Section
+////////////////////////////////
+$section-border-width:					sp(4) !default;
+$section-padding-horizontal:			0*3*$padding-super-horizontal !default;
+$section-padding-vertical:				0.5*$padding-super-vertical !default;
+$section-margin-top:					$grid-gutter-width*2.0 !default;
+$section-margin-bottom:					$grid-gutter-width*0.25 !default;
+$section-font-size:						1.3*$font-size-h1 !default;
+$section-font-weight:					300 !default;
+
+$section-header-border-color:			rgba($brand-primary, 0*0.8) !default;
+$section-header-color:					rgba($brand-tertiary, 0.8) !default;
+$section-header-bg:						rgba(darken($brand-quaternary, 8.5%), 0) !default;
+
+
+$section-lg-size-factor:				1.00*$base-lg-size-factor !default;
+$section-md-size-factor:				1.00*$base-md-size-factor !default;
+$section-sm-size-factor:				0.90*$base-sm-size-factor !default;
+$section-xs-size-factor:				0.90*$base-xs-size-factor !default;
+$section-ss-size-factor:				0.80*$base-ss-size-factor !default;
+
+
+
+////////////////////////////////
+// Well
+////////////////////////////////
+$well-jm-size-factor:					2.3*$base-jm-size-factor !default;
+$well-su-size-factor:					2.1*$base-su-size-factor !default;
+$well-xl-size-factor:					2.0*$base-xl-size-factor !default;
+$well-lg-size-factor:					1.5*$base-lg-size-factor !default;
+$well-md-size-factor:					1.3*$base-md-size-factor !default;
+$well-sm-size-factor:					1.7*$base-sm-size-factor !default;
+$well-xs-size-factor:					0.90*$base-xs-size-factor !default;
+$well-ss-size-factor:					$base-ss-size-factor !default;
+
+
+
+
+
+////////////////////////////////
+// Video
+////////////////////////////////
+$video-jm-size-factor:					2.3*$base-jm-size-factor !default;
+$video-su-size-factor:					2.1*$base-su-size-factor !default;
+$video-xl-size-factor:					2.0*$base-xl-size-factor !default;
+$video-lg-size-factor:					1.5*$base-lg-size-factor !default;
+$video-md-size-factor:					1.3*$base-md-size-factor !default;
+$video-sm-size-factor:					1.7*$base-sm-size-factor !default;
+$video-xs-size-factor:					0.90*$base-xs-size-factor !default;
+$video-ss-size-factor:					$base-ss-size-factor !default;
+$video-landscape-factor:				0.7 !default;
+
+// Filters
+$video-filter-spacing:					vp(50) !default;
+
+
+// Video (Details)
+$video-details-jm-size-factor:			2.3*$base-jm-size-factor !default;
+$video-details-su-size-factor:			2.1*$base-su-size-factor !default;
+$video-details-xl-size-factor:			2.0*$base-xl-size-factor !default;
+$video-details-lg-size-factor:			1.5*$base-lg-size-factor !default;
+$video-details-md-size-factor:			1.2*$base-md-size-factor !default;
+$video-details-sm-size-factor:			1.7*$base-sm-size-factor !default;
+$video-details-xs-size-factor:			1.5*$base-xs-size-factor !default;
+$video-details-ss-size-factor:			1.1*$base-ss-size-factor !default;
+$video-details-landscape-factor:		0.5 !default;
+
+$video-details-font-size: 				$font-size-xlarge !default;
+$video-details-name-font-size: 			$video-details-font-size*2.5 !default;
+$video-details-actions-font-size: 		$video-details-font-size*1 !default;
+$video-details-color:					darken($brand-tertiary, 15%) !default;
+
+$video-overview-font-size: 				$font-size-large !default;
+$video-overview-name-font-size: 		$video-overview-font-size*3 !default;
+$video-overview-info-font-size: 		$video-overview-font-size*1.25 !default;
+$video-overview-actions-font-size: 		$video-overview-font-size !default;
+$video-overview-color:					darken($brand-tertiary, 15%) !default;
+
+
+// Video Rental
+$video-details-rental-jm-size-factor:			2.3*$base-jm-size-factor !default;
+$video-details-rental-su-size-factor:			2.1*$base-su-size-factor !default;
+$video-details-rental-xl-size-factor:			2.0*$base-xl-size-factor !default;
+$video-details-rental-lg-size-factor:			1.5*$base-lg-size-factor !default;
+$video-details-rental-md-size-factor:			1.2*$base-md-size-factor !default;
+$video-details-rental-sm-size-factor:			1.4*$base-sm-size-factor !default;
+$video-details-rental-xs-size-factor:			1.2*$base-xs-size-factor !default;
+$video-details-rental-ss-size-factor:			0.7*$base-ss-size-factor !default;
+
+
+
+////////////////////////////////
+// Stars
+////////////////////////////////
+$star-jm-size-factor:					1.0*$base-jm-size-factor !default;
+$star-su-size-factor:					1.0*$base-su-size-factor !default;
+$star-xl-size-factor:					1.1*$base-xl-size-factor !default;
+$star-lg-size-factor:					1*$base-lg-size-factor !default;
+$star-md-size-factor:					0.85*$base-md-size-factor !default;
+$star-sm-size-factor:					0.8*$base-sm-size-factor !default;
+$star-xs-size-factor:					0.7*$base-xs-size-factor !default;
+$star-ss-size-factor:					0.9*$base-ss-size-factor !default;
+
+// Stars
+$star-grid-vertical-separation:			sp(0) !default;
+
+$star-grid-lg-columns:					(1 + $base-lg-columns) !default;
+$star-grid-md-columns:					(1 + $base-md-columns) !default;
+$star-grid-sm-columns:					(1 + $base-sm-columns) !default;
+$star-grid-xs-columns:					(1 + $base-xs-columns) !default;
+$star-grid-ss-columns:					(1 + $base-ss-columns) !default;
+
+$star-grid-lg-size-factor:				0.85*$base-lg-size-factor !default;
+$star-grid-md-size-factor:				0.74*$base-md-size-factor !default;
+$star-grid-sm-size-factor:				1.5*$base-sm-size-factor !default;
+$star-grid-xs-size-factor:				1.5*$base-xs-size-factor !default;
+$star-grid-ss-size-factor:				2*$base-ss-size-factor !default;
+
+// Star
+$star-highlight-color:					$brand-primary !default;
+
+$star-bg:								darken($brand-quaternary, 9%) !default;
+$star-height:							dp(450) !default;
+$star-border-size:						spw(0) !default;
+$star-font-size:						$font-size-large !default;
+$star-font-size-sm:						$font-size-base !default;
+$star-shadow:							spw(1) spw(1) spw(4) spw(0) rgba(#000, 0.4) !default;
+$star-shadow-hover:						$star-shadow !default;
+
+$star-title-border-size:				2*$btn-border-width !default;
+$star-title-border-radius:				$btn-border-radius-small !default;
+$star-title-font-weight:				700 !default;
+$star-title-font-size:					0.95*$font-size-h2 !default;
+
+$star-stats-font-size:					1.4*$font-size-base !default;
+$star-stats-color:						darken($brand-tertiary, 0%) !default;
+
+$star-overlay-opacity:					0.7 !default;
+
+$star-footer-color:						$white !default;
+$star-footer-padding:					sp(10) !default;
+
+$star-image-width:						dp(234) !default;
+
+$star-footer-separator-width: 			dp(1) !default;
+$star-footer-separator-color: 			rgba(255, 255, 255, 0.2) !default;
+
+$star-footer-extended-factor-sm:		0.7 !default;
+$star-footer-extended-factor-rg:		0.55 !default;
+$star-footer-extended-height-sm: 		(dps(2 * $star-footer-extended-factor-sm * $star-font-size * $line-height-base) + 2 * $star-footer-padding) !default;
+$star-footer-extended-height-rg: 		(dps(1 * $star-footer-extended-factor-rg * $star-font-size * $line-height-base) + 2 * $star-footer-padding) !default;
+
+
+// Star (Details)
+$star-details-lg-size-factor:			2.0*$base-lg-size-factor !default;
+$star-details-md-size-factor:			1.7*$base-md-size-factor !default;
+$star-details-sm-size-factor:			2.3*$base-sm-size-factor !default;
+$star-details-xs-size-factor:			1.3*$base-xs-size-factor !default;
+$star-details-ss-size-factor:			0.9*$base-ss-size-factor !default;
+$star-details-landscape-factor:			0.5 !default;
+
+$star-details-stats-font-size: 			$font-size-super !default;
+$star-details-name-font-size: 			$font-size-super*2.625 !default;
+
+
+////////////////////////////////
+// Categorys
+////////////////////////////////
+$categorys-jm-size-factor:					1*$base-jm-size-factor !default;
+$categorys-su-size-factor:					1*$base-su-size-factor !default;
+$categorys-xl-size-factor:					1*$base-xl-size-factor !default;
+$categorys-lg-size-factor:					1*$base-lg-size-factor !default;
+$categorys-md-size-factor:					1.125*$base-md-size-factor !default;
+$categorys-sm-size-factor:					0.8*$base-sm-size-factor !default;
+$categorys-xs-size-factor:					0.8*$base-xs-size-factor !default;
+$categorys-ss-size-factor:					$base-ss-size-factor !default;
+
+$category-jm-size-factor:					1*$base-jm-size-factor !default;
+$category-su-size-factor:					0.90*$base-su-size-factor !default;
+$category-xl-size-factor:					1*$base-xl-size-factor !default;
+$category-lg-size-factor:					0.95*$base-lg-size-factor !default;
+$category-md-size-factor:					1.7*$base-md-size-factor !default;
+$category-sm-size-factor:					$base-sm-size-factor !default;
+$category-xs-size-factor:					$base-xs-size-factor !default;
+$category-ss-size-factor:					$base-ss-size-factor !default;
+
+// Categorys
+$category-grid-vertical-separation:			sp(0) !default;
+
+$category-grid-lg-columns:					($base-lg-columns - 1) !default;
+$category-grid-md-columns:					($base-md-columns - 1) !default;
+$category-grid-sm-columns:					($base-sm-columns) !default;
+$category-grid-xs-columns:					($base-xs-columns) !default;
+$category-grid-ss-columns:					($base-ss-columns) !default;
+
+$category-grid-lg-size-factor:				0.85*$base-lg-size-factor !default;
+$category-grid-md-size-factor:				0.74*$base-md-size-factor !default;
+$category-grid-sm-size-factor:				1.5*$base-sm-size-factor !default;
+$category-grid-xs-size-factor:				1.5*$base-xs-size-factor !default;
+$category-grid-ss-size-factor:				2*$base-ss-size-factor !default;
+
+// Category
+$category-highlight-color:					$brand-primary !default;
+
+$category-bg:								darken($brand-quaternary, 9%) !default;
+$category-height:							dp(450) !default;
+$category-border-size:						spw(0) !default;
+$category-font-size:						$font-size-large !default;
+$category-font-size-sm:						$font-size-base !default;
+$category-shadow:							spw(1) spw(1) spw(4) spw(0) rgba(#000, 0.4) !default;
+$category-shadow-hover:						$category-shadow !default;
+
+$category-title-border-size:				2*$btn-border-width !default;
+$category-title-border-radius:				$btn-border-radius-large !default;
+$category-title-font-weight:				300 !default;
+$category-title-font-size:					4*$category-font-size !default;
+
+$category-description-indentation:			$grid-gutter-width !default;
+$category-description-font-size:			2.3*$font-size-base !default;
+
+$category-definition-color:					$white !default;
+
+$category-overlay-opacity:					0.75 !default;
+$category-overlay-name-font-size:			3.5*$font-size-super !default;
+$category-overlay-name-spacing:				$grid-gutter-width !default;
+
+$category-footer-color:						$white !default;
+$category-footer-padding:					sp(10) !default;
+
+$category-image-width:						dp(234) !default;
+
+$category-footer-separator-width: 			dp(1) !default;
+$category-footer-separator-color: 			rgba(255, 255, 255, 0.2) !default;
+
+$category-footer-extended-factor-sm:		0.7 !default;
+$category-footer-extended-factor-rg:		0.55 !default;
+$category-footer-extended-height-sm: 		(dps(2 * $category-footer-extended-factor-sm * $category-font-size * $line-height-base) + 2 * $category-footer-padding) !default;
+$category-footer-extended-height-rg: 		(dps(1 * $category-footer-extended-factor-rg * $category-font-size * $line-height-base) + 2 * $category-footer-padding) !default;
+
+// Category (Details)
+$category-details-lg-size-factor:			1.0*$base-lg-size-factor !default;
+$category-details-md-size-factor:			0.8*$base-md-size-factor !default;
+$category-details-sm-size-factor:			1.2*$base-sm-size-factor !default;
+$category-details-xs-size-factor:			0.8*$base-xs-size-factor !default;
+$category-details-ss-size-factor:			0.5*$base-ss-size-factor !default;
+$category-details-landscape-factor:			0.5 !default;
+
+
+$category-details-description-font-size:	1.6*$category-description-font-size !default;
+$category-details-overlay-name-font-size:	1.6*$category-overlay-name-font-size !default;
+$category-details-description-indentation:	1.3*$category-description-indentation !default;
+
+
+////////////////////////////////
+// Details Menu
+////////////////////////////////
+$details-menu-lg-size-factor:				1*$base-lg-size-factor !default;
+$details-menu-md-size-factor:				$base-md-size-factor !default;
+$details-menu-sm-size-factor:				0.8*$base-sm-size-factor !default;
+$details-menu-xs-size-factor:				0.8*$base-xs-size-factor !default;
+$details-menu-ss-size-factor:				0.5*$base-ss-size-factor !default;
+
+$details-menu-font-size:					$font-size-super !default;
+
+
+////////////////////////////////
+// Studios
+////////////////////////////////
+$studio-jm-size-factor:						1*$base-jm-size-factor !default;
+$studio-su-size-factor:						1*$base-su-size-factor !default;
+$studio-xl-size-factor:						1*$base-xl-size-factor !default;
+$studio-lg-size-factor:						1.2*$base-lg-size-factor !default;
+$studio-md-size-factor:						$base-md-size-factor !default;
+$studio-sm-size-factor:						$base-sm-size-factor !default;
+$studio-xs-size-factor:						$base-xs-size-factor !default;
+$studio-ss-size-factor:						$base-ss-size-factor !default;
+
+// Studios
+$studio-grid-vertical-separation:			sp(0) !default;
+
+$studio-grid-lg-columns:					$base-lg-columns !default;
+$studio-grid-md-columns:					$base-md-columns !default;
+$studio-grid-sm-columns:					$base-sm-columns !default;
+$studio-grid-xs-columns:					$base-xs-columns !default;
+$studio-grid-ss-columns:					$base-ss-columns !default;
+
+$studio-grid-lg-size-factor:				1*$base-lg-size-factor !default;
+$studio-grid-md-size-factor:				$base-md-size-factor !default;
+$studio-grid-sm-size-factor:				$base-sm-size-factor !default;
+$studio-grid-xs-size-factor:				$base-xs-size-factor !default;
+$studio-grid-ss-size-factor:				$base-ss-size-factor !default;
+
+// Studio (Details)
+$studio-details-lg-size-factor:				2.0*$base-lg-size-factor !default;
+$studio-details-md-size-factor:				1.7*$base-md-size-factor !default;
+$studio-details-sm-size-factor:				2.3*$base-sm-size-factor !default;
+$studio-details-xs-size-factor:				1.3*$base-xs-size-factor !default;
+$studio-details-ss-size-factor:				0.9*$base-ss-size-factor !default;
+$studio-details-landscape-factor:			0.5 !default;
+
+
+// Studio
+$studio-highlight-color:					$brand-primary !default;
+
+$studio-bg:									darken($brand-quaternary, 9%) !default;
+$studio-height:								dp(450) !default;
+$studio-border-size:						spw(0) !default;
+$studio-font-size:							$font-size-large !default;
+$studio-font-size-sm:						$font-size-base !default;
+$studio-shadow:								spw(1) spw(1) spw(4) spw(0) rgba(#000, 0.4) !default;
+$studio-shadow-hover:						$studio-shadow !default;
+
+$studio-title-border-size:					2*$btn-border-width !default;
+$studio-title-border-radius:				$btn-border-radius-large !default;
+$studio-title-font-weight:					400 !default;
+$studio-title-font-size:					$font-size-h2 !default;
+
+$studio-description-indentation:			$grid-gutter-width !default;
+$studio-description-font-size:				1.3*$font-size-base !default;
+
+$studio-definition-color:					$white !default;
+
+$studio-overlay-opacity:					0 !default;
+$studio-overlay-name-font-size:				2*$font-size-super !default;
+$studio-overlay-name-spacing:				$grid-gutter-width !default;
+
+$studio-footer-color:						$white !default;
+$studio-footer-padding:						sp(10) !default;
+
+$studio-image-width:						dp(234) !default;
+
+$studio-footer-separator-width:				dp(1) !default;
+$studio-footer-separator-color:				rgba(255, 255, 255, 0.2) !default;
+
+$studio-footer-extended-factor-sm:			0.7 !default;
+$studio-footer-extended-factor-rg:			0.55 !default;
+$studio-footer-extended-height-sm:	 		(dps(2 * $studio-footer-extended-factor-sm * $studio-font-size * $line-height-base) + 2 * $studio-footer-padding) !default;
+$studio-footer-extended-height-rg:	 		(dps(1 * $studio-footer-extended-factor-rg * $studio-font-size * $line-height-base) + 2 * $studio-footer-padding) !default;
+
+
+
+////////////////////////////////
+// Grids
+////////////////////////////////
+$grid-lg-size-factor:						1*$base-lg-size-factor !default;
+$grid-md-size-factor:						$base-md-size-factor !default;
+$grid-sm-size-factor:						$base-sm-size-factor !default;
+$grid-xs-size-factor:						$base-xs-size-factor !default;
+$grid-ss-size-factor:						$base-ss-size-factor !default;
+
+$grid-lg-columns:							$base-lg-columns !default;
+$grid-md-columns:							$base-md-columns !default;
+$grid-sm-columns:							$base-sm-columns !default;
+$grid-xs-columns:							$base-xs-columns !default;
+$grid-ss-columns:							$base-ss-columns !default;
+
+$grid-vertical-separation:					$grid-gutter-width*2 !default;
+$grid-portrait-factor:						3/2 !default;
+
+
+
+////////////////////////////////
+// Notifications
+////////////////////////////////
+$notification-lg-size-factor:						1*$base-lg-size-factor !default;
+$notification-md-size-factor:						$base-md-size-factor !default;
+$notification-sm-size-factor:						0.85*$base-sm-size-factor !default;
+$notification-xs-size-factor:						0.85*$base-xs-size-factor !default;
+$notification-ss-size-factor:						0.67*$base-ss-size-factor !default;
+
+
+
+////////////////////////////////
+// Statmenu
+////////////////////////////////
+$statmenu-lg-size-factor:						1*$base-lg-size-factor !default;
+$statmenu-md-size-factor:						$base-md-size-factor !default;
+$statmenu-sm-size-factor:						0.7*$base-sm-size-factor !default;
+$statmenu-xs-size-factor:						0.7*$base-xs-size-factor !default;
+$statmenu-ss-size-factor:						0.5*$base-ss-size-factor !default;
+
+$statmenu-vertical-padding:						sp(20) !default;
+$statmenu-content-size:							sp(80) !default;
+$statmenu-height:								(2 * $statmenu-vertical-padding + $statmenu-content-size) !default;
+
+$statmenu-header-font-size:						0.25 * $statmenu-content-size !default;
+$statmenu-value-font-size:						0.75 * $statmenu-content-size !default;
+
+
+
+
+// Channel
+$channel-highlight-color:					darken($brand-quaternary, 20%) !default;
+$channel-subscribed-color:					darken($brand-secondary, 35%) !default;
+$channel-remove-color:						darken($brand-primary, 10%) !default;
+$channel-selected-color:					darken($brand-success, 20%) !default;
+$channel-hover-color:						darken($brand-secondary, 0%) !default;
+$channel-bg:								darken($brand-quaternary, 10%) !default;
+$channel-border-size:						spw(2) !default;
+$channel-border-color:						rgba($brand-tertiary, 0.3) !default;
+$channel-shadow:							spw(1) spw(1) spw(4) spw(0) rgba(#000, 0.4) !default;
+$channel-shadow-hover:						$channel-shadow !default;
+
+
+
+////////////////////////////////
+// NavChannel
+////////////////////////////////
+$nav-channel-padding-horizontal: 			$grid-gutter-width/4 !default;
+$nav-channel-padding-vertical: 				$grid-gutter-width/10 !default;
+$nav-channel-height:						$navbar-height*0.40 - 2*$nav-channel-padding-vertical !default;
+$nav-channel-width:							sp(435) !default;
+
+
+
+
+////////////////////////////////
+// NavCategorys
+////////////////////////////////
+$nav-categorys-padding-horizontal: 			$grid-gutter-width/4 !default;
+$nav-categorys-padding-vertical: 			$grid-gutter-width/10 !default;
+$nav-categorys-height:						$navbar-height*0.40 - 2*$nav-categorys-padding-vertical !default;
+$nav-categorys-width:						sp(435) !default;
+
+
+
+
+////////////////////////////////
+// NavMenu
+////////////////////////////////
+$nav-menu-padding-horizontal: 					$grid-gutter-width/4 !default;
+$nav-menu-padding-vertical: 					$grid-gutter-width/10 !default;
+$nav-menu-height:								$navbar-height*0.40 - 2*$nav-menu-padding-vertical !default;
+$nav-menu-width:								sp(500) !default;
+
+
+$navmenu-lg-size-factor:						1.0*$navbar-lg-size-factor !default;
+$navmenu-md-size-factor:						1.0*$navbar-md-size-factor !default;
+$navmenu-sm-size-factor:						1.0*$navbar-sm-size-factor !default;
+$navmenu-xs-size-factor:						1.0*$navbar-xs-size-factor !default;
+$navmenu-ss-size-factor:						1.0*$navbar-ss-size-factor !default;
+
+////////////////////////////////
+// NavPlayer
+////////////////////////////////
+
+
+
+
+////////////////////////////////
+// Video Player
+////////////////////////////////
+$player-jm-size-factor:			2.3*$base-jm-size-factor !default;
+$player-su-size-factor:			2.1*$base-su-size-factor !default;
+$player-xl-size-factor:			2.0*$base-xl-size-factor !default;
+$player-lg-size-factor:			1.6*$base-lg-size-factor !default;
+$player-md-size-factor:			1.3*$base-md-size-factor !default;
+$player-sm-size-factor:			1.0*$base-sm-size-factor !default;
+$player-xs-size-factor:			0.9*$base-xs-size-factor !default;
+$player-ss-size-factor:			0.6*$base-ss-size-factor !default;
+$player-landscape-factor:		0.5 !default;
+$player-portrait-factor:		1.0 !default;
+
+$player-mini-lg-size-factor:	0.6 !default;
+$player-mini-md-size-factor:	0.8 !default;
+$player-mini-sm-size-factor:	0.9 !default;
+$player-mini-xs-size-factor:	0.9 !default;
+$player-mini-ss-size-factor:	0.6 !default;
+
+
+
+
+////////////////////////////////
+// Toggle Switch
+////////////////////////////////
+$toggle-switch-height: 							1em !default;
+$toggle-switch-width: 							2em !default;
+$toggle-switch-bg: 								$brand-tertiary !default;
+$toggle-switch-color: 							lighten($brand-quaternary, 20%) !default;
+$toggle-switch-button-size: 					$toggle-switch-height * 1.20 !default;
+$toggle-switch-button-offset: 					($toggle-switch-height - $toggle-switch-button-size)/2 !default;
+$toggle-switch-on-bg: 							desaturate(darken($brand-secondary, 20%), 20%) !default;
+$toggle-switch-on-color: 						$brand-tertiary !default
+
+
+
+
+////////////////////////////////
+// Heading
+////////////////////////////////
+$heading-color:									$brand-quaternary !default;
+$heading-font-size:								$font-size-super !default;
+$heading-border-color:							$brand-primary !default;
+$heading-border-width:							$btn-border-width !default;
+$heading-background:							rgba($brand-secondary, 0.75) !default;
+$heading-padding-factor:						1 !default;
+
+
+
+
+
+////////////////////////////////
+// Titlebar
+////////////////////////////////
+$titlebar-height:					sp(32) !default;
+
+$titlebar-icon-separation:			sp(2) !default;
+$titlebar-icon-height:				$titlebar-height - 2*$titlebar-icon-separation !default;
+$titlebar-icon-width:				$titlebar-icon-height*16/11 !default;
+
+$titlebar-fullscreen-icon-width:	sp(10) !default;
+
+$titlebar-close-hover-bg:			rgba(232, 17, 35, 0.9) !default;
+
+$titlebar-light-bg:					rgba($brand-tertiary, 1) !default;
+$titlebar-light-hover-bg:			darken($titlebar-light-bg, 10%) !default;
+$titlebar-light-color:				$brand-quaternary !default;
+$titlebar-light-inverse-color:		$brand-tertiary !default;
+
+$titlebar-dark-bg:					$brand-quaternary !default;
+$titlebar-dark-hover-bg:			lighten($titlebar-dark-bg, 10%) !default;
+$titlebar-dark-color:				$brand-tertiary !default;
+$titlebar-dark-inverse-color:		$brand-primary !default;
+
+
+
+
+
+////////////////////////////////
+// Preferences
+////////////////////////////////
+$preferences-jm-size-factor:					1*$base-jm-size-factor !default;
+$preferences-su-size-factor:					0.90*$base-su-size-factor !default;
+$preferences-xl-size-factor:					1*$base-xl-size-factor !default;
+$preferences-lg-size-factor:					0.95*$base-lg-size-factor !default;
+$preferences-md-size-factor:					1.1*$base-md-size-factor !default;
+$preferences-sm-size-factor:					$base-sm-size-factor !default;
+$preferences-xs-size-factor:					$base-xs-size-factor !default;
+$preferences-ss-size-factor:					$base-ss-size-factor !default;
+
+// Categorys
+$preferences-grid-vertical-separation:			sp(50) !default;
+$preferences-grid-horizontal-separation:		$btn-border-width !default;
+
+$preferences-grid-lg-columns:					($base-lg-columns + 3) !default;
+$preferences-grid-md-columns:					($base-md-columns + 2) !default;
+$preferences-grid-sm-columns:					($base-sm-columns + 1) !default;
+$preferences-grid-xs-columns:					($base-xs-columns + 0) !default;
+$preferences-grid-ss-columns:					($base-ss-columns + 1) !default;
+
+// Blue & Gray
+/*$btn-preference-color:							$brand-tertiary !default;
+$btn-preference-bg:								lighten($brand-quaternary, 40%) !default;
+$btn-preference-border:   						rgba($brand-quaternary, 0) !default;
+$btn-preference-active-color:					$brand-quaternary !default;
+$btn-preference-active-bg:						desaturate(darken($brand-secondary, 20%), 20%) !default;
+$btn-preference-active-border:					rgba($brand-quaternary, 0) !default;
+*/
+
+// Red & White
+/*$btn-preference-color:							$brand-tertiary !default;
+$btn-preference-bg:								lighten($brand-quaternary, 0%) !default;
+$btn-preference-border:   						$brand-tertiary !default;
+$btn-preference-active-color:					$brand-tertiary !default;
+$btn-preference-active-bg:						$brand-primary !default;
+$btn-preference-active-border:					$brand-tertiary !default;
+*/
+
+// Red & Black
+$btn-preference-color:							$brand-tertiary !default;
+$btn-preference-bg:								lighten($brand-quaternary, 40%) !default;
+$btn-preference-border:   						rgba($brand-tertiary, 0) !default;
+
+$btn-preference-active-color:					lighten($brand-quaternary, 0%) !default;
+$btn-preference-active-bg:						darken($brand-primary, 5%) !default;
+$btn-preference-active-border:					rgba($brand-tertiary, 0) !default;
+
+
+
+
+////////////////////////////////
+// Page -> Landing
+////////////////////////////////
+$landing-lg-size-factor:						1.25*$base-lg-size-factor !default;
+$landing-md-size-factor:						1.0*$base-md-size-factor !default;
+$landing-sm-size-factor:						1.0*$base-sm-size-factor !default;
+$landing-xs-size-factor:						1.0*$base-xs-size-factor !default;
+$landing-ss-size-factor:						1.0*$base-ss-size-factor !default;

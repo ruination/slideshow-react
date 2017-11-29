@@ -1,0 +1,58 @@
+.stars-grid .grid-row-content {
+	padding: 0 ($page-padding-right - 2) 0 ($page-padding-left - 2);
+}
+
+.stars-grid .grid-item {
+    padding: sp(0) sp(2) sp(4) sp(2);
+}
+
+
+@mixin stars-grid-size($parent, $size, $size-factor, $orientation: '')
+{
+    #{$orientation}.viewport-#{$size} #{$parent} {
+        margin-bottom: 0;
+    }
+}
+
+
+@mixin stars-grid-portrait-size($parent, $size, $size-factor, $orientation: '')
+{
+    #{$orientation}.viewport-#{$size} #{$parent} {
+        margin-bottom: 0;
+    }
+}
+
+
+// [SIZE: Large]
+// Stars Grid
+// --------------------------------------------------
+@include stars-grid-size('.stars-grid .grid-row', 'lg', $star-lg-size-factor);
+@include stars-grid-portrait-size('.stars-grid.grid-portrait .grid-row', 'lg', $grid-portrait-factor*$star-lg-size-factor);
+
+
+// [SIZE: Medium]
+// Stars Grid
+// --------------------------------------------------
+@include stars-grid-size('.stars-grid .grid-row', 'md', $star-md-size-factor);
+@include stars-grid-portrait-size('.stars-grid.grid-portrait .grid-row', 'md', $grid-portrait-factor*$star-md-size-factor);
+
+
+// [SIZE: Small]
+// Stars Grid
+// --------------------------------------------------
+@include stars-grid-size('.stars-grid .grid-row', 'sm', $star-sm-size-factor);
+@include stars-grid-portrait-size('.stars-grid.grid-portrait .grid-row', 'sm', $grid-portrait-factor*$star-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// Stars Grid
+// --------------------------------------------------
+@include stars-grid-size('.stars-grid .grid-row', 'xs', $star-xs-size-factor);
+@include stars-grid-portrait-size('.stars-grid.grid-portrait .grid-row', 'xs', $grid-portrait-factor*$star-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// Stars Grid
+// --------------------------------------------------
+@include stars-grid-size('.stars-grid .grid-row', 'ss', $star-ss-size-factor);
+@include stars-grid-portrait-size('.stars-grid.grid-portrait .grid-row', 'ss', $grid-portrait-factor*$star-ss-size-factor);

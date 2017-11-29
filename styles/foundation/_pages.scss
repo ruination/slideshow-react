@@ -1,0 +1,49 @@
+.page {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: $page-bg;
+}
+
+.page-container {
+	height: 100%;	
+	position: relative;
+	min-height: $page-min-height;
+	padding-right: $grid-gutter-width;
+	margin-right: -$grid-gutter-width;
+	z-index: 0;
+}
+
+.page-layout {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	top: dp(0);
+	overflow: hidden;
+}
+
+.page-content {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: dp(0);
+	padding-right: $grid-gutter-width;
+	padding-bottom: $page-padding-bottom;
+	z-index: $zindex-page;
+	overflow: hidden;
+}
+
+.page-default {
+	height: 100%;
+	@include clearfix;
+	overflow-y: auto;
+	padding: $page-padding-top ($grid-gutter-width + $page-padding-right) $page-padding-bottom  $page-padding-left;
+	margin-right: -$grid-gutter-width;
+}
+
+.page-single {
+	height: 100%;
+	@include clearfix;
+	overflow: visible;	
+	padding: $page-padding-top $page-padding-right $page-padding-bottom  $page-padding-left;
+}

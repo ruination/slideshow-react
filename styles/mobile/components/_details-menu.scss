@@ -1,0 +1,92 @@
+.details-menu .menu-action {
+	padding: $grid-gutter-width/2 0;
+	font-size: stovp($details-menu-font-size);
+}
+
+.details-menu {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba($brand-quaternary, 0.6);
+	z-index: 2;
+	padding: 0 $page-padding-right 0 $page-padding-left;
+	@include clearfix;
+}
+
+.details-menu > * {
+	width: 40%;
+	display: block;
+	float: left;
+	text-align: center;
+}
+
+.details-menu > *:first-child {
+	width: 30%;
+	text-align: left;
+}
+
+.details-menu > *:last-child {
+	width: 30%;
+	float: right;
+	text-align: right;
+}
+
+
+
+// [SIZE: Large]
+// Category (Details)
+// --------------------------------------------------
+.viewport-lg .details-menu .menu-action {
+	font-size: $details-menu-lg-size-factor*stovp($details-menu-font-size);
+	padding: $details-menu-lg-size-factor*stovp($grid-gutter-width/2) 0;
+}
+
+
+// [SIZE: Medium]
+// Category (Details)
+// --------------------------------------------------
+.viewport-md .details-menu .menu-action {
+	font-size: $details-menu-md-size-factor*stovp($details-menu-font-size);
+	padding: $details-menu-md-size-factor*stovp($grid-gutter-width/2) 0;
+}
+
+
+// [SIZE: Small]
+// Category (Details)
+// --------------------------------------------------
+.viewport-sm .details-menu .menu-action {
+	font-size: $details-menu-sm-size-factor*stovp($details-menu-font-size);
+	padding: $details-menu-sm-size-factor*stovp($grid-gutter-width/2) 0;
+}
+
+.viewport-sm .details-menu {
+	padding: 0 $page-padding-mobile-right 0 $page-padding-mobile-left;
+}
+
+
+// [SIZE: eXtra Small]
+// Category (Details)
+// --------------------------------------------------
+.viewport-xs .details-menu .menu-action {
+	font-size: $details-menu-xs-size-factor*stovp($details-menu-font-size);
+	padding: $details-menu-xs-size-factor*stovp($grid-gutter-width/2) 0;
+}
+
+.viewport-xs .details-menu {
+	padding: 0 $page-padding-mobile-right 0 $page-padding-mobile-left;
+}
+
+
+// [SIZE: Super Small]
+// Category (Details)
+// --------------------------------------------------
+.viewport-ss .details-menu .menu-action {
+	font-size: $details-menu-ss-size-factor*stovp($details-menu-font-size);
+	padding: $details-menu-ss-size-factor*stovp($grid-gutter-width/2) 0;
+}
+
+.viewport-ss .details-menu {
+	padding: 0 $page-padding-mobile-right 0 $page-padding-mobile-left;
+}
+

@@ -1,0 +1,20 @@
+.dialog-pin .modal-header,
+.dialog-pin .modal-footer {
+	border: none;
+	text-align: center; 
+}
+
+.dialog-pin .modal-footer .btn {
+	padding-left: sp(150);
+	padding-right: sp(150);
+	margin-bottom: $grid-gutter-width;
+	margin-right: sp(0);
+}
+
+.dialog-pin .modal-footer .btn + .btn {
+	margin-left: $grid-gutter-width * 2;
+}
+
+.reset-pin-enter.section {
+	text-align: center;
+}

@@ -1,0 +1,196 @@
+.dialog-rent .modal-dialog {
+	width: 79.17%;
+}
+
+.dialog-rent .modal-body {
+	padding: stovp($grid-gutter-width) 0*stovp($grid-gutter-width*2);
+}
+
+.video-details-rental {
+	display: flex;
+	flex-flow: row nowrap;
+	background-color: lighten($brand-quaternary, 4%);
+	color: $video-overview-color;
+	font-size: stovp($video-overview-font-size);
+	@include box-shadow(inset vp(0) vp(0) vp(6) vp(1) rgba(0, 0, 0, 0.3))
+	margin-bottom: stovp($grid-gutter-width*1.4);
+}
+
+.video-details-rental .video-img-container {
+	align-self: center;
+}
+
+.video-details-rental.video-details-rental-landscape  .video-overview {
+	flex: 1;
+}
+
+.video-details-rental .video-image {
+	flex: 1;
+	display: flex;
+}
+
+.video-details-rental .video-overview {
+	flex: 2;
+	display: flex;
+	flex-flow: column nowrap;
+	padding: stovp($grid-gutter-width/2) stovp($grid-gutter-width);
+}
+
+.video-details-rental .video-overview .video-push {
+	flex: 1;
+}
+
+.video-details-rental .video-overview .video-metadata {
+	align-self: flex-end;
+	margin: 0;
+}
+
+.video-details-rental .video-overview .video-metadata .rating {
+	font-size: 80%;
+}
+
+.video-details-rental .video-overview .video-overlay-name > * {
+	margin: 0;
+	white-space: normal;
+	text-align: left;
+	text-transform: uppercase;
+	color: $white;
+	font-size: stovp($video-overview-name-font-size);
+	font-weight: bold;
+	letter-spacing: 0.01em;
+}
+
+.video-rating, .video-quality {
+	background-color: $brand-tertiary;
+	color: lighten($brand-quaternary, 4%);
+	padding: 0.15em 0.35em;
+	line-height: 1;
+	border-radius: $btn-border-radius-base;
+	display: inline-block;
+	min-width: 2.8em;
+	text-align: center;
+}
+
+.btn.btn-primary .video-quality {
+	background: $white;
+	color: $btn-primary-bg;
+	margin: 0 0.4em 0 0.5em;
+}
+
+.video-rating.xxx {
+	background: $black;
+	border-color: $black;
+	color: $white;
+}
+
+.rental-information {
+	text-align: center;
+	margin: stovp($grid-gutter-width*1.4) 0 stovp($grid-gutter-width) 0;
+}
+
+.rental-information .rental-duration {
+	font-size: stovp($video-overview-info-font-size);
+}
+
+.rental-confirmation {
+	text-align: center;
+	margin-bottom: stovp($grid-gutter-width);
+}
+
+.rental-confirmation .btn {
+	margin-top: 0;
+}
+
+.rental-confirmation .btn + .btn {
+	margin-left: 5%;
+}
+
+
+
+
+
+
+@mixin video-details-rental-size($parent, $size, $size-factor, $orientation: '')
+{
+	#{$orientation}.modal-#{$size} #{$parent} {
+		font-size: $size-factor*stovp($video-overview-font-size);
+		margin-bottom: $size-factor*stovp($grid-gutter-width*1.4);
+
+		.dialog-rent .modal-body {
+			padding: $size-factor*stovp($grid-gutter-width) 0*$size-factor*stovp($grid-gutter-width*2);
+		}
+
+		.video-overview {
+			padding: $size-factor*stovp($grid-gutter-width/2) $size-factor*stovp($grid-gutter-width);
+		}
+
+		.video-overview .video-overlay-name > * {
+			font-size: $size-factor*stovp($video-overview-name-font-size);
+		}
+
+		.rental-information {
+			margin: $size-factor*stovp($grid-gutter-width*1.4) 0 $size-factor*stovp($grid-gutter-width) 0;
+		}
+
+		.rental-information .rental-duration {
+			font-size: $size-factor*stovp($video-overview-info-font-size);
+		}
+
+		.rental-confirmation {
+			margin-bottom: $size-factor*stovp($grid-gutter-width);
+		}
+	}
+}
+
+
+
+@mixin video-details-rental-mobile-size($parent, $size, $size-factor, $orientation: '')
+{
+	#{$orientation}.modal-#{$size} #{$parent} {
+		flex-flow: column nowrap;
+		background-color: transparent;
+		@include box-shadow(none);
+
+		.video-overview {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.video-overview .video-overlay-name > * {
+			font-size: $size-factor*stovp($video-overview-name-font-size*0.80);
+		}		
+	}
+}
+
+
+// [SIZE: Large]
+// Rental Dialog
+// --------------------------------------------------
+@include video-details-rental-size('.video-details-rental', 'lg', $video-details-rental-lg-size-factor);
+
+
+// [SIZE: Medium]
+// Rental Dialog
+// --------------------------------------------------
+@include video-details-rental-size('.video-details-rental', 'md', $video-details-rental-md-size-factor);
+
+
+// [SIZE: Small]
+// Rental Dialog
+// --------------------------------------------------
+@include video-details-rental-size('.video-details-rental', 'sm', $video-details-rental-sm-size-factor);
+@include video-details-rental-mobile-size('.video-details-rental', 'sm', $video-details-rental-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// Rental Dialog
+// --------------------------------------------------
+@include video-details-rental-size('.video-details-rental', 'xs', $video-details-rental-xs-size-factor);
+@include video-details-rental-mobile-size('.video-details-rental', 'xs', $video-details-rental-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// Rental Dialog
+// --------------------------------------------------
+@include video-details-rental-size('.video-details-rental', 'ss', $video-details-rental-ss-size-factor);
+@include video-details-rental-mobile-size('.video-details-rental', 'ss', $video-details-rental-ss-size-factor);

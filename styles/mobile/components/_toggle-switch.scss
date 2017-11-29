@@ -1,0 +1,64 @@
+/* The toggle-switch - the box around the slider */
+.toggle-switch {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	width: $toggle-switch-width;
+	height: $toggle-switch-height;
+	line-height: 1;
+}
+
+/* Hide default HTML checkbox */
+.toggle-switch input {
+	display:none;
+}
+
+/* The slider */
+.toggle-switch-slider {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: $toggle-switch-bg;
+	@include transition(all 200ms cubic-bezier(0.42,0,0.58,1));
+	@include box-shadow(sp(0) sp(0) sp(2) rgba(0,0,0,0.10));
+}
+
+.toggle-switch-slider:before {
+	position: absolute;
+	content: "";
+	height: $toggle-switch-button-size;
+	width: $toggle-switch-button-size;
+	left: $toggle-switch-button-offset;
+	bottom: $toggle-switch-button-offset;
+	background-color: $toggle-switch-color;
+	@include transition(all 200ms cubic-bezier(0.42,0,0.58,1));
+	@include box-shadow(sp(0) sp(1) sp(2) rgba(0,0,0,0.15));
+}
+
+input:checked + .toggle-switch-slider {
+	background-color: $toggle-switch-on-bg;
+}
+
+input:checked + .toggle-switch-slider:before {
+	background-color: $toggle-switch-on-color;
+}
+
+.toggle-switch-slider:hover,
+input:focus + .toggle-switch-slider {
+	@include box-shadow(sp(1) sp(1) sp(3) rgba(0,0,0,0.65));
+}
+
+input:checked + .toggle-switch-slider:before {
+	@include translate($toggle-switch-button-size + 2 * $toggle-switch-button-offset, 0);
+}
+
+/* Rounded sliders */
+.toggle-switch-slider.toggle-switch-round {
+	border-radius: $toggle-switch-width + 2 * $toggle-switch-button-offset;
+}
+
+.toggle-switch-slider.toggle-switch-round:before {
+	border-radius: 50%;
+}

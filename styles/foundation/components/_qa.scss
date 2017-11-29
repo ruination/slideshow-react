@@ -1,0 +1,79 @@
+.qa-item {
+	background-color: $qa-bg;
+	margin-bottom: $qa-separation;
+}
+
+.qa-item:hover {
+	background-color: $qa-hover-bg;
+}
+
+.qa-list {
+	list-style: none;
+	padding: 0;
+}
+
+.qa-item .question {
+	background: $qa-question-bg;
+	color: $qa-question-color;
+	font-weight: $qa-question-font-weight;
+	padding: $qa-padding-vertical ($qa-question-icon-size + $qa-padding-horizontal) $qa-padding-vertical $qa-padding-horizontal;
+	text-transform: none;
+	position: relative;
+	overflow: hidden;
+	word-break: break-all;
+	margin: 0;
+}
+
+.qa-item .question .icon {
+	position: absolute;
+	right: $qa-padding-horizontal;
+	top: $qa-padding-vertical;
+	line-height: inherit;
+}
+
+.qa-item .question a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.qa-item .link-overlay {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	height: 100%;
+}
+
+
+.qa-item .answer p {
+	overflow: hidden;
+	padding: $qa-padding-vertical $qa-padding-horizontal;
+	margin-bottom: 0;
+}
+
+.qa-item .answer {
+	background: $qa-answer-bg;
+	color: $qa-answer-color;
+	display: none;
+}
+
+.qa-item .answer .line,
+.qa-item .bullets .break {
+	display: block;
+	margin-bottom: $qa-bullet-separation;
+}
+
+.qa-item .answer .line:last-child,
+.qa-item .bullets .break:last-child,
+.qa-item .answer .line + .line:last-child,
+.qa-item .bullets .break + .break:last-child {
+	margin-bottom: $qa-bullet-separation / 4;
+}
+
+.qa-item .answer .text-info {
+	color: $qa-answer-info-color;
+}
+
+.qa-item small {
+	color: inherit;
+}

@@ -1,0 +1,33 @@
+///////////////////////////
+// Studios
+///////////////////////////
+.studios-grid .grid-items {
+    padding: 0;
+    margin: 0 sp(-2) 0 sp(-2);
+    @include clearfix;
+}
+
+.studios-grid .grid-item {
+    float: left;
+    padding: sp(0) sp(2) sp(4) sp(2);
+}
+
+.viewport-lg .studios-grid .grid-item {
+    margin-bottom: $studio-lg-size-factor*stovp($studio-grid-vertical-separation);
+}
+
+.viewport-md .studios-grid .grid-item {
+    margin-bottom: $studio-md-size-factor*stovp($studio-grid-vertical-separation);
+}
+
+.viewport-xs .studios-grid .grid-item {
+    margin-bottom: $studio-xs-size-factor*stovp($studio-grid-vertical-separation);
+}
+
+.viewport-sm .studios-grid .grid-item {
+    margin-bottom: $studio-sm-size-factor*stovp($studio-grid-vertical-separation);
+}
+
+.viewport-ss .studios-grid .grid-item {
+    margin-bottom: 0;
+}

@@ -1,0 +1,287 @@
+///////////////////////////
+// Studio
+///////////////////////////
+.studio {
+    width: $studio-image-width;
+    display: block;
+    position: relative;
+}
+
+.studio .studio-content {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    @include transition(background-color 200ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+    background-color: $studio-bg;
+    @include box-shadow($studio-shadow);
+}
+
+.studio .studio-border {
+    background-color: transparent;
+    padding: $studio-border-size;
+    height: 100%;
+    width: 100%;
+}
+
+.studio-placeholder {
+    width: 100%;
+    background-size: 90%;
+    background-position: center center;
+    background-repeat: no-repeat;    
+}
+
+.studio:hover * {
+    cursor: default;
+}
+
+.studio:hover .studio-border {
+    background-color: $studio-highlight-color;
+}
+
+.studio:hover .studio-content {
+    background-color: $studio-highlight-color;
+    @include box-shadow(none);
+}
+
+.studio:hover {
+    @include box-shadow($studio-shadow-hover);
+}
+
+.studio-img-container {
+    @include text-hide;
+
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    @include box-shadow($studio-shadow);
+}
+
+.studio .studio-content .studio-img-container {
+    @include box-shadow(none);
+}
+
+.studio-img-container img {
+    width: 100%;
+}
+
+.studio-img {
+    width: 100%;
+    display: block;
+    height: 100%;   
+    position: absolute;
+    top: 0;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.studio-footer > * {
+    color: $studio-footer-color;
+    font-size: $studio-font-size;
+    letter-spacing: sp(-1);
+    margin: 0;
+    padding: $studio-footer-padding 1.5*$studio-footer-padding;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.studio.sm .studio-footer > * {
+    font-size: $studio-font-size-sm;
+}
+
+.hover-context {
+    text-align: right;
+    position: absolute;
+    top: -100%;
+    z-index: 2;
+    width: 100%;
+    right: -$studio-border-size;
+
+    @include transition(top 250ms)
+}
+
+.studio:hover .hover-context {
+    top: -$studio-border-size;
+}
+
+.carousel.horizontal .hover-context {
+    font-size: 125%;
+} 
+
+.studio-header {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    z-index: 1;
+    background-color: $studio-bg;
+    padding: 0.7% 1.5%;
+}
+
+.studio-img {
+    width: 100%;
+}
+
+.studio {
+    width: 100%;
+}
+
+
+//
+// Studio -> Overlay
+// --------------------------------------------------
+.studio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, $studio-overlay-opacity);
+    @include transition(opacity 320ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+    @include opacity(0);
+    @include translate3d(0, 0, 0);
+    z-index: 0;    
+}
+
+.studio:hover .studio-overlay {
+    @include opacity(1);
+}
+
+.grid.grid-focusable .grid-item-content .studio-overlay,
+.slideshow.slideshow-focusable .slideshow-content .studio-overlay {
+    @include transition(opacity 320ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+    @include opacity(0);
+}
+
+.grid.grid-focusable .grid-item-content .studio:hover .studio-overlay,
+.slideshow.slideshow-focusable .slideshow-content .studio:hover .studio-overlay {
+    @include opacity(0);
+}
+
+.grid.grid-focusable .grid-item-content .grid-item-focused .studio:hover .studio-overlay,
+.slideshow.slideshow-focusable .slideshow-content .slide-focused .studio:hover .studio-overlay {
+    @include opacity(1);
+}
+
+.studio-overlay.studio-overlay-empty {
+    background-color: rgba($black, 0);
+    background-image: none;
+}
+
+.grid.grid-focusable .grid-item-content .studio:hover .studio-overlay,
+.slideshow.slideshow-focusable .slideshow-content .studio:hover .studio-overlay {
+    @include opacity(0);
+}
+
+.grid.grid-focusable .grid-item-content .grid-item-focused .studio:hover .studio-overlay,
+.slideshow.slideshow-focusable .slideshow-content .slide-focused .studio:hover .studio-overlay {
+    @include opacity(1);
+}
+
+//
+// Studio -> Overlay -> Metadata
+// --------------------------------------------------
+.studio-overlay-always {
+    font-size: stovp($font-size-small);
+    padding: stovp($grid-gutter-width/2);
+    position: absolute;
+    @include translate3d(0, 0, 0);
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+
+//
+// Studio -> Overlay -> Favorite
+// --------------------------------------------------
+.studio-overlay-always .studio-button-favorite {
+    position: absolute;
+    bottom: 10%;
+    right: 4%;
+    font-size: stovp($font-size-h2);
+    z-index: 2;
+}
+
+.studio-overlay-always .favorite-add {
+    @include opacity(0);
+    @include transition(opacity 320ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.studio.studio-simple .studio-overlay-always .favorite-add,
+.studio:hover .studio-overlay-always .favorite-add {
+    @include opacity(1);
+}
+
+.grid.grid-focusable .grid-item-content .studio .studio-overlay-always .favorite-add,
+.slideshow.slideshow-focusable .slideshow-content .studio .studio-overlay-always .favorite-add {
+    @include transition(opacity 320ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.grid.grid-focusable .grid-item-content .studio:hover .studio-overlay-always .favorite-add,
+.slideshow.slideshow-focusable .slideshow-content .studio:hover .studio-overlay-always .favorite-add {
+    @include opacity(0);
+}
+
+.grid.grid-focusable .grid-item-content .grid-item-focused .studio .studio-overlay-always .favorite-add,
+.slideshow.slideshow-focusable .slideshow-content .slide-focused .studio .studio-overlay-always .favorite-add {
+    @include opacity(1);
+}
+
+
+
+
+
+
+@mixin studio-size($parent, $slide-width, $size, $size-factor)
+{
+    #{$parent}-#{$size},
+    .width-#{$slide-width} #{$parent} {
+        .studio-overlay-always {
+            font-size: $size-factor*stovp($font-size-small);
+            padding: $size-factor*stovp($grid-gutter-width/2);
+        }
+
+        .studio-button-favorite {
+            font-size: $size-factor*stovp($font-size-h2);
+        }
+    }
+}
+
+
+// [SIZE: Large]
+// Studio
+// --------------------------------------------------
+@include studio-size('.studio', 5, 'lg', $studio-lg-size-factor);
+
+
+// [SIZE: Medium]
+// Studio
+// --------------------------------------------------
+@include studio-size('.studio', 4, 'md', $studio-md-size-factor);
+
+
+// [SIZE: Small]
+// Studio
+// --------------------------------------------------
+@include studio-size('.studio', 3, 'sm', $studio-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// Studio
+// --------------------------------------------------
+@include studio-size('.studio', 2, 'xs', $studio-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// Studio
+// --------------------------------------------------
+@include studio-size('.studio', 1, 'ss', $studio-ss-size-factor);

@@ -1,0 +1,14 @@
+.signin .forgot-password {
+	text-align: right;
+	margin-bottom: $grid-gutter-width/2;
+}
+
+li.signin.hiding-signout {
+	display: none;
+}
+
+.signin.modal-backdrop.in.members-area,
+.enter-pin.modal-backdrop.in.members-area {
+	@include opacity(0.95);
+}
+

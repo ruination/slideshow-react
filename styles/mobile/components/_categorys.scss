@@ -1,0 +1,30 @@
+.categorys-grid .grid-items {
+	padding: 0;
+    margin: 0 sp(-2) 0 sp(-2);
+	@include clearfix;
+}
+
+.categorys-grid .grid-item {
+    float: left;
+    padding: sp(0) sp(2) sp(4) sp(2);
+}
+
+.viewport-lg .categorys-grid .grid-item {
+    margin-bottom: $category-lg-size-factor*stovp($category-grid-vertical-separation);
+}
+
+.viewport-md .categorys-grid .grid-item {
+    margin-bottom: $category-md-size-factor*stovp($category-grid-vertical-separation);
+}
+
+.viewport-sm .categorys-grid .grid-item {
+    margin-bottom: $category-sm-size-factor*stovp($category-grid-vertical-separation);
+}
+
+.viewport-xs .categorys-grid .grid-item {
+    margin-bottom: $category-xs-size-factor*stovp($category-grid-vertical-separation);
+}
+
+.viewport-ss .categorys-grid .grid-item {
+    margin-bottom: 0;
+}

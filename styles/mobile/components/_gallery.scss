@@ -1,0 +1,26 @@
+.gallery {
+	padding: 0 ($page-padding-right - 2) 0 ($page-padding-left - 2);
+}
+
+.gallery-photo-layout {
+	@include clearfix;
+}
+
+.gallery-photo-block {
+	width: 50%;
+	float: left;
+}
+
+.gallery-photo {
+    width: 100%;
+    margin-bottom: 0;
+    padding: sp(0) sp(2) sp(4) sp(2);
+}
+
+.gallery-photo-image {
+	display: block;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center;
+}

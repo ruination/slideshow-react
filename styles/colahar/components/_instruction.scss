@@ -1,0 +1,45 @@
+.instruction-inline > .step {
+	background-color: $brand-quaternary;
+	border-radius: $border-radius-large;
+	min-height: sp(570);
+	border: spw(3) solid rgba($brand-primary, 0.7);
+	margin-top: $grid-gutter-width*2;
+	
+	margin-bottom: 5%;
+
+	@media (max-width: $screen-md-max) {
+		min-height: sp(540);
+	}
+
+	@media (max-width: $screen-sm-max) {
+		min-height: sp(530);
+	}
+
+	@media (max-width: $screen-xs-max) {
+		min-height: sp(470);
+	}	
+}
+
+.instruction-inline > .step > .number {
+	background-color: darken($brand-primary, 8%);
+	color: $brand-quaternary;
+	font-weight: 400;
+	border-radius: $border-radius-large;
+	line-height: ($instruction-number-width / 5.7%)*$headings-line-height * $font-size-h1;
+}
+
+.instruction-inline > .step > .number > h1 {
+	margin-top: 10%;
+}
+
+.instruction > .step > h5 {
+	margin-bottom: 7%;
+}
+
+.instruction-inline > .step > img {
+	margin: auto;
+} 
+
+.instruction-inline {
+	text-align: center;
+}

@@ -1,0 +1,72 @@
+@mixin logo-grayscale() {
+	fill: lighten($brand-quaternary, 15%);
+	color: lighten($brand-quaternary, 15%);
+	--band1-color: lighten($brand-quaternary, 15%);
+	--band2-color: lighten($brand-quaternary, 15%);
+	--band3-color: lighten($brand-quaternary, 15%);
+	--band4-color: lighten($brand-quaternary, 15%);
+	--band5-color: lighten($brand-quaternary, 15%);
+	--band6-color: lighten($brand-quaternary, 15%);
+	--band7-color: lighten($brand-quaternary, 15%);
+	--girl-color: #000;
+}
+
+@mixin logo-black() {
+	fill: #000;
+	color: #000;
+	--band1-color: #000;
+	--band2-color: #000;
+	--band3-color: #000;
+	--band4-color: #000;
+	--band5-color: #000;
+	--band6-color: #000;
+	--band7-color: #000;
+}
+
+@mixin logo-white() {
+	fill: #fff;
+	color: #fff;
+	--girl-color: #000;
+	--band1-color: #fff;
+	--band2-color: #fff;
+	--band3-color: #fff;
+	--band4-color: #fff;
+	--band5-color: #fff;
+	--band6-color: #fff;
+	--band7-color: #fff;	
+}
+
+@mixin logo-secondary() {
+	fill: $brand-secondary;
+	color: $brand-secondary;
+	--girl-color: $brand-quaternary;
+	--band1-color: $brand-secondary;
+	--band2-color: $brand-secondary;
+	--band3-color: $brand-secondary;
+	--band4-color: $brand-secondary;
+	--band5-color: $brand-secondary;
+	--band6-color: $brand-secondary;
+	--band7-color: $brand-secondary;	
+	--band8-color: $brand-secondary;	
+	--band9-color: $brand-secondary;	
+	--band10-color: $brand-secondary;	
+	--band11-color: $brand-secondary;	
+}
+
+
+@mixin logo-success() {
+	fill: $brand-success;
+	color: $brand-success;
+	--girl-color: $brand-quaternary;
+	--band1-color: $brand-success;
+	--band2-color: $brand-success;
+	--band3-color: $brand-success;
+	--band4-color: $brand-success;
+	--band5-color: $brand-success;
+	--band6-color: $brand-success;
+	--band7-color: $brand-success;	
+	--band8-color: $brand-success;	
+	--band9-color: $brand-success;	
+	--band10-color: $brand-success;	
+	--band11-color: $brand-success;	
+}

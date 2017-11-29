@@ -1,0 +1,108 @@
+.stars-girl {
+	/*fill: #FFF;*/
+}
+
+.device-icon {
+	width: 2em;
+	height: 2em;
+}
+
+.playstation-icon {
+	fill: #414042;
+}
+
+.playstation-icon.icon-white {
+	fill: #FFFFFF;
+	--band1-color: darken(#FFFFFF, 10%);
+	--band3-color: darken(#FFFFFF, 30%);
+	--band4-color: #FFFFFF;
+	--band5-color: #FFFFFF;
+	--band6-color: #FFFFFF;
+	--band7-color: #FFFFFF;
+}
+
+.xbox-icon {
+	fill: #F1F2F2;
+}
+
+.xbox-icon.icon-white {
+	fill: #FFFFFF;
+	--band2-color: darken(#FFFFFF, 30%);
+	--band3-color: darken(#FFFFFF, 10%);
+	--band4-color: darken(#FFFFFF, 20%);
+	--band5-color: darken(#FFFFFF, 40%);
+	--band6-color: darken(#FFFFFF, 40%);
+	--band7-color: darken(#FFFFFF, 40%);
+	--band8-color: darken(#FFFFFF, 40%);
+	--band9-color: darken(#FFFFFF, 40%);
+	--band10-color: darken(#FFFFFF, 50%);
+	--band11-color: darken(#FFFFFF, 30%);
+}
+
+.wii-icon {
+	fill: #E6E7E8;
+}
+
+.wii-icon.icon-white {
+	fill: #FFFFFF;
+	--band2-color: darken(#FFFFFF, 20%);
+	--band3-color: darken(#FFFFFF, 30%);
+	--band4-color: darken(#FFFFFF, 40%);
+	--band5-color: darken(#FFFFFF, 40%);
+	--band6-color: darken(#FFFFFF, 30%);
+	--band7-color: darken(#FFFFFF, 30%);
+	--band8-color: darken(#FFFFFF, 40%);
+}
+
+.console-icon {
+	fill: #414042;
+}
+
+.console-icon.icon-white {
+	fill: #FFFFFF;
+	--band2-color: darken(#FFFFFF, 20%);
+	--band3-color: darken(#FFFFFF, 30%);
+	--band4-color: darken(#FFFFFF, 40%);	
+}
+
+.roku-icon {
+	fill: #6D3E98;
+}
+
+.roku-icon.icon-white {
+	fill: #FFFFFF;
+}
+
+.desktop-icon {
+	fill: #414042;
+}
+
+.desktop-icon.icon-white {
+	fill: #FFFFFF;
+	--band1-color: darken(#FFFFFF, 35%);
+	--band2-color: darken(#FFFFFF, 30%);
+}
+
+.tablet-icon {
+	fill: #414042;
+}
+
+.tablet-icon.icon-white {
+	fill: #FFFFFF;
+	--band1-color: darken(#FFFFFF, 30%);
+	--band2-color: darken(#FFFFFF, 40%);
+	--band3-color: darken(#FFFFFF, 45%);
+	--band4-color: darken(#FFFFFF, 20%);
+}
+
+.mobile-icon {
+	fill: #414042;
+}
+
+.mobile-icon.icon-white {
+	fill: #FFFFFF;
+	--band1-color: darken(#FFFFFF, 40%);
+	--band2-color: darken(#FFFFFF, 20%);
+	--band3-color: darken(#FFFFFF, 30%);
+	--band4-color: darken(#FFFFFF, 35%);
+}

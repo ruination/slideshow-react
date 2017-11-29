@@ -1,0 +1,8 @@
+.btn-quaternary {
+    @include button-variant-inverse($btn-quaternary-color, $btn-quaternary-bg, $btn-quaternary-border, 0%, 100%);
+}
+
+.inverse .btn-quaternary,
+.btn-quaternary.inverse {
+    @include button-variant($btn-quaternary-inverse-color, $btn-quaternary-inverse-bg, $btn-quaternary-inverse-border);
+}

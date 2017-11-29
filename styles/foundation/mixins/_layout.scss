@@ -1,0 +1,38 @@
+// Center-align a block level element
+
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Sizing shortcuts
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+// Resize anything
+
+@mixin resizable($direction) {
+  resize: $direction; // Options: horizontal, vertical, both
+  overflow: auto; // Per CSS3 UI, `resize` only applies when `overflow` isn't `visible`
+}
+
+@mixin box-sizing($type){
+	box-sizing: $type;
+	-ms-box-sizing: $type;
+	-moz-box-sizing: $type;
+	-webkit-box-sizing: $type;
+}
+
+@mixin columns{
+	@include box-sizing(border-box);
+	margin:dp(60) dp(54);
+	width:100%;
+}

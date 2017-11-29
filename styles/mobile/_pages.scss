@@ -1,0 +1,139 @@
+.page {
+	min-width: sp(260);
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: stretch;
+}
+
+.page .titlebar {
+	flex: 0 0 auto;
+}
+
+.page .page-layout {
+	flex: 1 1 auto;
+}
+
+.page-scroll > .view > .view-scroll {
+	height: 100%;	
+	position: relative;
+}
+
+.page-scroll > .view {
+	height: 100vh;
+	width: 100vw;
+    position: relative;
+	top: 0;
+}
+
+.page > svg {
+	max-height: 0;
+}
+
+.page-container {
+	padding-right: 0;
+	margin-right: 0;
+}
+
+.page-content {
+	padding-right: 0;
+	position: relative;
+	height: auto;
+	padding-bottom: stovp(10*$page-padding-bottom);
+	z-index: 0;
+}
+
+.viewport-sm .page-content,
+.viewport-xs .page-content {
+	padding-bottom: stovp(10*$page-padding-bottom);
+}
+
+.viewport-ss .page-content {
+	padding-bottom: stovp(10*$page-padding-bottom);
+}
+
+.page-transition-leave .ps-container > .ps-scrollbar-x-rail,
+.page-transition-enter .ps-container > .ps-scrollbar-x-rail,
+.reverse-page-transition-leave .ps-container > .ps-scrollbar-x-rail,
+.reverse-page-transition-enter .ps-container > .ps-scrollbar-x-rail,
+.page-transition-leave .ps-container > .ps-scrollbar-y-rail,
+.page-transition-enter .ps-container > .ps-scrollbar-y-rail,
+.reverse-page-transition-leave .ps-container > .ps-scrollbar-y-rail,
+.reverse-page-transition-enter .ps-container > .ps-scrollbar-y-rail {
+	display: none;
+}
+
+
+.page-transition-leave.page-scroll .scrollbar-track,
+.page-transition-enter.page-scroll .scrollbar-track,
+.reverse-page-transition-leave.page-scroll .scrollbar-track,
+.reverse-page-transition-enter.page-scroll .scrollbar-track{
+	display: none;
+}
+
+.page-transition-leave,
+.page-transition-enter,
+.reverse-page-transition-leave,
+.reverse-page-transition-enter {
+	.scrollbar,
+	[data-scrollbar] {
+		.scrollbar-track {
+			display: none !important;
+		}
+	}
+}
+
+.page-transition-leave {
+	@include translate3d(0, 0, 0);
+}
+
+.page-transition-leave.page-transition-leave-active {
+	@include translate3d(-100%, 0, 0);
+	@include transition(transform 200ms cubic-bezier(0.42,0,0.58,1));
+	background-color: $body-bg;
+	z-index: 1;
+}
+
+.page-transition-enter {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	@include translate3d(100%, 0, 0);
+}
+
+.page-transition-enter.page-transition-enter-active {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	@include translate3d(0, 0, 0);
+	@include transition(transform 200ms cubic-bezier(0.42,0,0.58,1));
+	z-index: 2;
+	background-color: $body-bg;
+}
+
+.reverse-page-transition-leave {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	@include translate3d(0, 0, 0);
+}
+
+.reverse-page-transition-leave.reverse-page-transition-leave-active {
+	@include translate3d(100%, 0, 0);
+	@include transition(transform 200ms cubic-bezier(0.42,0,0.58,1));
+	background-color: $body-bg;
+	z-index: 2;
+}
+
+.reverse-page-transition-enter {
+	@include translate3d(-100%, 0, 0);
+}
+
+.reverse-page-transition-enter.reverse-page-transition-enter-active {
+	@include translate3d(0, 0, 0);
+	@include transition(transform 200ms cubic-bezier(0.42,0,0.58,1));
+	background-color: $body-bg;
+	z-index: 1;
+}

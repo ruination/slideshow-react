@@ -1,0 +1,63 @@
+.form-group .form-control:not(textarea) {
+	padding-left: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+.form-group textarea.form-control {
+	padding: $grid-gutter-width/5;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	background: darken($brand-quaternary, 10%);
+}
+	
+input *,
+select *,
+input.form-control *,
+select.form-control * {
+	background: darken($brand-quaternary, 10%);
+}
+
+.has-error .form-control,
+.form-control {
+ 	&:focus {
+    	@include box-shadow(none);
+    	color: $input-color-focus;
+  	}
+}
+
+.form-group {
+	position: relative;
+	margin-top: $form-group-margin-bottom;
+}
+
+form fieldset {
+	margin-bottom: 2*$form-group-margin-bottom;
+}
+
+form fieldset:last-child {
+	margin-bottom: 0;
+}

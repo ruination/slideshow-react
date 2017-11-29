@@ -1,0 +1,47 @@
+body {
+	font-weight: 300;
+}
+
+body, button {
+	cursor: default;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	outline: none;
+}
+
+input {
+	user-select: contain;
+	-moz-user-select: contain;
+	-webkit-user-select: contain;
+	-ms-user-select: contain;
+}
+
+.form-control {
+
+}
+
+::-moz-selection {
+  background-color: transparent;
+}
+
+::selection {
+  background-color: transparent;
+} 
+
+input::-moz-selection {
+  background-color: rgba($brand-primary, 0.5);
+}
+
+input::selection {
+  background-color: rgba($brand-primary, 0.5);
+} 
+
+.form-header {
+	text-align: center;
+}
+
+[role="button"] {
+  cursor: default;
+}

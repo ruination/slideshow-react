@@ -1,0 +1,33 @@
+@media (min-width: $screen-md-min) {
+	.nav-settings {
+		margin-top: $grid-gutter-width*2;
+	}
+}
+
+.nav-settings > .btn {
+	text-align: left;
+
+	+ .btn {
+		margin-top: $grid-gutter-width*0.7;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: rgba(darken($brand-quaternary, 20%), 1);
+	}
+
+	&.active {
+		background-color: rgba(darken($brand-quaternary, 20%), 1);
+		color: $brand-secondary;
+	}
+
+	.link-content {
+		display: block;
+		margin: auto;
+		width: 8em;
+	}
+
+	.icon {
+		margin-right: $grid-gutter-width/4;
+	}
+}

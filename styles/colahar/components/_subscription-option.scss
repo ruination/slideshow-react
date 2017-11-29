@@ -1,0 +1,10 @@
+input[type="radio"].subscription-radio:checked + .subscription-option .btn-select,
+.subscription-option:hover .btn-select,
+.subscription-option.selected .btn-select {
+	color: $brand-primary;
+}
+
+.registration_promo {
+	margin-left: 0;
+	padding-left: 0;
+}

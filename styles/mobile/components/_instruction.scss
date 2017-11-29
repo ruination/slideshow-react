@@ -1,0 +1,99 @@
+.instruction {
+
+}
+
+.instruction p {
+	font-size: $font-size-h5;
+}
+
+.instruction p:last-child {
+	margin-bottom: 0;
+}
+
+.instruction h1,
+.instruction h2,
+.instruction h3,
+.instruction h4,
+.instruction h5,
+{
+	line-height: $line-height-base;
+}
+
+@media (max-width: $screen-xs-max) {
+	.instruction-inline {
+		margin-top: 10%;
+	}
+}
+
+.instruction-inline {
+	text-align: center;
+}
+
+.instruction-inline > .step {
+	margin-right: $instruction-separation-width;
+	float: left;
+	width: (100% - $instruction-separation-width * 2) / 3;
+	text-align: center;
+	background-color: darken($brand-primary, 25%);
+	padding: $grid-gutter-width;
+	min-height: sp(500);
+	margin-top: 10%;
+	position: relative;
+	padding-top: 5%;
+
+	@media (max-width: $screen-sm-max) {
+		width: (100% - $instruction-separation-width * 2) / 2;
+	}
+
+	@media (max-width: $screen-xs-max) {
+		margin: auto;
+		float: none;
+		width: (100% - $instruction-separation-width * 2);
+		margin-bottom: 20%;
+	}
+}
+
+.instruction-inline > .step > .number {
+	position: absolute;
+	top: -$instruction-number-width;
+	left: 50% - ($instruction-number-width+2);
+	width: 2*($instruction-number-width+2);
+	height: 2*$instruction-number-width;
+	background-color: darken($brand-primary, 15%);
+	font-size: $font-size-h1;
+	line-height: ($instruction-number-width / 4.7%)*$headings-line-height * $font-size-h1;
+}
+
+.instruction-inline > .step img {
+	width: auto;
+	max-width: 100%;
+	margin-top: $grid-gutter-width/2;
+	margin-bottom: $grid-gutter-width/2;
+}
+
+.instruction-inline > .step:last-child {
+	margin-right: 0;
+
+	@media (max-width: $screen-sm-max) {
+		margin-bottom: 0%;
+		margin-right: auto;
+	}
+}
+
+.page.about_playstation .instruction-inline > .step,
+.page.about_xbox .instruction-inline > .step {
+	min-height: sp(420);
+
+	@media (max-width: $screen-md-max) {
+		min-height: sp(370);
+	}
+
+	@media (max-width: $screen-sm-max) {
+		min-height: sp(380);
+	}
+
+	@media (max-width: $screen-xs-max) {
+		min-height: sp(320);
+	}	
+}
+

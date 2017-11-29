@@ -1,0 +1,83 @@
+.studio-details {
+	position: relative;
+}
+
+.studio-details .studio-img {
+	background-position: center;
+}
+
+.studio-details .studio-overlay {
+	height: auto;
+    top: auto;
+    @include opacity(1);
+}
+
+.studio-details .statmenu {
+	position: relative;
+}
+
+.studio-details .details-menu {
+	background-color: darken(rgba($brand-quaternary, 0.7), 10%);
+	position: relative;
+}
+
+
+@mixin studio-details-size($parent, $size, $size-factor, $orientation: '')
+{
+	#{$orientation}.viewport-#{$size} #{$parent} {
+		margin-bottom: $size-factor*stovp(3*$grid-gutter-width);
+	}
+}
+
+
+@mixin studio-details-mobile-size($parent, $size, $size-factor)
+{
+	.viewport-portrait.viewport-#{$size} #{$parent} {
+	}
+}
+
+
+@mixin studio-details-tablet-size($parent, $size, $size-factor)
+{
+	@include studio-details-size($parent, $size, $studio-details-landscape-factor*$size-factor, '.viewport-landscape');
+
+	.viewport-landscape.viewport-#{$size} #{$parent} {
+		
+	}
+}
+
+
+// [SIZE: Large]
+// Studio (Details)
+// --------------------------------------------------
+@include studio-details-size('.studio-details', 'lg', $studio-details-lg-size-factor);
+
+
+// [SIZE: Medium]
+// Studio (Details)
+// --------------------------------------------------
+@include studio-details-size('.studio-details', 'md', $studio-details-md-size-factor);
+
+
+// [SIZE: Small]
+// Studio (Details)
+// --------------------------------------------------
+@include studio-details-size('.studio-details', 'sm', $studio-details-sm-size-factor);
+@include studio-details-tablet-size('.studio-details', 'sm', $studio-details-sm-size-factor);
+@include studio-details-mobile-size('.studio-details', 'sm', $studio-details-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// Studio (Details)
+// --------------------------------------------------
+@include studio-details-size('.studio-details', 'xs', $studio-details-xs-size-factor);
+@include studio-details-tablet-size('.studio-details', 'xs', $studio-details-xs-size-factor);
+@include studio-details-mobile-size('.studio-details', 'xs', $studio-details-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// Studio (Details)
+// --------------------------------------------------
+@include studio-details-size('.studio-details', 'ss', $studio-details-ss-size-factor);
+@include studio-details-tablet-size('.studio-details', 'ss', $studio-details-ss-size-factor);
+@include studio-details-mobile-size('.studio-details', 'ss', $studio-details-ss-size-factor);

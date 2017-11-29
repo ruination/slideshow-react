@@ -1,0 +1,332 @@
+//
+// NavChannel
+// --------------------------------------------------
+.nav-channel {
+}
+
+.nav-channel .btn {
+	padding: stovp($nav-channel-padding-vertical) stovp($nav-channel-padding-horizontal);
+	min-width: auto;
+}
+
+.nav-channel .channel-img {
+	height: stovp($nav-channel-height);
+	width: auto;
+	float: none;
+}
+
+
+
+
+//
+// NavChannel -> NavButton
+// --------------------------------------------------
+.nav-channel-button > * {
+	float: left;
+}
+
+.nav-channel-button > * + * {
+	margin-left: stovp($grid-gutter-width/2);
+}
+
+.nav-channel-button > .icon {
+	font-size: stovp($font-size-jumbo*1.2);
+}
+
+.nav-channel-button:hover,
+.nav-channel-button:focus,
+.nav-channel-button {
+	color: $brand-tertiary;
+	background-color: transparent;
+}
+
+.nav-channel-button .channel .channel-img {
+	@include transition-duration(100ms);
+}
+
+.nav-channel.window-open .nav-channel-button:focus,
+.nav-channel.window-open .nav-channel-button {
+	background-color: $brand-tertiary;
+	color: $black;
+}
+
+
+
+//
+// NavChannel -> Rollout
+// --------------------------------------------------
+.nav-channel-rollout {
+	position: fixed;
+    background-color: $navbar-inverse-bg;
+    top: stovp($navbar-height );
+    bottom: 0;
+    right: stovp(-$nav-channel-width);    
+    width: stovp($nav-channel-width);
+	@include transition(right 500ms cubic-bezier(0.365, 0.45, 0.23, 0.95) 250ms);
+    z-index: 1;
+}
+
+.layout-titlebar .nav-channel-rollout {
+    margin-top: $titlebar-height;
+}
+
+.navbar-active .nav-channel-rollout {
+    background-color: $navbar-inverse-active-bg;
+}
+
+.nav-channel-rollout .view-content {
+	min-height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.nav-channel.nav-channel.window-open .nav-channel-rollout {
+    right: 0;    
+}
+
+.nav-channel-push {
+	flex: 1;
+}
+
+.nav-channel.window-exited .nav-channel-rollout {
+	@include opacity(0);
+}
+
+.nav-channel-coming-soon {
+	width: 80%;
+	padding: stovp($grid-gutter-width/2) 0 stovp($page-padding-bottom) 0;
+	margin: auto;
+	margin-top: $grid-gutter-width*5;
+	border-top: sp(1) solid rgba($brand-tertiary, 0.35);
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 300;
+	color: rgba($brand-tertiary, 0.6);
+	line-height: $line-height-base;
+}
+
+
+
+//
+// NavChannel -> Rollout -> Channel
+// --------------------------------------------------
+.nav-channel-rollout .channel {
+	width: 100%;
+    padding: stovp($grid-gutter-width) stovp($page-padding-right) stovp($grid-gutter-width) stovp($grid-gutter-width);
+    min-height: stovp($grid-gutter-width*6.5);
+    border-bottom: sp(1) solid rgba($brand-tertiary, 0.4);
+    font-size: stovp($font-size-large);
+    display: flex;
+}
+
+.nav-channel-rollout .channel.channel-selected:after {
+	border-left: sp(4) solid $brand-primary;
+	height: 100%;
+	content: '';
+	left: 0;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+}
+
+.nav-channel-rollout .channel .channel-border {
+	align-self: center;
+}
+
+.nav-channel-rollout .channel .channel-content {
+	padding-left: stovp($page-padding-right - $grid-gutter-width);
+}
+
+.nav-channel .nav-channel-rollout .channel .channel-img {
+	height: auto;
+	width: 100%;
+	@include transition-duration(500ms);
+}
+
+.nav-channel-rollout .channel.channel-unsubscribed .channel-img {
+	fill: $white;
+	color: $white;
+	--band1-color: $white;
+	--band2-color: $white;
+	--band3-color: $white;
+	--band4-color: $white;
+	--band5-color: $white;
+	--band6-color: $white;
+	--band7-color: $white;
+	--girl-color: #000;	
+	@include opacity(0.6);
+	@include transition(opacity 500ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.nav-channel-rollout .channel.channel-unsubscribed:hover .channel-img {
+	@include opacity(1);
+}
+
+.nav-channel-rollout .channel:before {
+	@include gradient-vertical-seven-colors(
+		rgba(desaturate($brand-secondary, 40%), 0.025),
+		0%,
+		rgba(darken($brand-quaternary, 10%), 0.05),
+		25%,
+		rgba($brand-secondary, 0.15),
+		50%,
+		rgba(darken($brand-quaternary, 10%), 0.05),
+		75%,
+		rgba(desaturate($brand-secondary, 40%), 0.025),
+		100%
+	);	
+	content: '';	
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	@include opacity(0);
+	@include transition(opacity 500ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.nav-channel-rollout .channel.channel-unsubscribed:before {
+	@include gradient-vertical-seven-colors(
+		rgba(desaturate($brand-secondary, 100%), 0.025),
+		0%,
+		rgba(darken($brand-quaternary, 10%), 0.05),
+		25%,
+		rgba(desaturate($brand-secondary, 100%), 0.15),
+		50%,
+		rgba(darken($brand-quaternary, 10%), 0.05),
+		75%,
+		rgba(desaturate($brand-secondary, 100%), 0.025),
+		100%
+	);	
+}
+
+.nav-channel-rollout .channel:hover:before {
+	@include opacity(1);
+}
+
+
+
+//
+// NavChannel -> Rollout -> Channel -> Actions
+// --------------------------------------------------
+.nav-channel-actions {
+	position: absolute;
+	top: stovp($grid-gutter-width/2);
+	left: stovp($grid-gutter-width);
+	line-height: $line-height-base;
+}
+
+.nav-channel-actions .icon-glasses {
+	font-size: 120%;
+	@include scale(1.20);
+	line-height: 0.80;
+}
+
+.nav-channel-actions > * + * {
+	margin-left: 0.5em;
+}
+
+
+
+
+
+
+
+@mixin nav-channel-size($parent, $viewport, $size-factor)
+{
+	#{$parent}-#{$viewport} {
+		.nav-channel {
+		}
+
+		.nav-channel .btn {
+			padding: $size-factor*stovp($nav-channel-padding-vertical) $size-factor*stovp($nav-channel-padding-horizontal);
+		}
+
+		.nav-channel .channel-img {
+			height: $size-factor*stovp($nav-channel-height);
+		}
+
+		.nav-channel-button > * + * {
+			margin-left: $size-factor*stovp($grid-gutter-width/2);
+		}
+
+		.nav-channel-button > .icon {
+			font-size: $size-factor*stovp($font-size-jumbo*1.2);
+		}
+
+		.nav-channel-rollout {
+		    top: $size-factor*stovp($navbar-height );
+		    right: $size-factor*stovp(-$nav-channel-width);    
+		    width: $size-factor*stovp($nav-channel-width);
+		}
+
+		.nav-menu-rollout .nav-channel-rollout {
+		    top: $size-factor*stovp(2*$navbar-height );
+			width: 100%;
+			right: -100%;
+		}
+
+		.nav-channel-coming-soon {
+			padding: $size-factor*stovp($grid-gutter-width/2) 0 $size-factor*stovp($page-padding-bottom) 0;
+		}
+
+		.nav-channel-rollout .channel {
+		    padding: $size-factor*stovp($grid-gutter-width) stovp($page-padding-right) $size-factor*stovp($grid-gutter-width) stovp($grid-gutter-width);
+		    min-height: $size-factor*stovp($grid-gutter-width*6.5);
+		    font-size: $size-factor*stovp($font-size-large);
+		}
+
+		.nav-menu-mobile .nav-channel-rollout .channel {		
+		    padding: $size-factor*stovp($grid-gutter-width) $size-factor*stovp($page-padding-right) $size-factor*stovp($grid-gutter-width) $size-factor*stovp($page-padding-right);
+		}
+		
+		.nav-channel-rollout .channel .channel-content {
+			padding-left: stovp($page-padding-right - $grid-gutter-width);
+		}
+
+		.nav-channel-rollout .channel.colahar {
+		    padding: $size-factor*stovp($grid-gutter-width) stovp($page-padding-right - $grid-gutter-width/2) $size-factor*stovp($grid-gutter-width) stovp($grid-gutter-width*0);
+		}
+
+		.nav-channel-rollout .channel.colahar .channel-content {
+			padding-left: stovp($page-padding-right - $grid-gutter-width/2);
+		}
+
+		.nav-channel-actions {
+			top: $size-factor*stovp($grid-gutter-width/2);
+			left: $size-factor*stovp($grid-gutter-width);
+		}
+	}
+}
+
+
+
+// [SIZE: Large]
+// NavChannel
+// --------------------------------------------------
+@include nav-channel-size('.viewport', 'lg', $navbar-lg-size-factor);
+
+
+// [SIZE: Medium]
+// NavChannel
+// --------------------------------------------------
+@include nav-channel-size('.viewport', 'md', $navbar-md-size-factor);
+
+
+// [SIZE: Small]
+// NavChannel
+// --------------------------------------------------
+@include nav-channel-size('.viewport', 'sm', $navbar-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// NavChannel
+// --------------------------------------------------
+@include nav-channel-size('.viewport', 'xs', $navbar-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// NavChannel
+// --------------------------------------------------
+@include nav-channel-size('.viewport', 'ss', $navbar-ss-size-factor);
+

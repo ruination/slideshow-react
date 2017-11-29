@@ -1,0 +1,48 @@
+.brand {
+	height: stovp($navbar-height);
+	position: relative;
+	display: block;
+	z-index: 1;
+}
+
+.logo {
+	@include transition(fill, stroke, color);
+	@include transition-duration(1500ms);
+	@include transition-timing-function(cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+
+.colahar-logo {
+	fill: #FFFFFF;
+	color: #EC1C24;
+	--girl-color: #FFFFFF;
+}
+
+.colahar-logo4 {
+	fill: #FFFFFF;
+	color: #EC1C24;
+	--girl-color: #FFFFFF;
+	filter: url(#shadow);
+}
+
+.colahar-logo2 {
+	fill: darken($brand-quaternary, 0%);
+	color: darken($brand-primary, 0%);
+}
+
+.colahar-logo3 {
+	fill: darken($brand-tertiary, 0%);
+	color: transparent;
+}
+
+.logo-white {
+	@include logo-white();
+}
+
+.logo-black {
+	@include logo-black();
+}
+
+.logo-grayscale {
+	@include logo-grayscale();
+}

@@ -1,0 +1,489 @@
+.video-img {
+	width: 100%;
+}
+
+.video {
+	width: 100%;
+	color: $brand-tertiary;
+}
+
+.video:hover * {
+	cursor: default;
+}
+
+
+.video .video-image:after {
+	/*background-color: rgba($brand-quaternary, 0.5);*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: '';
+	z-index: 0;
+	/*display: none;*/
+/*	@include gradient-vertical-five-colors(
+       rgba($brand-quaternary, 0.0), 65%,
+       rgba($brand-quaternary, 0.85), 90%, 
+       rgba($brand-quaternary, 0.95), 
+       rgba($brand-quaternary, 1.00), 98% 
+   	);*/
+	pointer-events: none;
+}
+
+//
+// Video -> Overlay
+// --------------------------------------------------
+.video-hud-overlay,
+.video-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	/*@include gradient-vertical-six-colors(
+		rgba($black, 0.25), 
+		0%,
+		rgba($black, 0.35),
+		5%,
+		rgba($black, 0.35),
+		70%,
+		rgba($black, 0.25),
+		100%
+	);	*/
+	background-color: rgba($brand-quaternary, 0.4);
+
+	@include transition(opacity 320ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+	@include opacity(0);
+	@include translate3d(0, 0, 0);
+	z-index: 0;	
+	text-shadow: vp(1) vp(1) vp(2) rgba(#000, 0.7);
+}
+
+.video-hud-overlay {
+	background-color: transparent;
+}
+
+.video-simple .video-image,
+.video-hud .video-image {
+	position: relative;
+}
+
+.video.video-simple .video-hud-overlay,
+.video:hover .video-hud-overlay,
+.video:hover .video-overlay {
+	@include opacity(1);
+}
+
+.grid.grid-focusable .grid-item-content .video-overlay,
+.slideshow.slideshow-focusable .slideshow-content .video-overlay {
+	@include transition(opacity 620ms cubic-bezier(0.50, 0.0, 0.10, 1.0));
+    @include opacity(0);
+}
+
+.grid.grid-focusable .grid-item-content .video:hover .video-overlay,
+.slideshow.slideshow-focusable .slideshow-content .video:hover .video-overlay {
+    @include opacity(0);
+}
+
+.grid.grid-focusable .grid-item-content .grid-item-focusing .video:hover,
+.slideshow.slideshow-focusable .slideshow-content .slide-focusing .video:hover,
+.grid.grid-focusable .grid-item-content .grid-item-focused .video:hover,
+.slideshow.slideshow-focusable .slideshow-content .slide-focused .video:hover,
+.grid.grid-focusable .grid-item-content .grid-item-focusing .video,
+.slideshow.slideshow-focusable .slideshow-content .slide-focusing .video,
+.grid.grid-focusable .grid-item-content .grid-item-focused .video,
+.slideshow.slideshow-focusable .slideshow-content .slide-focused .video {
+	@include box-shadow($video-shadow-focus);
+}
+
+.grid.grid-focusable .grid-item-content .grid-item-focused .video .video-overlay,
+.slideshow.slideshow-focusable .slideshow-content .slide-focused .video .video-overlay {
+    @include opacity(1);
+}
+
+.video-overlay.video-overlay-empty {
+	background-color: rgba($black, 0);
+	background-image: none;
+}
+
+//
+// Video -> Overlay -> Title
+// --------------------------------------------------
+.video-overlay-title {
+	white-space: nowrap;
+	text-align: center;
+	padding: stovp($grid-gutter-width/2);
+}
+
+.video-overlay-title > h3 {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin: auto;
+	line-height: $line-height-jumbo;
+	font-size: stovp($font-size-xlarge);
+}
+
+.video-portrait .video-overlay-title {
+	white-space: normal;
+}
+
+.video-portrait .video-overlay-title > h3 {
+	white-space: normal;
+	line-height: 1.1;
+}
+
+
+//
+// Video -> Overlay -> Play
+// --------------------------------------------------
+.video-overlay-play {
+	text-align: center;
+	font-size: stovp($font-size-h1);
+	line-height: 1;
+}
+
+.video-overlay-play > * {
+	@include scale(1);
+	@include transition(all 300ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.video-overlay-play > *:hover {
+	@include scale(1.3);
+}
+
+.video-hud .video-overlay-play .icon-play,
+.video-simple .video-overlay-play .icon-play {
+	width: 1.5em;
+	height: 1.5em;
+    border-radius: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+	&:before {
+		width: 0.5em;
+		height: 1em;
+		line-height: 1em;
+	}
+}
+
+
+//
+// Video -> Overlay -> Rating
+// --------------------------------------------------
+.video-overlay-rating {
+	padding: 0 stovp($grid-gutter-width/2);
+	text-align: left;
+}
+
+.video-overlay-rating .rating .icon {
+	font-size: stovp($font-size-base);
+}
+
+
+//
+// Video -> Overlay -> Description
+// --------------------------------------------------
+.video-overlay-description {
+	padding: 0 stovp($grid-gutter-width/2);
+	text-align: left;
+}
+
+.video-overlay-description > p {
+	font-weight: 300;
+	font-size: stovp($font-size-small);
+}
+
+
+//
+// Video -> Overlay -> Metadata
+// --------------------------------------------------
+.video-overlay-always,
+.video-overlay-metadata {
+	font-size: stovp($font-size-small);
+	padding: stovp($grid-gutter-width/2);
+	position: absolute;
+	@include translate3d(0, 0, 0);
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+}
+
+.video-overlay-always {
+	z-index: 1;
+}
+
+.video-overlay-always .video-button-favorite,
+.video-overlay-metadata .video-button-favorite {
+	float: left;
+}
+
+.video-overlay-always,
+.video-overlay-metadata .video-details-meta {
+	float: right;
+	text-align: right;
+}
+
+
+//
+// Video -> Overlay -> Favorite
+// --------------------------------------------------
+.video-overlay-always .video-button-favorite,
+.video-overlay .video-button-favorite {
+}
+
+.video .video-overlay-always .favorite-remove {
+	@include transition(color 200ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.video-portrait .video-overlay-always .favorite-add > span,
+.video-portrait .video-overlay-always .favorite-remove > span {
+	display: none;
+}
+
+.video:not(:hover) .video-overlay-always .favorite-remove {
+	color: transparent;
+}
+
+.grid.grid-focusable .grid-item-content .video-overlay-always .favorite-remove,
+.slideshow.slideshow-focusable .slideshow-content .video-overlay-always .favorite-remove {
+	color: transparent;
+}
+
+.grid.grid-focusable .grid-item-content .grid-item-focused .video-overlay-always .favorite-remove,
+.slideshow.slideshow-focusable .slideshow-content .slide-focused .video-overlay-always .favorite-remove {
+	color: $white;
+}
+
+.video-overlay-always .favorite-add {
+@include opacity(0);
+	@include transition(opacity 320ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.video.video-simple .video-overlay-always .favorite-add,
+.video:hover .video-overlay-always .favorite-add {
+    @include opacity(1);
+}
+
+.grid.grid-focusable .grid-item-content .video .video-overlay-always .favorite-add,
+.slideshow.slideshow-focusable .slideshow-content .video .video-overlay-always .favorite-add {
+	@include transition(opacity 320ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.grid.grid-focusable .grid-item-content .video:hover .video-overlay-always .favorite-add,
+.slideshow.slideshow-focusable .slideshow-content .video:hover .video-overlay-always .favorite-add {
+    @include opacity(0);
+}
+
+.grid.grid-focusable .grid-item-content .grid-item-focused .video .video-overlay-always .favorite-add,
+.slideshow.slideshow-focusable .slideshow-content .slide-focused .video .video-overlay-always .favorite-add {
+    @include opacity(1);
+}
+
+
+
+
+//
+// Video -> Status
+// --------------------------------------------------
+.video-overlay-status {
+	@include translate3d(0, 0, 0);
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	pointer-events: none;
+}
+
+.video-overlay-status > * {
+	pointer-events: auto;
+}
+
+.video-overlay-status .slider {
+	border-radius: 0;
+	background-color: $player-timeline-background;
+	height: stovp($player-timeline-height/2);
+}
+
+.video-overlay-status .slider .elapsed {
+	border-radius: 0;
+	background-color: $brand-primary;
+}
+
+
+
+@mixin video-size($parent, $slide-width, $size, $size-factor, $orientation: '')
+{
+    #{$parent}-#{$size},
+	.width-#{$slide-width} #{$orientation}#{$parent} {
+		.video-overlay-play {
+			font-size: $size-factor*stovp($font-size-h1);
+		}
+
+		.video-overlay-rating {
+			padding: 0 $size-factor*stovp($grid-gutter-width/2);
+		}
+
+		.video-overlay-rating .rating .icon {
+			font-size: $size-factor*stovp($font-size-base);
+		}
+
+		.video-overlay-description {
+			padding: 0 $size-factor*stovp($grid-gutter-width/2);
+		}
+
+		.video-overlay-description > p {
+			font-size: $size-factor*stovp($font-size-small);
+		}
+		
+		.video-overlay-always,
+		.video-overlay-metadata {
+			font-size: $size-factor*stovp($font-size-small);
+			padding: $size-factor*stovp($grid-gutter-width/2);
+		}
+
+		.video-overlay-title {
+			padding: $size-factor*stovp($grid-gutter-width/2);
+		}
+
+		.video-overlay-title > h3 {
+			font-size: $size-factor*stovp($font-size-xlarge);
+		}
+	}
+
+	.width-#{$slide-width} .video-hud#{$orientation}#{$parent} {
+		.video-overlay-title > h3 {
+			font-size: $size-factor*stovp($font-size-large);
+		}
+
+		.video-overlay-title {
+			padding-bottom: $size-factor*stovp($grid-gutter-width/4);
+		}
+
+		.video-overlay-always {
+			font-size: $size-factor*stovp(1*$font-size-large);
+			padding:  0 $size-factor*stovp($grid-gutter-width/2) $size-factor*stovp($grid-gutter-width/2) $size-factor*stovp($grid-gutter-width/2);
+		}
+		
+		.video-hud-overlay {
+			.video-overlay-play {
+				font-size: $size-factor*stovp(2*$font-size-h1);
+				text-shadow: $size-factor*vp(2) $size-factor*vp(2) $size-factor*vp(4) rgba(#000, 0.3);
+
+				.icon-play {
+				    border: $size-factor*vp(10) solid rgba($brand-tertiary, 0.7);
+				}
+			}
+
+			.video-overlay-play:hover {
+				text-shadow: $size-factor*vp(4) $size-factor*vp(4) $size-factor*vp(6) rgba(#000, 0.5);
+			}
+		}
+	}
+
+	.width-#{$slide-width} .video-simple#{$orientation}#{$parent} {
+		.video-overlay-title > h3 {
+			font-size: $size-factor*stovp($font-size-large);
+		}
+
+		.video-overlay-title > h3 {
+			font-size: $size-factor*stovp($font-size-super);
+		}
+
+		.video-overlay-title {
+			padding-bottom: $size-factor*stovp($grid-gutter-width/4);
+		}
+
+		.video-overlay-always .favorite {
+			text-shadow: $size-factor*vp(3) $size-factor*vp(3) $size-factor*vp(5) rgba(#000, 0.5);
+		}
+
+		.video-overlay-always {
+			font-size: $size-factor*stovp(1*$font-size-jumbo);
+			padding:  0 $size-factor*stovp($grid-gutter-width/2) $size-factor*stovp($grid-gutter-width/2) $size-factor*stovp($grid-gutter-width/2);
+		}
+		
+		.video-hud-overlay {
+			.video-overlay-play {
+				font-size: $size-factor*stovp(3*$font-size-h1);
+				text-shadow: $size-factor*vp(4) $size-factor*vp(4) $size-factor*vp(6) rgba(#000, 0.2);
+
+				.icon-play {
+				    border: $size-factor*vp(10) solid rgba($brand-tertiary, 0.7);
+				}
+			}
+
+			.video-overlay-play:hover {
+				text-shadow: $size-factor*vp(7) $size-factor*vp(7) $size-factor*vp(9) rgba(#000, 0.0);
+			}
+		}
+	}
+}
+
+@mixin video-landscape-size($parent, $slide-width, $size, $size-factor, $orientation: '')
+{
+	@include video-size($parent, $slide-width, $size, $video-landscape-factor*$size-factor, '.video-landscape');
+}
+
+// [SIZE: Jumbo]
+// Video
+// --------------------------------------------------
+@include video-size('.video', 9, 'jm', $video-jm-size-factor);
+@include video-landscape-size('.video', 9, 'jm', $video-jm-size-factor);
+
+
+// [SIZE: Super]
+// Video
+// --------------------------------------------------
+@include video-size('.video', 8, 'su', $video-su-size-factor);
+@include video-landscape-size('.video', 8, 'su', $video-su-size-factor);
+
+
+// [SIZE: eXtra Large]
+// Video
+// --------------------------------------------------
+@include video-size('.video', 7, 'xl', $video-xl-size-factor);
+@include video-landscape-size('.video', 7, 'xl', $video-xl-size-factor);
+
+
+// [SIZE: Large]
+// Video
+// --------------------------------------------------
+@include video-size('.video', 6, 'lg', $video-lg-size-factor);
+@include video-landscape-size('.video', 6, 'lg', $video-lg-size-factor);
+
+
+// [SIZE: Medium]
+// Video
+// --------------------------------------------------
+@include video-size('.video', 5, 'md', $video-md-size-factor);
+@include video-landscape-size('.video', 5, 'md', $video-md-size-factor);
+
+
+// [SIZE: Small]
+// Video
+// --------------------------------------------------
+@include video-size('.video', 4, 'sm', $video-sm-size-factor);
+@include video-landscape-size('.video', 4, 'sm', $video-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// Video
+// --------------------------------------------------
+@include video-size('.video', 3, 'xs', $video-xs-size-factor);
+@include video-landscape-size('.video', 3, 'xs', $video-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// Video
+// --------------------------------------------------
+@include video-size('.video', 2, 'ss', $video-ss-size-factor);
+@include video-landscape-size('.video', 2, 'ss', $video-ss-size-factor);

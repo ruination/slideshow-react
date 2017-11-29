@@ -1,0 +1,83 @@
+
+.grid-item-focus-locked .studio .studio-overlay,
+.slide-focus-locked .studio .studio-overlay {
+	background: transparent;
+}
+
+.grid-item-focus-locked .studio .studio-overlay > *,
+.slide-focus-locked .studio .studio-overlay > * {
+	display: none;
+}
+
+.grid-item-focus-locked .studio .studio-content,
+.slide-focus-locked .studio .studio-content {
+	overflow: visible;
+}
+
+.grid-row-rolledout .grid-row-content .grid-item-focus-locked .studio .studio-overlay,
+.slideshow-rolledout .slideshow-content .slide-focus-locked .studio .studio-overlay {
+	@include box-shadow(none);
+	top: vp(-4);
+	left: vp(-4);
+	right: vp(-4);
+	bottom: vp(-4);
+	width: auto;
+	height: auto;
+	border: vp(4) solid rgba($brand-secondary, 0.0);
+	background: rgba($brand-quaternary, 0.5);
+	@include transition(border-color 700ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+	@include opacity(1);
+}
+
+.grid-row-rolledout .grid-row-content .grid-item-focus-locked .studio .studio-overlay,
+.slideshow-rolledout .slideshow-content .slide-focus-locked .studio .studio-overlay {
+	border-color: rgba($brand-secondary, 0.8);
+}
+
+
+@mixin studio-details-expanded-size($parent, $size, $size-factor, $orientation: '')
+{
+	#{$orientation}.viewport-#{$size} #{$parent} {
+		margin-bottom: $size-factor*stovp(3*$grid-gutter-width);
+	}
+}
+
+
+@mixin studio-details-expanded-mobile-size($parent, $size, $size-factor)
+{
+	.viewport-portrait.viewport-#{$size} #{$parent} {
+	}
+}
+
+
+// [SIZE: Large]
+// Studio Details (Expanded)
+// --------------------------------------------------
+@include studio-details-expanded-size('.studio-details-expanded', 'lg', 0.7*$studio-details-lg-size-factor);
+
+
+// [SIZE: Medium]
+// Studio Details (Expanded)
+// --------------------------------------------------
+@include studio-details-expanded-size('.studio-details-expanded', 'md', 0.7*$studio-details-md-size-factor);
+
+
+// [SIZE: Small]
+// Studio Details (Expanded)
+// --------------------------------------------------
+@include studio-details-expanded-size('.studio-details-expanded', 'sm', 0.7*$studio-details-sm-size-factor);
+@include studio-details-expanded-mobile-size('.studio-details-expanded', 'sm', 0.7*$studio-details-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// Studio Details (Expanded)
+// --------------------------------------------------
+@include studio-details-expanded-size('.studio-details-expanded', 'xs', 0.7*$studio-details-xs-size-factor);
+@include studio-details-expanded-mobile-size('.studio-details-expanded', 'xs', 0.7*$studio-details-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// Studio Details (Expanded)
+// --------------------------------------------------
+@include studio-details-expanded-size('.studio-details-expanded', 'ss', 0.7*$studio-details-ss-size-factor);
+@include studio-details-expanded-mobile-size('.studio-details-expanded', 'ss', 0.7*$studio-details-ss-size-factor);

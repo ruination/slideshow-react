@@ -1,0 +1,423 @@
+////////////////////////////////
+// Typography
+////////////////////////////////
+$font-size-base:					dp(16) !default;
+$font-size-large:					($font-size-base * 1.25 * 0.90) !default;
+$font-size-xsmall:					($font-size-base * 0.60 * 0.90) !default;
+$font-size-ssmall:					($font-size-base * 0.50 * 0.90) !default;
+$font-size-small:					($font-size-base * 0.85 * 0.90) !default;
+$font-size-xlarge:					($font-size-base * 1.5 * 0.90) !default;
+$font-size-super: 					($font-size-base * 1.8 * 0.90) !default;
+$font-size-jumbo: 					($font-size-base * 2.25 * 0.90) !default;
+
+$font-size-h1:						($font-size-base * 2.6 * 0.90) !default;
+$font-size-h2:						($font-size-base * 2.15 * 0.90) !default;
+$font-size-h3:						($font-size-base * 1.7 * 0.90) !default;
+$font-size-h4:						($font-size-base * 1.25 * 0.90) !default;
+$font-size-h5:						($font-size-base * 1.0 * 0.90) !default;
+$font-size-h6:						($font-size-base * 0.85 * 0.90) !default;
+
+$text-color:						#bfbfbf !default;
+
+$headings-color:					lighten($text-color, 15%) !default;
+
+
+//== Components ==//
+//
+//## Define common padding and border radius sizes and more. Values based on dp(14) text and 1.428 line-height (~dp(20) to start). ##//
+
+//** Unit-less `line-height` for use in components like buttons. **//
+$line-height-base:					1.428571429 !default;
+$line-height-large:					1.3333333 !default;
+$line-height-small:					1.5 !default;
+$line-height-xlarge:				1.25 !default;
+$line-height-super:					1.20 !default;
+$line-height-jumbo:					1.15 !default;
+
+$padding-xsmall-vertical:				dp(2) !default;
+$padding-xsmall-horizontal:				dp(5) !default;
+
+$padding-small-vertical:			dp(4) !default;
+$padding-small-horizontal:  		dp(8) !default;
+
+$padding-base-vertical:				dp(6) !default;
+$padding-base-horizontal:   		dp(10) !default;
+
+$padding-large-vertical:			dp(8) !default;
+$padding-large-horizontal:  		dp(16) !default;
+
+$padding-xlarge-vertical:			dp(12) !default;
+$padding-xlarge-horizontal:  		dp(30) !default;
+
+$padding-super-vertical:			dp(16) !default;
+$padding-super-horizontal:  		dp(40) !default;
+
+$padding-jumbo-vertical:			dp(20) !default;
+$padding-jumbo-horizontal:  		dp(46) !default;
+
+$border-radius-small:				spw(2) !default;
+$border-radius-base:				spw(3) !default;
+$border-radius-large:				spw(4) !default;
+$border-radius-xlarge:				spw(5) !default;
+$border-radius-super:				spw(6) !default;
+$border-radius-jumbo:				spw(8) !default;
+$border-radius-xsmall:				spw(2) !default;
+$border-radius-ssmall:				spw(1) !default;
+
+
+//== Forms ==//
+//
+//## ##//
+//** `<input>` background color **//
+$input-bg:						transparent !default;
+//** `<input disabled>` background color **//
+$input-bg-disabled:				transparent !default;
+
+//** Text color for `<input>`s **//
+$input-color:					$text-color !default;
+
+//** `<input>` border color **//
+$input-border:					darken($text-color, 20%) !default;
+
+$input-border-width: 			spw(2) !default;
+
+// TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
+//** Default `.form-control` border radius **//
+// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
+$input-border-radius:			0 !default;
+//** Large `.form-control` border radius **//
+$input-border-radius-large:		0 !default;
+//** XLarge `.form-control` border radius **//
+$input-border-radius-xlarge:	0 !default;
+//** Small `.form-control` border radius **//
+$input-border-radius-small:		0 !default;
+//** Super `.form-control` border radius **//
+$input-border-radius-super:		0 !default;
+//** Jumbo `.form-control` border radius **//
+$input-border-radius-jumbo:		0 !default;
+
+
+//** Border color for inputs on focus **//
+$input-border-focus:			$brand-primary !default;
+
+$input-color-focus:  			$brand-tertiary !default;
+
+$input-bg-focus:				transparent !default;
+
+//** Placeholder text color **//
+$input-color-placeholder:		$input-border !default;
+
+
+//** Default `.form-control` height **//
+$input-height-base:				($line-height-computed + ($padding-base-vertical * 0) + wtosp($input-border-width)) !default;
+//** Large `.form-control` height **//
+$input-height-large:			(($font-size-large * $line-height-large) + ($padding-large-vertical * 0) + wtosp($input-border-width)) !default;
+//** XLarge `.form-control` height **//
+$input-height-xlarge:			(($font-size-xlarge * $line-height-xlarge) + ($padding-xlarge-vertical * 0) + wtosp($input-border-width)) !default;
+//** Small `.form-control` height **//
+$input-height-small:			(($font-size-small * $line-height-small) + ($padding-small-vertical * 0) + wtosp($input-border-width)) !default;
+//** Super `.form-control` height **//
+$input-height-super:			(($font-size-super * $line-height-super) + ($padding-super-vertical * 0) + wtosp($input-border-width)) !default;
+//** Jumbo `.form-control` height **//
+$input-height-jumbo:			(($font-size-jumbo * $line-height-jumbo) + ($padding-jumbo-vertical * 0) + wtosp($input-border-width)) !default;
+
+//** `.form-group` margin **//
+$form-group-margin-bottom:		dp(20) !default;
+
+$legend-color:					$gray-dark !default;
+$legend-border-color:			#e5e5e5 !default;
+
+//** Background color for textual input addons **//
+$input-group-addon-bg:			$gray-lighter !default;
+//** Border color for textual input addons **//
+$input-group-addon-border-color: $input-border !default;
+
+//** Disabled cursor for form controls and buttons. **//
+$cursor-disabled:				not-allowed !default;
+
+
+
+
+//== Media queries breakpoints ==//
+//
+// Super small screen / phone
+$screen-ss:							320px !default;
+
+// Extra small screen / phone
+$screen-xs:							480px !default;
+
+// Small screen / tablet
+$screen-sm:							768px !default;
+
+// Medium screen / desktop
+$screen-md:							992px !default;
+
+// Large screen / wide desktop
+$screen-lg:							1540px !default;
+
+
+
+
+
+
+
+//== Form states and alerts ==//
+//
+//## Define colors for form feedback states and, by default, alerts. ##//
+
+$state-default-text:			darken($brand-default, 70%) !default;
+$state-default-bg:				$brand-default !default;
+$state-default-border:			darken(adjust-hue($state-default-bg, 0), 5%) !default;
+
+$state-success-text:			#3c763d !default;
+$state-success-bg:				#dff0d8 !default;
+$state-success-border:			darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+$state-info-text:				$brand-info !default;
+$state-info-bg:					#d9edf7 !default;
+$state-info-border:				darken(adjust-hue($state-info-bg, -10), 7%) !default;
+
+$state-warning-text:			#8a6d3b !default;
+$state-warning-bg:				#fcf8e3 !default;
+$state-warning-border:			darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+
+$state-danger-text:				#a94442 !default;
+$state-danger-bg:				#f2dede !default;
+$state-danger-border:			darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+
+$state-primary-text:			#fff !default;
+$state-primary-bg:				$brand-primary !default;
+$state-primary-border:			lighten(adjust-hue($state-primary-bg, -10), 30%) !default;
+
+$state-secondary-text:			#fff !default;
+$state-secondary-bg:			$brand-secondary !default;
+$state-secondary-border:		lighten(adjust-hue($state-secondary-bg, -10), 30%) !default;
+
+$state-tertiary-text:			#fff !default;
+$state-tertiary-bg:				$brand-tertiary !default;
+$state-tertiary-border:			lighten(adjust-hue($state-tertiary-bg, -10), 30%) !default;
+
+$state-quaternary-text:			$brand-tertiary !default;
+$state-quaternary-bg:			$brand-quaternary !default;
+$state-quaternary-border:		lighten(adjust-hue($state-quaternary-bg, -10), 30%) !default;
+
+
+
+
+////////////////////////////////
+// Navbar
+////////////////////////////////
+
+$navbar-link-padding-vertical:      sp(0);
+
+
+////////////////////////////////
+// Buttons
+////////////////////////////////
+$btn-border-width:				 	spw(2) !default;
+$btn-font-weight:					400 !default;
+
+
+//== Subscriptions
+//
+//##
+$subscription-option-padding:					sp(8) !default;
+$subscription-option-border-width:				sp(3) !default;
+$subscription-option-min-height:				sp(380) !default;
+$subscription-option-color:						$brand-tertiary !default;
+$subscription-option-shadow-color:				rgba($black, 0.2) !default;
+$subscription-option-shadow-spread:				spw(2) !default;
+$subscription-option-shadow-size:				spw(1) !default;
+$subscription-option-count:						5 !default;
+$subscription-option-separation:				0.8% !default;
+$subscription-option-width-computed:			(100% / $subscription-option-count - (($subscription-option-count - 1) / $subscription-option-count) * $subscription-option-separation) !default;
+$subscription-option-minus-width-computed:		(100% / ($subscription-option-count - 1) - (($subscription-option-count - 2) / ($subscription-option-count - 1)) * $subscription-option-separation) !default;
+$subscription-option-bg:						#535353 !default;
+$subscription-option-image-height-alternate:	42% !default;
+
+$subscription-option-hover-color:				$brand-secondary  !default;
+$subscription-option-hover-bg:					$subscription-option-bg  !default;
+$subscription-option-border-color:				$subscription-option-bg !default;
+
+$subscription-option-selected-color:			$subscription-option-bg !default;
+$subscription-option-selected-bg:				$brand-tertiary !default;
+$subscription-option-selected-border-width: 	$subscription-option-border-width !default;
+$subscription-option-selected-shadow-color:		rgba($black, 0.5) !default;
+$subscription-option-selected-image-scale: 		1.1 !default;
+
+$subscription-option-header-font-size:			($font-size-base * 2.8) !default;
+$subscription-option-header-font-weight:		400  !default;
+
+
+
+
+// Billing
+$billing-form-width:							100% !default;
+
+
+////////////////////////////////
+// QA - Question Answer
+////////////////////////////////
+$qa-separation:						($grid-gutter-width / 2) !default;
+$qa-padding-vertical:				$padding-large-vertical !default;
+$qa-padding-horizontal:				$padding-large-horizontal !default;
+$qa-bg:								lighten($brand-quaternary, 12%) !default;
+$qa-hover-bg:						darken($qa-bg, 5%) !default;
+
+$qa-question-color:					$headings-color !default;
+$qa-question-font-weight:			400 !default;
+$qa-question-bg:					transparent !default;
+$qa-question-icon-size:				0 !default; // $qa-padding-horizontal*1.5 !default;
+
+$qa-answer-bg:						$qa-question-bg !default;
+$qa-answer-color:					$text-color !default;
+$qa-answer-info-color:				lighten($qa-answer-color, 10%) !default;
+
+$qa-bullet-separation: 				2em !default;
+
+
+
+
+////////////////////////////////
+// Video
+////////////////////////////////
+$video-border-size:					spw(0) !default;
+$video-highlight-color:				transparent !default;
+$video-bg:							$brand-tertiary !default;
+$video-footer-color:				$white !default;
+$video-shadow:						none !default;
+$video-shadow-hover:				$video-shadow !default;
+
+
+////////////////////////////////
+// Studios
+////////////////////////////////
+
+// Studio
+$studio-highlight-color:				transparent !default;
+
+
+////////////////////////////////
+// Categorys
+////////////////////////////////
+
+// Category
+$category-highlight-color:				transparent !default;
+
+
+////////////////////////////////
+// Stars
+////////////////////////////////
+
+// Star
+$star-highlight-color:					transparent !default;
+
+
+
+
+
+////////////////////////////////
+// Video Player
+////////////////////////////////
+
+$player-hover-background: 					rgba($black, 0.0) !default;
+
+$player-base-font-size:						($font-size-super * 1.5) !default;
+
+$player-controls-color: 					$brand-tertiary !default;
+$player-controls-color-blur-opacity:		0.5 !default;
+$player-controls-color-blur:				rgba($player-controls-color, $player-controls-color-blur-opacity) !default;
+$player-controls-font-size:					$player-base-font-size !default;
+$player-controls-shadow:					sp(0) sp(0) ($player-base-font-size * 0.05) rgba($brand-tertiary, 0.4) !default;
+
+$player-title-font-size:					$player-base-font-size * 1.0 !default;
+$player-title-shadow:						sp(0) sp(0) ($player-base-font-size * 0.10) rgba($brand-tertiary, 0.4) !default;
+
+$player-button-action-size:					$player-base-font-size * 2 !default;
+$player-button-control-size:				$player-base-font-size * 1.2 !default;
+$player-button-play-color:					$brand-tertiary !default;
+$player-button-play-border-width:			$btn-border-width !default;
+$player-button-play-border-color:			$player-controls-color !default;
+
+$player-loading-font-size:					$player-base-font-size * 4 !default;
+
+$player-close-font-size:					$player-base-font-size * 1 !default;
+
+$player-timeline-height: 					$player-base-font-size * 0.20 !default;
+$player-timeline-foreground: 				rgba($brand-primary, 1) !default;
+$player-timeline-background: 				rgba($player-controls-color, 0.2) !default;
+
+$player-volume-width: 						$player-base-font-size * 0.15 !default;
+$player-volume-foreground: 					rgba($brand-secondary, 1) !default;
+$player-volume-background: 					$player-controls-color-blur !default;
+
+$player-tooltip-background:					rgba($player-controls-color-blur, 0.25) !default;
+$player-tooltip-font-size:					$player-controls-font-size !default;
+$player-tooltip-font-color:					$player-controls-color !default;
+$player-tooltip-arrow-size:					($player-controls-font-size * 0.70) !default;
+
+$player-padding-left:						($page-padding-left) !default;
+$player-padding-top:						($page-padding-top) !default;
+$player-padding-right:						($page-padding-right) !default;
+$player-padding-bottom:						($page-padding-bottom) !default;
+
+$player-animation-transition-time:			300ms !default;
+$player-animation-hover-transition-time:	300ms !default;
+
+
+
+
+//== Wells
+//
+//##
+
+$well-border-width:				$input-border-width;
+
+$well-border-radius-base:		3*$border-radius-base !default;
+$well-border-radius-large:		3*$border-radius-large !default;
+$well-border-radius-xlarge:		3*$border-radius-xlarge !default;
+$well-border-radius-super:		3*$border-radius-super !default;
+$well-border-radius-jumbo:		3*$border-radius-jumbo !default;
+$well-border-radius-small:		3*$border-radius-small !default;
+$well-border-radius-xsmall:		3*$border-radius-xsmall !default;
+$well-border-radius-ssmall:		3*$border-radius-ssmall !default;
+
+$well-bg:                   	#000000 !default;
+$well-border:               	darken($well-bg, 7%) !default;
+$well-border-width:				spw(1) !default;
+
+$well-default-bg:				transparent !default;
+$well-default-text:				$white !default;
+$well-default-border:			transparent !default;
+
+$well-success-bg:				$state-success-bg !default;
+$well-success-text:				$state-success-text !default;
+$well-success-border:			$state-success-border !default;
+
+$well-info-bg:					$state-info-bg !default;
+$well-info-text:				$state-info-text !default;
+$well-info-border:				$state-info-border !default;
+
+$well-warning-bg:				$state-warning-bg !default;
+$well-warning-text:				$state-warning-text !default;
+$well-warning-border:			$state-warning-border !default;
+
+$well-danger-bg:				$brand-quaternary;
+$well-danger-text:				$text-color;
+$well-danger-border:			$brand-danger;
+
+$well-primary-bg:				$state-primary-bg !default;
+$well-primary-text:				$state-primary-text !default;
+$well-primary-border:			$state-primary-border !default;
+
+$well-secondary-bg:				$state-secondary-bg !default;
+$well-secondary-text:			$state-secondary-text !default;
+$well-secondary-border:			$state-secondary-border !default;
+
+$well-tertiary-bg:				$brand-tertiary !default
+$well-tertiary-text:			$state-tertiary-text !default;
+$well-tertiary-border:			$state-tertiary-border !default;
+
+$well-quaternary-bg:			rgba($state-quaternary-bg, 0.5) !default;
+$well-quaternary-text:			$state-quaternary-text !default;
+$well-quaternary-border:		rgba($state-tertiary-border, 0.2) !default;

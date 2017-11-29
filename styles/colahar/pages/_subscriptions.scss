@@ -1,0 +1,7 @@
+.subscriptions button.apply {
+	margin-top: -$btn-border-width;
+
+	@media (max-width: $screen-xs-max) {
+		margin-top: $btn-border-width;		
+	}
+}

@@ -1,0 +1,30 @@
+.window {
+    @include transition-property(background-position);
+    @include transition-duration(500ms);
+    @include transition-timing-function(cubic-bezier(0.365, 0.45, 0.23, 0.95)); 
+	background-position: 0%;
+}
+
+.window-enter {
+	background-position: 1%;
+}
+
+.window-entering {
+    background-position: 2%;
+}
+
+.window-entered {
+    background-position: 3%;
+}
+
+.window-exit {
+    background-position: 97%;
+}
+
+.window-exiting {
+    background-position: 98%;
+}
+
+.window-exited {
+    background-position: 99%;
+}

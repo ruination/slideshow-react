@@ -1,0 +1,269 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+	overflow: hidden;
+	display: inline-block;
+	margin-bottom: 0; // For input.btn
+	font-weight: $btn-font-weight;
+	text-align: center;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	border: $btn-border-width solid transparent;
+	white-space: nowrap;
+	@include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $btn-border-radius-base);
+	@include user-select(none);
+
+	&,
+	&:active,
+	&.active {
+		&:focus,
+		&.focus {
+			@include tab-focus;
+		}
+	}
+
+	&:hover,
+	&:focus,
+	&.focus {
+		color: $btn-default-color;
+		text-decoration: none;
+	}
+
+	&:active,
+	&.active {
+		outline: 0;
+		background-image: none;
+		@include box-shadow(inset 0 dp(3) dp(5) rgba(0,0,0,.125));
+	}
+
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		cursor: $cursor-disabled;
+		@include opacity(.65);
+		@include box-shadow(none);
+	}
+
+	// [converter] extracted a& to a.btn
+}
+
+a.btn {
+	&.disabled,
+	fieldset[disabled] & {
+		pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+	}
+}
+
+// Fixed button with minimum size
+.btn-fixed {
+	/*min-width: $btn-fixed-width;*/
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+	@include button-variant($btn-default-color, $btn-default-bg, $btn-default-border, $linkColor: $btn-default-link);
+}
+.inverse .btn-default,
+.btn-default.inverse {
+	@include button-variant-inverse($btn-default-inverse-color, $btn-default-inverse-bg, $btn-default-inverse-border, 0%, 100%, $linkColor: $btn-default-inverse-link);
+}
+
+.btn-primary {
+	@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border, $linkColor: $btn-primary-link);
+}
+.inverse .btn-primary,
+.btn-primary.inverse {
+	@include button-variant-inverse($btn-primary-inverse-color, $btn-primary-inverse-bg, $btn-primary-inverse-border, 0%, 100%, $linkColor: $btn-primary-inverse-link);
+}
+
+.btn-secondary {
+	@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border, $linkColor: $btn-secondary-link);
+}
+.inverse .btn-secondary,
+.btn-secondary.inverse {
+	@include button-variant-inverse($btn-secondary-inverse-color, $btn-secondary-inverse-bg, $btn-secondary-inverse-border, 0%, 100%, $linkColor: $btn-secondary-inverse-link);
+}
+
+.btn-tertiary {
+	@include button-variant($btn-tertiary-color, $btn-tertiary-bg, $btn-tertiary-border, $linkColor: $btn-tertiary-link);
+}
+.inverse .btn-tertiary,
+.btn-tertiary.inverse {
+	@include button-variant-inverse($btn-tertiary-inverse-color, $btn-tertiary-inverse-bg, $btn-tertiary-inverse-border, 0%, 100%, $linkColor: $btn-tertiary-inverse-link);
+}
+
+.btn-quaternary {
+	@include button-variant($btn-quaternary-color, $btn-quaternary-bg, $btn-quaternary-border, $linkColor: $btn-quaternary-link);
+}
+.inverse .btn-quaternary,
+.btn-quaternary.inverse {
+	@include button-variant-inverse($btn-quaternary-inverse-color, $btn-quaternary-inverse-bg, $btn-quaternary-inverse-border, 0%, 100%, $linkColor: $btn-quaternary-inverse-link);
+}
+
+// Success appears as green
+.btn-success {
+	@include button-variant($btn-success-color, $btn-success-bg, $btn-success-border, $linkColor: $btn-success-link);
+}
+.inverse .btn-success,
+.btn-success.inverse {
+	@include button-variant-inverse($btn-success-inverse-color, $btn-success-inverse-bg, $btn-success-inverse-border, 0%, 100%, $linkColor: $btn-success-inverse-link);
+}
+
+// Info appears as blue-green
+.btn-info {
+	@include button-variant($btn-info-color, $btn-info-bg, $btn-info-border, $linkColor: $btn-info-link);
+}
+.inverse .btn-info,
+.btn-info.inverse {
+	@include button-variant-inverse($btn-info-inverse-color, $btn-info-inverse-bg, $btn-info-inverse-border, 0%, 100%, $linkColor: $btn-info-inverse-link);
+}
+
+// Warning appears as orange
+.btn-warning {
+	@include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border, $linkColor: $btn-warning-link);
+}
+.inverse .btn-warning,
+.btn-warning.inverse {
+	@include button-variant-inverse($btn-warning-inverse-color, $btn-warning-inverse-bg, $btn-warning-inverse-border, 0%, 100%, $linkColor: $btn-warning-inverse-link);
+}
+
+// Danger and error appear as red
+.btn-danger {
+	@include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border, $linkColor: $btn-danger-link);
+}
+.inverse .btn-danger,
+.btn-danger.inverse {
+	@include button-variant-inverse($btn-danger-inverse-color, $btn-danger-inverse-bg, $btn-danger-inverse-border, 0%, 100%, $linkColor: $btn-danger-inverse-link);
+}
+
+
+
+// Button Sizes
+// --------------------------------------------------
+.btn-jumbo,
+.btn-jm {
+	// line-height: ensure even-numbered height of button next to jumbo input
+	@include button-size($padding-jumbo-vertical, $padding-jumbo-horizontal, $font-size-jumbo, $line-height-jumbo, $btn-border-radius-jumbo);
+}
+
+.btn-super,
+.btn-su {
+	// line-height: ensure even-numbered height of button next to super input
+	@include button-size($padding-super-vertical, $padding-super-horizontal, $font-size-super, $line-height-super, $btn-border-radius-super);
+}
+
+.btn-xlarge,
+.btn-xl {
+	// line-height: ensure even-numbered height of button next to xlarge input
+	@include button-size($padding-xlarge-vertical, $padding-xlarge-horizontal, $font-size-xlarge, $line-height-xlarge, $btn-border-radius-xlarge);
+}
+
+.btn-large,
+.btn-lg {
+	// line-height: ensure even-numbered height of button next to large input
+	@include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-large);
+}
+
+
+.btn-jumbo {
+	// line-height: ensure even-numbered height of button next to large input
+	@include button-size($padding-jumbo-vertical, $padding-jumbo-horizontal, $font-size-jumbo, $line-height-jumbo, $btn-border-radius-jumbo);
+}
+
+.btn-super {
+	// line-height: ensure even-numbered height of button next to large input
+	@include button-size($padding-super-vertical, $padding-super-horizontal, $font-size-super, $line-height-super, $btn-border-radius-super);
+}
+
+.btn-small,
+.btn-sm {
+	// line-height: ensure proper height of button next to small input
+	@include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+}
+
+.btn-xsmall,
+.btn-xs {
+	@include button-size($padding-xsmall-vertical, $padding-xsmall-horizontal, $font-size-xsmall, $line-height-xsmall, $btn-border-radius-xsmall);
+}
+
+.btn-ssmall,
+.btn-ss {
+	@include button-size($padding-ssmall-vertical, $padding-ssmall-horizontal, $font-size-ssmall, $line-height-ssmall, $btn-border-radius-ssmall);
+}
+
+
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link {
+	color: $link-color;
+	/*font-weight: normal;*/
+	border-radius: 0;
+	padding: 0;
+
+	&,
+	&:active,
+	&.active,
+	&[disabled],
+	fieldset[disabled] & {
+		background-color: transparent;
+		@include box-shadow(none);
+	}
+	&,
+	&:hover,
+	&:focus,
+	&:active {
+		border-color: transparent;
+	}
+	&:hover,
+	&:focus {
+		color: $link-hover-color;
+		text-decoration: $link-hover-decoration;
+		background-color: transparent;
+	}
+	&[disabled],
+	fieldset[disabled] & {
+		&:hover,
+		&:focus {
+			color: $btn-link-disabled-color;
+			text-decoration: none;
+		}
+	}
+}
+
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+	margin-top: dp(5);
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	&.btn-block {
+		width: 100%;
+	}
+}

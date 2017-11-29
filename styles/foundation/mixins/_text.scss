@@ -1,0 +1,65 @@
+// CSS image replacement
+//
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+
+// Deprecated as of v3.0.1 (will be removed in v4)
+@mixin hide-text() {
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;
+}
+
+// New mixin to use as of v3.0.1
+@mixin text-hide() {
+	@include hide-text;
+}
+
+@mixin reset-text() {
+	font-family: $font-family-base;
+	// We deliberately do NOT reset font-size.
+	font-style: normal;
+	font-weight: normal;
+	letter-spacing: normal;
+	line-break: auto;
+	line-height: $line-height-base;
+	text-align: left; // Fallback for where `start` is not supported
+	text-align: start;
+	text-decoration: none;
+	text-shadow: none;
+	text-transform: none;
+	white-space: normal;
+	word-break: normal;
+	word-spacing: normal;
+	word-wrap: normal;
+}
+
+// [converter] $parent hack
+@mixin text-emphasis-variant($parent, $color) {
+	#{$parent} {
+		color: $color;
+	}
+	a#{$parent}:hover,
+	a#{$parent}:focus {
+		color: darken($color, 10%);
+	}
+}
+
+@mixin text-emphasis($color) {
+	color: $color;
+	
+	&:hover,
+	&:focus {
+		color: darken($color, 10%);
+	}
+}
+
+// Text overflow
+// Requires inline-block or block for proper styling
+
+@mixin text-overflow() {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

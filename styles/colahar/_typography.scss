@@ -1,0 +1,3 @@
+.list-striped {
+  	@include list-striped($white, $brand-primary, $white, $brand-secondary);
+}

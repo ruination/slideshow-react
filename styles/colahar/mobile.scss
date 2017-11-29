@@ -1,0 +1,37 @@
+$viewport-scaling:					1;
+$dp:								$viewport-scaling * 1px;
+$dpw:								$viewport-scaling * 1px;
+$device: 							mobile !default;
+
+$ImagePath: 						"../../public/images";
+
+@import "../foundation/functions";
+
+@import "theme";
+
+/*$font-path: 			"../../fonts";*/
+$font-path: 			"../../public/fonts";
+
+@import "../mobile";
+
+@import "variables";
+
+// Core
+@import "typography";
+
+// Components
+@import "components/nav";
+@import "components/navbar";
+@import "components/instruction";
+@import "components/modal";
+@import "components/footer";
+@import "components/buttons";
+@import "components/wells";
+@import "components/subscription-option";
+
+// Pages
+@import "pages/verify-age";
+@import "pages/home";
+@import "pages/subscriptions";
+@import "pages/registration";
+@import "pages/landing";

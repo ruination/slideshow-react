@@ -1,0 +1,260 @@
+//
+// Search
+// --------------------------------------------------
+.nav .nav-search {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.nav-search.window-entered,
+.nav-search.window-exited,
+.nav-search.window-exiting,
+.nav-search.window-entering {
+    @include transition-duration(1ms);
+}
+
+.nav-search.window-exit,
+.nav-search.window-enter {
+    @include transition-duration(500ms);
+}
+
+.nav-search.window-open .nav-search-form {
+	max-width: 100vw;
+}
+
+.nav-search.window-open .nav-search-button {
+    margin-left: 0;
+}
+
+
+//
+// Search -> Button
+// --------------------------------------------------
+.nav-search-button {
+	padding: 0;
+	background-color: transparent;
+    border: 0;
+    display: inline-block;
+    vertical-align: baseline;
+    color: $navbar-inverse-link-color;
+    flex: 0 0 auto;
+    margin: auto;
+
+	@include transition(transform, color, margin);
+	@include transition-duration(500ms);
+	@include transition-timing-function(cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+
+
+//
+// Search -> Form
+// --------------------------------------------------
+.nav-search .nav-search-form {
+    flex: 1 1 auto;
+	max-width: 0;
+	overflow: hidden;
+	@include transition(all 500ms cubic-bezier(0.77, 0.05, 0.55, 0.635));
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+}
+
+.nav-search-form .form-group {
+    margin: 0;
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+}
+
+
+
+
+//
+// Search -> Results
+// --------------------------------------------------
+.nav-search-results {
+	position: fixed;
+    top: stovp($navbar-height );
+    bottom: 0;
+    left: 0;
+    right: 0;    
+    display: flex;
+    flex-flow: column nowrap;
+    z-index: -2;
+    @include transition-duration(1ms);
+    @include transition-property(background-position);
+}
+
+.nav-search-results.window-exited {
+	/*visibility: hidden;*/
+	pointer-events: none;
+}
+
+.nav-search-results.window-enter {
+    @include transition-duration(1200ms);
+}
+
+.nav-search-results.window-exiting {
+    @include transition-duration(600ms);
+}
+
+.nav-search-results.window-exit {
+    @include transition-duration(400ms);
+}
+
+.nav-search-results.window-entering {
+    @include transition-duration(200ms);
+}
+
+.nav-search-results.window-entered,
+.nav-search-results.window-exited {
+    @include transition-duration(1ms);
+}
+
+
+
+
+
+//
+// Search -> Results -> Grid
+// --------------------------------------------------
+.search-items {
+    top: stovp($navbar-height );
+	position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	width: 100%;
+	z-index: 2;
+	@include transition(opacity 300ms cubic-bezier(0.45, 0.365, 0.95, 0.23));
+	@include opacity(0);
+	line-height: $line-height-base;
+	text-align: left;
+	pointer-events: none;
+}
+
+.search-items.scroll-native.view > .view-scroll {
+	position: relative;
+}
+
+.nav-search-results.window-entering .search-items,
+.nav-search-results.window-entered .search-items {
+	@include opacity(1);
+	pointer-events: auto;
+}
+
+
+//
+// Search -> Results -> Shutter
+// --------------------------------------------------
+.search-results-shutter {
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	width: 100%;
+	z-index: 1;
+    @include animation-duration(800ms);
+    @include animation-timing-function(linear);    
+	@include transition(all 500ms cubic-bezier(0.45, 0.365, 0.95, 0.23));
+    background-color: rgba($navbar-inverse-bg, 1);
+}
+
+@include keyframes(bounceUp) {
+    0%   { top:-100.0%; animation-timing-function:ease-in;  }
+    37%  { top:-50.0%; animation-timing-function:ease-out; }
+    55%  { top:-62.5%; animation-timing-function:ease-in;  }
+    73%  { top:-50.0%; animation-timing-function:ease-out; }
+    82%  { top:-53.5%; animation-timing-function:ease-in;  }
+    91%  { top:-50.0%; animation-timing-function:ease-out; }
+    96%  { top:-51.0%; animation-timing-function:ease-in;  }
+    100% { top:-49.0%; }
+}
+
+@include keyframes(bounceDown) {
+    0%   { bottom:-100.0%; animation-timing-function:ease-in;  }
+    37%  { bottom:-50.0%; animation-timing-function:ease-out; }
+    55%  { bottom:-62.5%; animation-timing-function:ease-in;  }
+    73%  { bottom:-50.0%; animation-timing-function:ease-out; }
+    82%  { bottom:-53.5%; animation-timing-function:ease-in;  }
+    91%  { bottom:-50.0%; animation-timing-function:ease-out; }
+    96%  { bottom:-51.0%; animation-timing-function:ease-in;  }
+    100% { bottom:-49.0%; }
+}
+
+.search-results-shutter-up {
+	top: -100%;
+}
+
+.search-results-shutter-down {
+	bottom: -100%;
+}
+
+.nav-search-results.window-exit .search-results-shutter-up,
+.nav-search-results.window-open .search-results-shutter-up {
+	top: -49%;
+    @include animation-name(bounceUp);
+}
+
+.nav-search-results.window-exit .search-results-shutter-down,
+.nav-search-results.window-open .search-results-shutter-down {
+	bottom: -49%;
+    @include animation-name(bounceDown);
+}
+
+
+
+
+
+
+
+
+@mixin navbar-search-size($parent, $viewport, $size-factor)
+{
+	#{$parent}-#{$viewport} {
+		.nav-search .nav-search-form .form-group {
+			padding-left: $size-factor*stovp($grid-gutter-width);
+		}
+
+		.search-items {
+            top: $size-factor*stovp($navbar-height );
+        }		
+
+        .nav-search-results {
+            top: $size-factor*stovp($navbar-height );
+        }		
+	}
+}
+
+
+
+
+// [SIZE: Large]
+// Search
+// --------------------------------------------------
+@include navbar-search-size('.viewport', 'lg', $navbar-lg-size-factor);
+
+
+// [SIZE: Medium]
+// Search
+// --------------------------------------------------
+@include navbar-search-size('.viewport', 'md', $navbar-md-size-factor);
+
+
+// [SIZE: Small]
+// Search
+// --------------------------------------------------
+@include navbar-search-size('.viewport', 'sm', $navbar-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// Search
+// --------------------------------------------------
+@include navbar-search-size('.viewport', 'xs', $navbar-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// Search
+// --------------------------------------------------
+@include navbar-search-size('.viewport', 'ss', $navbar-ss-size-factor);

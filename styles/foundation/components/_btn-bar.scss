@@ -1,0 +1,54 @@
+.btn-bar {
+	display: block;
+	width: 100%;
+	position: relative;
+}
+
+.btn-bar .btn {
+	min-width: $btn-bar-button-width;
+	margin-right: $btn-bar-separation;
+	margin-top: $btn-bar-separation;
+}
+
+.btn-bar .btn:last-child {
+	margin-right: 0;
+}
+
+.btn-bar.btn-bar-right {
+	text-align: right;
+}
+
+.btn-bar.btn-bar-right .btn {
+	margin-left: $btn-bar-separation;
+	margin-right: 0;
+}
+
+.btn-bar.btn-bar-right .btn:first-child {
+	margin-left: 0;
+}
+
+.btn-bar .btn-bar-2 {
+	min-width: $btn-bar-button-width;
+	width: 50%;
+	float: left;
+	text-align: center;
+	margin-top: $btn-bar-separation;
+}
+
+.btn-bar.btn-bar-left .btn-bar-2,
+.btn-bar.btn-bar-split .btn-bar-2 {
+	text-align: left;
+}
+
+.btn-bar.btn-bar-split .btn-bar-2 + .btn-bar-2 {
+	text-align: right;
+}
+
+.btn-bar.btn-bar-full .btn-bar-2 .btn {
+	display: inline-block;
+	width: 95%;
+}
+
+.btn-bar .btn-bar-2 .btn {
+	margin: 0;
+}

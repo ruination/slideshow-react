@@ -1,0 +1,43 @@
+// Mixins
+// --------------------------
+
+@mixin icon-base() {
+  display: inline-block;
+  font: normal normal normal #{$icon-font-size-base}/#{$icon-line-height-base} "colahar-icons"; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;  
+}
+
+@mixin icon-svg() {
+  content: '';
+  height: 1em;
+  width: 1em;
+  margin-bottom: -0.20em;
+  display: inline-block;
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+@mixin icon-rotate($degrees, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  -webkit-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
+@mixin icon-flip($horiz, $vert, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  -webkit-transform: scale($horiz, $vert);
+      -ms-transform: scale($horiz, $vert);
+          transform: scale($horiz, $vert);
+}
+
+@mixin icon-flip-rotate($horiz, $vert, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: scale($horiz, $vert) rotate($rotation);
+      -ms-transform: scale($horiz, $vert) rotate($rotation);
+          transform: scale($horiz, $vert) rotate($rotation);
+}

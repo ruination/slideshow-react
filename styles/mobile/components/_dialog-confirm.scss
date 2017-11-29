@@ -1,0 +1,21 @@
+.dialog-confirm .modal-header,
+.dialog-confirm .modal-footer {
+	border: none;
+	text-align: center; 
+}
+
+.dialog-confirm .modal-footer .btn {
+/*	padding-left: sp(150);
+	padding-right: sp(150);*/
+	/*min-width: sp(300);*/
+	/*margin-left: sp(0);*/
+	/*min-width: auto;*/
+	float: left;
+	/*font-size: $font-size-large;*/
+	/*margin-bottom: $grid-gutter-width;*/
+}
+
+.dialog-confirm .modal-footer .btn + .btn {
+	/*margin-left: $grid-gutter-width * 2;*/
+	float: right;
+}

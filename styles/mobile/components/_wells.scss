@@ -1,0 +1,72 @@
+.well-danger > h1,
+.well-danger > h2,
+.well-danger > h3,
+.well-danger > h4 {
+	margin-top: 0;
+	text-align: center;
+	color: $brand-danger;
+}
+
+.well-danger {
+	padding: 1.5*$grid-gutter-width $grid-gutter-width;	
+}
+
+
+
+
+@mixin well-size($parent, $size, $font-size, $border-radius, $padding-vertical, $padding-horizontal, $size-factor, $orientation: '')
+{
+    #{$parent}-#{$size} {
+    	padding: 2*$padding-vertical $padding-horizontal;
+		border-radius: $border-radius;
+		font-size: $font-size;
+	}
+}
+
+
+// [SIZE: Jumbo]
+// Well
+// --------------------------------------------------
+@include well-size('.well', 'jm', $font-size-jumbo, $border-radius-jumbo, $padding-jumbo-vertical, $padding-jumbo-horizontal, $well-jm-size-factor);
+
+
+// [SIZE: Super]
+// Well
+// --------------------------------------------------
+@include well-size('.well', 'su', $font-size-super, $border-radius-super, $padding-super-vertical, $padding-super-horizontal, $well-su-size-factor);
+
+
+// [SIZE: eXtra Large]
+// Well
+// --------------------------------------------------
+@include well-size('.well', 'xl', $font-size-xlarge, $border-radius-xlarge, $padding-xlarge-vertical, $padding-xlarge-horizontal, $well-xl-size-factor);
+
+
+// [SIZE: Large]
+// Well
+// --------------------------------------------------
+@include well-size('.well', 'lg', $font-size-large, $border-radius-large, $padding-large-vertical, $padding-large-horizontal, $well-lg-size-factor);
+
+
+// [SIZE: Medium]
+// Well
+// --------------------------------------------------
+@include well-size('.well', 'md', $font-size-base, $border-radius-base, $padding-base-vertical, $padding-base-horizontal, $well-md-size-factor);
+
+
+// [SIZE: Small]
+// Well
+// --------------------------------------------------
+@include well-size('.well', 'sm', $font-size-small, $border-radius-small, $padding-small-vertical, $padding-small-horizontal, $well-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// Well
+// --------------------------------------------------
+@include well-size('.well', 'xs', $font-size-xsmall, $border-radius-xsmall, $padding-xsmall-vertical, $padding-xsmall-horizontal, $well-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// Well
+// --------------------------------------------------
+@include well-size('.well', 'ss', $font-size-ssmall, $border-radius-ssmall, $padding-ssmall-vertical, $padding-ssmall-horizontal, $well-ss-size-factor);

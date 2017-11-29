@@ -1,0 +1,303 @@
+.star-details-profile {
+	background-color: darken($brand-quaternary, 10%);
+	position: relative;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: stretch;
+}
+
+.star-details-profile .star-image {
+	width: 33%;
+	position: relative;
+}
+
+.star-details-profile .star-img-container {
+	@include box-shadow(none);
+}
+
+.star-details-profile .star-image:before {
+	content: '';
+	position: absolute;
+	left: vp(-1);
+	right: 0;
+	bottom: 0;
+	top: 0;
+	height: 100%;
+	width: 101%;
+	z-index: 1;
+	display: none;
+	@include gradient-horizontal-five-colors(
+		rgba($black, 0), 70%,
+		rgba(darken($brand-quaternary, 10%), 0.10), 80%, 
+		rgba(darken($brand-quaternary, 10%), 0.90), 
+		darken($brand-quaternary, 10%), 92%
+	);
+}
+
+.star-details .statmenu {
+	width: 100%;
+	position: absolute;
+	background-color: darken(rgba($brand-quaternary, 0.8), 10%);
+	bottom: vp(-1);
+	padding-top: $grid-gutter-width;
+}
+
+.star-details-profile:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	height: 101%;
+	width: 100%;
+	z-index: 2;
+	display: none;
+	@include gradient-vertical-five-colors(
+       rgba($brand-quaternary, 0.0), 70%,
+       rgba($brand-quaternary, 0.85), 90%, 
+       rgba($brand-quaternary, 0.98), 
+       rgba($brand-quaternary, 1.00), 95% 
+   	);
+	pointer-events: none;
+}
+
+
+
+
+//
+// Star (Details) -> Overlay
+// --------------------------------------------------
+.star-details-profile .star-overlay {
+	@include opacity(1);
+	background-image: none;
+	z-index: 2;	
+	position: relative;
+	flex: 1;
+	display: flex;
+	/*align-self: flex-end;*/
+	height: auto;
+	flex-flow: column nowrap;
+	/*padding-top: stovp($navbar-height);*/
+	padding-bottom: stovp($statmenu-height);
+}
+
+.star-details-profile .details-menu {
+	align-self: flex-start;
+	position: relative;
+	/*background-color: rgba($brand-quaternary, 0);*/
+	background-color: transparent;
+	border-bottom: vp(1) solid rgba($brand-quaternary, 0.9);
+	padding: 0 $page-padding-right 0 stovp($grid-gutter-width);
+}
+
+.star-details-profile .star-overlay .star-overlay-name > * {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: stovp($star-details-name-font-size);
+	font-weight: bold;
+	letter-spacing: 0.01em;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin: 0;
+}
+
+.star-overlay-container {
+	position: relative;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	padding: stovp($grid-gutter-width/2) $page-padding-right stovp($grid-gutter-width/2) stovp($grid-gutter-width);
+	display: flex;
+	flex-flow: column nowrap;
+	height: 100%;
+}
+
+.star-overlay-container .star-overlay-name {
+	flex: 2;
+	padding-top: $grid-gutter-width;
+	padding-bottom: $grid-gutter-width;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.star-overlay-container .star-overlay-stats {
+	width: 100%;
+	align-self: flex-end;
+}
+
+//
+// Star (Details) -> Overlay Stats
+// --------------------------------------------------
+.star-details-profile .star-overlay-stats {
+	position: relative;
+	padding-bottom: 0;
+	bottom: auto;
+	left: auto;
+	@include clearfix;
+}
+
+.star-details-profile .star-overlay-stats > * {
+	font-size: stovp($star-details-stats-font-size);
+}
+
+.star-details-profile .star-overlay-stats > * + * {
+	margin-top: 0;
+}
+
+.stats-column-left > *,
+.stats-column-right > * {
+	margin-bottom: 0.2em;
+}
+
+.stat-header {
+	color: darken($brand-tertiary, 20%);
+}
+
+.stats-column-right,
+.stats-column-left {
+	float: left;
+	width: 50%;
+}
+
+.stats-column-right {
+	text-align: right;
+}
+
+
+
+
+
+
+@mixin star-details-size($parent, $size, $size-factor, $orientation: '')
+{
+	#{$orientation}.viewport-#{$size} #{$parent} {
+		.star-details-profile {
+			margin-bottom: $size-factor*stovp(4*$grid-gutter-width);
+		}
+
+		.star-details-profile .star-overlay .star-overlay-name > * {
+			font-size: $size-factor*stovp($star-details-name-font-size);
+		}
+
+		.star-details-profile .star-overlay-stats > * {
+			font-size: $size-factor*stovp($star-details-stats-font-size);
+		}
+
+		.star-details-profile .star-overlay {
+			padding-bottom: $size-factor*stovp(1.2*$statmenu-height);
+		}
+	}
+}
+
+
+@mixin star-details-mobile-size($parent, $size, $size-factor)
+{
+	.viewport-portrait.viewport-#{$size} #{$parent} {
+		.star-details-profile {
+			flex-flow: column nowrap;
+		}
+
+		.star-details-profile .star-image {
+			width: 100%;
+		}
+
+		.star-details-profile .star-overlay {
+			padding-bottom: 0;
+			margin-top: $size-factor*stovp(-10*$grid-gutter-width);
+		}
+
+		.star-details-profile .details-menu {
+			order: 2;
+		}
+
+		.statmenu {
+			position: relative;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			align-items: flex-end;
+		}
+
+		.statmenu > * {
+			width: auto;
+			flex: 1 0 33%;
+		}
+
+		.statmenu > *:nth-child(2n) {
+			text-align: center;
+		}
+
+		.statmenu > *:nth-child(3n) {
+			text-align: right;
+		}
+
+		.statmenu > *:nth-child(4n) {
+			text-align: left;
+			margin-top: $size-factor*stovp($grid-gutter-width/2);
+		}
+
+		.statmenu > *:last-child {
+			text-align: right;
+		}		
+
+		.star-details-profile .star-image:before {
+			display: block;
+			@include gradient-vertical-five-colors(
+		       rgba($brand-quaternary, 0.0), 60%,
+		       rgba($brand-quaternary, 0.85), 80%, 
+		       rgba($brand-quaternary, 0.98), 
+		       rgba($brand-quaternary, 1.00), 95% 
+		   	);
+		}		
+	}
+}
+
+
+@mixin star-details-tablet-size($parent, $size, $size-factor)
+{
+	@include star-details-size($parent, $size, $star-details-landscape-factor*$size-factor, '.viewport-landscape');
+
+	.viewport-landscape.viewport-#{$size} #{$parent} {
+		
+	}
+}
+
+
+// [SIZE: Large]
+// Star (Details)
+// --------------------------------------------------
+@include star-details-size('.star-details', 'lg', $star-details-lg-size-factor);
+
+
+// [SIZE: Medium]
+// Star (Details)
+// --------------------------------------------------
+@include star-details-size('.star-details', 'md', $star-details-md-size-factor);
+
+
+// [SIZE: Small]
+// Star (Details)
+// --------------------------------------------------
+@include star-details-size('.star-details', 'sm', $star-details-sm-size-factor);
+@include star-details-tablet-size('.star-details', 'sm', $star-details-sm-size-factor);
+@include star-details-mobile-size('.star-details', 'sm', $star-details-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// Star (Details)
+// --------------------------------------------------
+@include star-details-size('.star-details', 'xs', $star-details-xs-size-factor);
+@include star-details-tablet-size('.star-details', 'xs', $star-details-xs-size-factor);
+@include star-details-mobile-size('.star-details', 'xs', $star-details-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// Star (Details)
+// --------------------------------------------------
+@include star-details-size('.star-details', 'ss', $star-details-ss-size-factor);
+@include star-details-tablet-size('.star-details', 'ss', $star-details-ss-size-factor);
+@include star-details-mobile-size('.star-details', 'ss', $star-details-ss-size-factor);

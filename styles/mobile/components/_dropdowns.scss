@@ -1,0 +1,34 @@
+// The dropdown menu (ul)
+.dropdown-menu {
+	padding: $grid-gutter-width/2 0;
+
+	.divider {
+		margin: (($line-height-computed / 2) - 1) $grid-gutter-width/2;
+	}
+
+	// Links within the dropdown menu
+	> li > a,
+	> li > .btn-link,
+	> li > .link-content > .btn-link {
+		font-weight: 300;
+		padding: $grid-gutter-width/3 $grid-gutter-width*1.25;
+
+		&.active {
+			color: $brand-secondary;
+
+			&:hover,
+			&:focus {
+				color: darken($brand-secondary, 25%);
+
+				> .icon {
+					color: darken($brand-secondary, 25%);
+				}
+			}
+		}
+
+		> .link-content > .icon,
+		> .icon {
+			margin-right: $grid-gutter-width/3;
+		}
+	}
+}

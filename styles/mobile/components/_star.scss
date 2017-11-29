@@ -1,0 +1,477 @@
+///////////////////////////
+// Star
+///////////////////////////
+.star {
+	width: $star-image-width;
+	display: block;
+	position: relative;
+}
+
+.star .star-content {
+	text-decoration: none;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	display: block;
+	@include transition(background-color 200ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+	background-color: $star-bg;
+	@include box-shadow($star-shadow);
+}
+
+.star .star-border {
+	background-color: transparent;
+	padding: $star-border-size;
+	height: 100%;
+	width: 100%;
+}
+
+.star-placeholder {
+	width: 100%;
+	background-size: 75%;
+	background-position: center center;
+	background-repeat: no-repeat;	
+	@include transition(padding 500ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.star:hover * {
+	cursor: default;
+}
+
+.star:hover .star-border {
+	background-color: $star-highlight-color;
+}
+
+.star:hover .star-content {
+	background-color: $star-highlight-color;
+	@include box-shadow(none);
+}
+
+.star:hover {
+	@include box-shadow($star-shadow-hover);
+}
+
+.star-img-container {
+	@include text-hide;
+
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	@include box-shadow($star-shadow);
+}
+
+.star .star-content .star-img-container {
+	@include box-shadow(none);
+}
+
+.star-img-container img {
+	width: 100%;
+}
+
+.star-img {
+	width: 100%;
+	display: block;
+	height: 100%;	
+	position: absolute;
+	top: 0;
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+.star-footer > * {
+	color: $star-footer-color;
+	font-size: $star-font-size;
+	letter-spacing: sp(-1);
+	margin: 0;
+	padding: $star-footer-padding 1.5*$star-footer-padding;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.star.sm .star-footer > * {
+	font-size: $star-font-size-sm;
+}
+
+.hover-context {
+	text-align: right;
+	position: absolute;
+	top: -100%;
+	z-index: 2;
+	width: 100%;
+	right: -$star-border-size;
+
+	@include transition(top 250ms)
+}
+
+.star:hover .hover-context {
+	top: -$star-border-size;
+}
+
+.carousel.horizontal .hover-context {
+	font-size: 125%;
+} 
+
+.star-header {
+	position: absolute;
+	top: 20%;
+	left: 0;
+	z-index: 1;
+	background-color: $star-bg;
+	padding: 0.7% 1.5%;
+}
+
+
+
+.star-img {
+	width: 100%;
+}
+
+.star {
+	width: 100%;
+}
+
+//
+// Star -> Overlay
+// --------------------------------------------------
+.star-title {
+	z-index: 1;
+	position: absolute;
+	bottom: 2%;
+	left: 5%;
+	max-width: 78%;
+	background-color: rgba(darken($star-bg, 10%), 0.6);
+	padding: stovp($star-title-border-size);
+	border-radius: stovp($star-title-border-radius);
+	white-space: nowrap;
+	@include translate3d(0,0,0);
+}
+
+
+.star-title > * {
+	margin: 0;
+	line-height: 1.1em;
+	height: 1.6em;
+	padding: stovp($grid-gutter-width/4) stovp($grid-gutter-width/2);
+	background-color: rgba(darken($star-bg, 10%), 0.6);	
+	border-radius: stovp($star-title-border-radius);
+	font-size: stovp($star-title-font-size);
+	font-weight: $star-title-font-weight;
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	@include transition(background-color 200ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+//
+// Star -> Overlay
+// --------------------------------------------------
+.star-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	@include gradient-vertical-six-colors(
+		rgba($black, $star-overlay-opacity*0.50), 
+		0%,
+		rgba($black, $star-overlay-opacity*0.60),
+		40%,
+		rgba($black, $star-overlay-opacity*0.70),
+		80%,
+		rgba($black, $star-overlay-opacity*0.80),
+		100%
+	);	
+	@include translate3d(0, 0, 0);
+	z-index: 0;
+	@include transition(opacity 520ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+	@include opacity(0);
+}
+
+.star:hover .star-overlay {
+	@include opacity(1);
+}
+
+.grid.grid-focusable .grid-item-content .star-overlay,
+.slideshow.slideshow-focusable .slideshow-content .star-overlay {
+    @include transition(opacity 620ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+    @include opacity(0);
+}
+
+.grid.grid-focusable .grid-item-content .star .star-overlay,
+.slideshow.slideshow-focusable .slideshow-content .star .star-overlay {
+    @include opacity(0);
+}
+
+.grid.grid-focusable .grid-item-content .grid-item-focused .star .star-overlay,
+.slideshow.slideshow-focusable .slideshow-content .slide-focused .star .star-overlay {
+    @include opacity(1);
+}
+
+.star:hover .star-overlay-always + .star-title > * {
+	background-color: transparent;
+}
+
+.grid.grid-focusable .grid-item-content .star-overlay-always + .star-title > *,
+.slideshow.slideshow-focusable .slideshow-content .star-overlay-always + .star-title > * {
+	@include transition(background-color 200ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+	background-color: rgba(darken($star-bg, 10%), 0.6);	
+}
+
+.grid.grid-focusable .grid-item-content .grid-item-focused .star-overlay-always + .star-title > *,
+.slideshow.slideshow-focusable .slideshow-content .slide-focused .star-overlay-always + .star-title > * {
+	background-color: transparent;
+}
+
+
+
+//
+// Star -> Overlay -> Title
+// --------------------------------------------------
+.star-overlay-title {
+	white-space: nowrap;
+	text-align: center;
+	padding: stovp($grid-gutter-width/2);
+}
+
+.star-overlay-title > h3 {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin: auto;
+	line-height: $line-height-jumbo;
+	font-size: stovp($font-size-xlarge);
+}
+
+//
+// Star -> Overlay -> Stats
+// --------------------------------------------------
+.star-overlay-stats {
+	white-space: nowrap;
+	text-align: left;
+	position: absolute;
+	font-weight: 300;
+	left: 5%;
+	bottom: 2%;
+	padding-bottom: 20%;
+}
+
+.star-overlay-stats > * {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	color: $star-stats-color;
+	margin: auto;
+	font-size: stovp($star-stats-font-size);
+}
+
+.star-overlay-stats .icon {
+	width: 1.3em;
+	text-align: center;
+	margin-right: 0.5em;
+	color: $white;
+	font-size: 125%;
+}
+
+.star-overlay-stats > * + * {
+	margin-top: 0.50em;
+}
+
+//
+// Star -> Overlay -> Play
+// --------------------------------------------------
+.star-overlay-play {
+	text-align: center;
+	font-size: stovp($font-size-h1);
+	line-height: 1;
+}
+
+
+//
+// Star -> Overlay -> Rating
+// --------------------------------------------------
+.star-overlay-rating {
+	padding: 0 stovp($grid-gutter-width/2);
+	text-align: left;
+}
+
+.star-overlay-rating .rating .icon {
+	font-size: stovp($font-size-base);
+}
+
+
+//
+// Star -> Overlay -> Description
+// --------------------------------------------------
+.star-overlay-description {
+	padding: 0 stovp($grid-gutter-width/2);
+	text-align: left;
+}
+
+.star-overlay-description > p {
+	font-weight: 300;
+	font-size: stovp($font-size-small);
+}
+
+
+//
+// Star -> Overlay -> Metadata
+// --------------------------------------------------
+.star-overlay-always {
+	font-size: stovp($font-size-small);
+	padding: stovp($grid-gutter-width/2);
+	position: absolute;
+	@include translate3d(0, 0, 0);
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+}
+
+
+//
+// Star -> Overlay -> Favorite
+// --------------------------------------------------
+.star-overlay-always .star-button-favorite,
+.star-overlay .star-button-favorite {
+	position: absolute;
+	bottom: 50%;
+	right: 4%;
+	font-size: stovp($font-size-h2);
+	z-index: 2;
+}
+
+.star-overlay-always .favorite-add {
+    @include opacity(0);
+    @include transition(opacity 320ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.star.star-simple .star-overlay-always .favorite-add,
+.star:hover .star-overlay-always .favorite-add {
+    @include opacity(1);
+}
+
+.grid.grid-focusable .grid-item-content .star .star-overlay-always .favorite-add,
+.slideshow.slideshow-focusable .slideshow-content .star .star-overlay-always .favorite-add {
+    @include transition(opacity 320ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.grid.grid-focusable .grid-item-content .star:hover .star-overlay-always .favorite-add,
+.slideshow.slideshow-focusable .slideshow-content .star:hover .star-overlay-always .favorite-add {
+    @include opacity(0);
+}
+
+.grid.grid-focusable .grid-item-content .grid-item-focused .star .star-overlay-always .favorite-add,
+.slideshow.slideshow-focusable .slideshow-content .slide-focused .star .star-overlay-always .favorite-add {
+    @include opacity(1);
+}
+
+@mixin star-size($parent, $slide-width, $size, $size-factor)
+{
+	#{$parent}-#{$size},
+	.width-#{$slide-width} #{$parent} {
+		.star-overlay-play {
+			font-size: $size-factor*stovp($font-size-h1);
+		}
+
+		.star-overlay-rating {
+			padding: 0 $size-factor*stovp($grid-gutter-width/2);
+		}
+
+		.star-overlay-rating .rating .icon {
+			font-size: $size-factor*stovp($font-size-base);
+		}
+
+		.star-overlay-description {
+			padding: 0 $size-factor*stovp($grid-gutter-width/2);
+		}
+
+		.star-overlay-description > p {
+			font-size: $size-factor*stovp($font-size-small);
+		}
+
+		.star-overlay-always {
+			font-size: $size-factor*stovp($font-size-small);
+			padding: $size-factor*stovp($grid-gutter-width/2);
+		}
+
+		.star-overlay-title {
+			padding: $size-factor*stovp($grid-gutter-width/2);
+		}
+
+		.star-overlay-title > h3 {
+			font-size: $size-factor*stovp($font-size-xlarge);
+		}
+
+		.star-title {
+			padding: $size-factor*stovp($star-title-border-size);
+			border-radius: $size-factor*stovp($star-title-border-radius);
+		}
+
+		.star-title > * {
+			padding: $size-factor*stovp($grid-gutter-width/4) $size-factor*stovp($grid-gutter-width/2);
+			border-radius: $size-factor*stovp($star-title-border-radius);
+			font-size: $size-factor*stovp($star-title-font-size);
+		}
+
+		.star-overlay-stats > * {
+			font-size: $size-factor*stovp($star-stats-font-size);
+		}
+
+		.star-button-favorite {
+			font-size: $size-factor*stovp($font-size-h2);
+		}
+	}
+}
+
+
+
+// [SIZE: Jumbo]
+// Star
+// --------------------------------------------------
+@include star-size('.star', 9, 'jm', $star-jm-size-factor);
+
+
+// [SIZE: Super]
+// Star
+// --------------------------------------------------
+@include star-size('.star', 8, 'su', $star-su-size-factor);
+
+
+// [SIZE: eXtra Large]
+// Star
+// --------------------------------------------------
+@include star-size('.star', 7, 'xl', $star-xl-size-factor);
+
+
+// [SIZE: Large]
+// Star
+// --------------------------------------------------
+@include star-size('.star', 6, 'lg', $star-lg-size-factor);
+
+
+// [SIZE: Medium]
+// Star
+// --------------------------------------------------
+@include star-size('.star', 5, 'md', $star-md-size-factor);
+
+
+// [SIZE: Small]
+// Star
+// --------------------------------------------------
+@include star-size('.star', 4, 'sm', $star-sm-size-factor);
+
+
+// [SIZE: eXtra Small]
+// Star
+// --------------------------------------------------
+@include star-size('.star', 3, 'xs', $star-xs-size-factor);
+
+
+// [SIZE: Super Small]
+// Star
+// --------------------------------------------------
+@include star-size('.star', 2, 'ss', $star-ss-size-factor);

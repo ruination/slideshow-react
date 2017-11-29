@@ -1,0 +1,83 @@
+////////////////////////////////////
+// Main Menu
+////////////////////////////////////
+.menu-main {
+	font-size: $menu-main-font-size;
+	color: $menu-main-link-color;
+	float:left;
+	max-width: 100%;
+	width: 100%;
+	z-index: $zindex-menu;
+	position: relative;
+	height: $menu-main-height;
+	background-color: $menu-main-border-color;
+	padding: $menu-main-border-width 0;
+
+	/*@include box-shadow(0 spw(1) spw(1) spw(0) rgba(#000, 0.35));	*/
+}
+
+.menu-main-background {
+	height: ($menu-main-height - 2 * $menu-main-border-width);
+	background-color: $menu-main-bg;
+	padding: $menu-main-padding-vertical ($page-padding-right + $grid-gutter-width) $menu-main-padding-vertical ($page-padding-left + $grid-gutter-width);
+	overflow: hidden;
+}
+
+.menu-main-background > * {
+	height: $menu-main-link-height;
+}
+
+
+////////////////////////////////////
+// Menu Components
+////////////////////////////////////
+.menu-main a.button-back {
+	color: inherit;
+	display: block;
+	position: relative;
+	text-decoration: none;
+	padding-left: 1.5em;
+}
+
+.menu-main .btn-menu {
+	padding: 0;
+	width: $menu-main-link-height;
+	float: right;
+}
+
+.menu-main .btn-menu .icon {
+	vertical-align: middle;
+	font-size: 1.35em;
+	color: $menu-main-link-color;
+}
+
+.menu-main a.button-back > * {
+	display: inline-block;
+}
+
+.menu-main .text {
+	float: right;
+	font-weight: bold;
+}
+
+a.button-back .icon {
+	font-size: 2em;
+	font-weight: bold;
+	position: absolute;
+	left: 0;
+	top: 0;
+	line-height: 0.9*$menu-main-link-height;
+}
+
+
+////////////////////////////////////
+// Main Menu Layout
+////////////////////////////////////
+.page-content .menu-main + div {
+	height: 100%;
+	padding-top: $menu-main-height;
+}
+
+.header-main + .menu-main + .page-content { 
+	padding-top: $header-main-height-computed + $menu-main-height;
+}

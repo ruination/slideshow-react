@@ -1,0 +1,79 @@
+$featured-poster-border-width:			vp(5) !default;
+$featured-poster-border-color:			$brand-primary !default;
+$featured-poster-font-size:				stovp($font-size-large) !default;
+$featured-poster-font-color:			$white !default;
+$featured-poster-aspect-ratio:			50% * (830 / 1920) !default;
+$featured-poster-text-indent:			$grid-gutter-width !default;
+$featured-poster-separation:			stovp($grid-gutter-width) !default;
+
+$featured-poster-title-size:			stovp($font-size-h1 * 1.2) !default;
+$featured-poster-title-weight:			700 !default;
+
+$featured-poster-description-color:		$brand-primary !default;
+
+.featured-poster {
+	padding: $featured-poster-aspect-ratio;
+	background-size: cover;
+	font-size: $featured-poster-font-size;
+	color: $featured-poster-font-color;
+	position: relative;
+}
+
+.featured-poster .content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.featured-poster .header {
+	height: 30%;
+	overflow: hidden;
+	padding-left: $featured-poster-text-indent;
+	position: relative;
+}
+
+.featured-poster .header-text {
+	display: inline-block;
+	padding-top: $featured-poster-separation;
+	width: 30%;
+	bottom: 0;	
+	max-height: 100%;
+	position: absolute;
+}
+
+
+.featured-poster .body {
+	height: 70%;
+	padding-top: $featured-poster-separation;
+	overflow: hidden;
+}
+
+.featured-poster .title {
+	font-size: $featured-poster-title-size;
+	font-weight: $featured-poster-title-weight;
+}
+
+.featured-poster .title-text {
+	width: 50%;
+	display: block;
+	padding-left: $featured-poster-text-indent;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.featured-poster .title-divider {
+	width: 40%;
+	margin: auto 0 0 0;
+	background-color: $featured-poster-border-color;
+	height: $featured-poster-border-width;
+}
+
+.featured-poster .description {
+	margin-top: $featured-poster-separation*2.5;
+	padding-left: $featured-poster-text-indent;
+	color: $featured-poster-description-color;
+}

@@ -1,0 +1,123 @@
+///////////////////////////
+// Notifications
+///////////////////////////
+.notifications .notification {
+	background-color: rgba($black, 0.7);
+	color: darken($brand-tertiary, 22%);
+	padding: 0 $page-padding-right 0 $page-padding-left;
+	font-size: stovp($font-size-xlarge);
+}
+
+.notifications .notification .btn-link {
+	color: darken($brand-tertiary, 22%);
+	text-transform: uppercase;
+	margin: 0 stovp($grid-gutter-width);
+	font-size: 110%;
+	display: inline;
+}
+
+.notifications .notification > * {
+	vertical-align: middle;
+}
+
+.notifications .notification .message {
+	font-family: $font-family-serif;
+}
+
+.notifications .notification > .icon {
+	font-size: 180%;
+	margin: stovp($grid-gutter-width/3) stovp($grid-gutter-width/2) stovp($grid-gutter-width/3) 0;
+}
+
+.bellIconRed {
+	color: red;
+}
+
+
+// [SIZE: Large]
+// Notifications
+// --------------------------------------------------
+.viewport-lg .notifications .notification {
+	font-size: $notification-lg-size-factor*stovp($font-size-xlarge);
+}
+
+.viewport-lg .notifications .notification .btn-link {
+	margin: 0 $notification-lg-size-factor*stovp($grid-gutter-width);
+}
+
+.viewport-lg .notifications .notification > .icon {
+	margin: $notification-lg-size-factor*stovp($grid-gutter-width/3) $notification-lg-size-factor*stovp($grid-gutter-width/2) $notification-lg-size-factor*stovp($grid-gutter-width/3) 0;
+}
+
+
+
+// [SIZE: Medium]
+// Notifications
+// --------------------------------------------------
+.viewport-md .notifications .notification {
+	font-size: $notification-md-size-factor*stovp($font-size-xlarge);
+}
+
+.viewport-md .notifications .notification .btn-link {
+	margin: 0 $notification-md-size-factor*stovp($grid-gutter-width);
+}
+
+.viewport-md .notifications .notification > .icon {
+	margin: $notification-md-size-factor*stovp($grid-gutter-width/3) $notification-md-size-factor*stovp($grid-gutter-width/2) $notification-md-size-factor*stovp($grid-gutter-width/3) 0;
+}
+
+
+
+// [SIZE: Small]
+// Notifications
+// --------------------------------------------------
+.viewport-sm .notifications .notification {
+	padding: 0 $page-padding-mobile-right 0 $page-padding-mobile-left;
+	font-size: $notification-sm-size-factor*stovp($font-size-xlarge);
+}
+
+.viewport-sm .notifications .notification .btn-link {
+	margin: 0 $notification-sm-size-factor*stovp($grid-gutter-width);
+}
+
+.viewport-sm .notifications .notification > .icon {
+	margin: $notification-sm-size-factor*stovp($grid-gutter-width/3) $notification-sm-size-factor*stovp($grid-gutter-width/2) $notification-sm-size-factor*stovp($grid-gutter-width/3) 0;
+}
+
+
+
+
+// [SIZE: eXtra Small]
+// Notifications
+// --------------------------------------------------
+.viewport-xs .notifications .notification {
+	padding: 0 $page-padding-mobile-right 0 $page-padding-mobile-left;
+	font-size: $notification-xs-size-factor*stovp($font-size-xlarge);
+}
+
+.viewport-xs .notifications .notification .btn-link {
+	margin: 0 $notification-xs-size-factor*stovp($grid-gutter-width);
+}
+
+.viewport-xs .notifications .notification > .icon {
+	margin: $notification-xs-size-factor*stovp($grid-gutter-width/3) $notification-xs-size-factor*stovp($grid-gutter-width/2) $notification-xs-size-factor*stovp($grid-gutter-width/3) 0;
+}
+
+
+
+// [SIZE: Super Small]
+// Notifications
+// --------------------------------------------------
+.viewport-ss .notifications .notification {
+	padding: 0 $page-padding-mobile-right 0 $page-padding-mobile-left;
+	font-size: $notification-ss-size-factor*stovp($font-size-xlarge);
+}
+
+.viewport-ss .notifications .notification .btn-link {
+	margin: 0 $notification-ss-size-factor*stovp($grid-gutter-width);
+}
+
+.viewport-ss .notifications .notification > .icon {
+	margin: $notification-ss-size-factor*stovp($grid-gutter-width/3) $notification-ss-size-factor*stovp($grid-gutter-width/2) $notification-ss-size-factor*stovp($grid-gutter-width/3) 0;
+}
+

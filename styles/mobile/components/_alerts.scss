@@ -1,0 +1,41 @@
+.alert > h1,
+.alert > h2,
+.alert > h3,
+.alert > h4,
+.alert > h5 {
+	margin-top: 0;
+}
+
+.error-message {
+	margin-top: $grid-gutter-width*2 + $navbar-height;
+}
+
+.application-loading {
+	margin-top: $grid-gutter-width*2 + $navbar-height;
+	font-size: $font-size-jumbo;
+}
+
+.application-loading .icon {
+	font-size: 200%;
+}
+
+.validation-feedback .alert {
+	margin-top: $line-height-computed;
+}
+
+.modal-header .loading-message {
+	position: absolute;
+	top: ($grid-gutter-width/2);
+	right: ($grid-gutter-width/2);
+	color: $brand-secondary;
+	font-size: $font-size-super;
+}
+
+.loading-message {
+	@include opacity(1);
+	@include transition(opacity 500ms cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.loading-message.loading-disabled {
+	@include opacity(0);
+}

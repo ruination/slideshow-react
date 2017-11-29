@@ -1,0 +1,48 @@
+// Display Pixel - Used for fonts
+@function dp($ip) {
+	@return $dp *  $ip;
+}
+
+// Variable Pixel
+@function vp($ip) {
+	@return $vp *  $ip;
+}
+
+// Display Pixel - Used for borders
+@function stovp($sp_width) {
+	@return $sp_width / $dpw * $vp;
+}
+
+// Scaled Display Pixel - Used for widths
+@function sp($ip) {
+	@return $dp *  $ip * $viewport-width-adjustment;
+}
+
+// Scaled Display Pixel - Used for heights
+@function svh($ip) {
+	@return $svh *  $ip * $viewport-width-adjustment;
+}
+
+// Scaled Display Pixel - Used for widths
+@function svw($ip) {
+	@return $svw *  $ip * $viewport-width-adjustment;
+}
+
+@function dp2dpmin($width) {
+	@return $width / 1vw * 1vwmin;
+}
+
+// Display Pixel - Used for borders
+@function wtosp($sp_width) {
+	@return $sp_width / $dpw * $dp;
+}
+
+// Display Pixel - Used for borders
+@function spw($ip) {
+	@return $dpw *  $ip * $viewport-width-adjustment;
+}
+
+// Convert Display Pixel to Scaled Display Pixel - Used for widths
+@function dps($dp_unscaled){
+	@return $dp_unscaled * $viewport-width-adjustment;
+}

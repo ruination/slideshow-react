@@ -1,0 +1,1 @@
+export const REORIENT_DEVICE = 'REORIENT_DEVICE'

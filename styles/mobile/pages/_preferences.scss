@@ -1,0 +1,150 @@
+//
+// Preferences
+// --------------------------------------------------
+.preferences-header {
+	text-align: center;
+}
+
+.preferences-header .section-title {
+	font-weight: 300;
+	margin-bottom: 0;
+}
+
+.preferences-header p {
+	margin-bottom: $grid-gutter-width;
+	font-size: $font-size-large;
+}
+
+
+//
+// Preferences -> Choices
+// --------------------------------------------------
+.preferences-choices-orientations {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.preferences-choices-categories {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+
+
+//
+// Preferences -> Choices -> Preference
+// --------------------------------------------------
+.preference-container {
+	width: 10%;
+	padding: $preferences-grid-horizontal-separation;
+	margin-bottom: $preferences-grid-vertical-separation;
+}
+
+.preference {
+	width: 100%;
+
+	@include preference(
+        $btn-preference-color,
+        $btn-preference-bg,
+        $btn-preference-border,
+        10%,
+        $btn-preference-active-color,
+        $btn-preference-active-bg,
+        $btn-preference-active-border
+    );
+}
+
+.preference-type {
+	text-transform: uppercase;
+	margin-top: ($line-height-computed / 2);
+	margin-bottom: ($line-height-computed / 2);
+	font-size: $font-size-h4;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	line-height: $headings-line-height;
+	letter-spacing: $headings-letter-spacing;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+
+
+
+
+//
+// Preferences -> Choices -> Icons
+// --------------------------------------------------
+.preference-icon {
+	width: 100%;
+	display: block;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+
+.preference-icon-container {
+	padding: 50% 0;
+	position: relative;
+}
+
+
+
+
+
+
+@mixin preferences-size($parent, $size, $size-factor, $grid-size, $orientation: '')
+{
+	#{$orientation}.viewport-#{$size} #{$parent} {
+		.preference-container {
+			width: 100%/$grid-size;
+		}
+
+		.preferences-choices-orientations .preference-container {
+			width: 100%/max(2, $grid-size - 1);
+		}
+
+		.preference-type {
+			margin-top: $size-factor*stovp($line-height-computed / 2);
+			margin-bottom: $size-factor*stovp($line-height-computed);
+			font-size: $size-factor*stovp($font-size-h2);
+		}
+
+	}
+}
+
+
+// [SIZE: Large]
+// Preferences
+// --------------------------------------------------
+@include preferences-size('.preferences', 'lg', $preferences-lg-size-factor, $preferences-grid-lg-columns);
+
+
+// [SIZE: Medium]
+// Preferences
+// --------------------------------------------------
+@include preferences-size('.preferences', 'md', $preferences-md-size-factor, $preferences-grid-md-columns);
+
+
+// [SIZE: Small]
+// Preferences
+// --------------------------------------------------
+@include preferences-size('.preferences', 'sm', $preferences-sm-size-factor, $preferences-grid-sm-columns);
+
+
+// [SIZE: eXtra Small]
+// Preferences
+// --------------------------------------------------
+@include preferences-size('.preferences', 'xs', $preferences-xs-size-factor, $preferences-grid-xs-columns);
+
+
+// [SIZE: Super Small]
+// Preferences
+// --------------------------------------------------
+@include preferences-size('.preferences', 'ss', $preferences-ss-size-factor, $preferences-grid-ss-columns);

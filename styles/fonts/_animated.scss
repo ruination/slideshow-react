@@ -1,0 +1,82 @@
+// Spinning Icons
+// --------------------------
+
+.#{$icon-css-prefix}-spin {
+  -webkit-animation: icon-spin 2s infinite linear;
+          animation: icon-spin 2s infinite linear;
+}
+
+.#{$icon-css-prefix}-pulse {
+  -webkit-animation: icon-pulse 1s infinite steps(8);
+          animation: icon-pulse 1s infinite steps(8);
+}
+
+.#{$icon-css-prefix}-shake {
+  -webkit-animation: icon-shake 1s infinite steps(8);
+          animation: icon-shake 1s infinite steps(8);
+}
+
+@-webkit-keyframes icon-shake {
+  0% { -webkit-transform: scale(1.1) rotate(8deg); }
+  10% { -webkit-transform: scale(1.2) rotate(-6deg); }
+  20% { -webkit-transform: scale(1.1) rotate(6deg); }
+  30% { -webkit-transform: scale(1.2) rotate(-7deg); }
+  40% { -webkit-transform: scale(1.1) rotate(7deg); }
+  50% { -webkit-transform: scale(1.2) rotate(-8deg); }
+  60% { -webkit-transform: scale(1.1) rotate(8deg); }
+  70% { -webkit-transform: scale(1.2) rotate(-9deg); }
+  80% { -webkit-transform: scale(1.1) rotate(9deg); }
+  90% { -webkit-transform: scale(1.2) rotate(-8deg); }
+  100% { -webkit-transform: scale(1.1) rotate(8deg); }
+}
+
+@keyframes icon-shake {
+  0% { transform: scale(1.1) rotate(8deg); }
+  10% { transform: scale(1.2) rotate(-6deg); }
+  20% { transform: scale(1.1) rotate(6deg); }
+  30% { transform: scale(1.2) rotate(-7deg); }
+  40% { transform: scale(1.1) rotate(7deg); }
+  50% { transform: scale(1.2) rotate(-8deg); }
+  60% { transform: scale(1.1) rotate(8deg); }
+  70% { transform: scale(1.2) rotate(-9deg); }
+  80% { transform: scale(1.1) rotate(9deg); }
+  90% { transform: scale(1.2) rotate(-8deg); }
+  100% { transform: scale(1.1) rotate(8deg); }
+}
+
+@-webkit-keyframes icon-pulse {
+    0% { -webkit-transform: scale(1); }
+    70% { -webkit-transform: scale(1.2); }
+    80% { -webkit-transform: scale(1.5); }
+    100% { -webkit-transform: scale(1); }
+}
+
+@keyframes icon-pulse {
+    0% { transform: scale(1); }
+    70% { transform: scale(1.2); }
+    80% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+
+
+@-webkit-keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}

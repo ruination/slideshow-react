@@ -1,0 +1,9 @@
+$viewport-scaling:					1 !default;
+$svh:								$viewport-scaling * 1vh !default;
+$svw:								$viewport-scaling * 1vw !default;
+$dp:								$viewport-scaling * 0.0521vw !default;
+$vp:								$viewport-scaling * 0.0521vw !default;
+$dpw:								$dp !default;
+$viewport-width-adjustment:			1 !default;
+
+@import "functions/typography";

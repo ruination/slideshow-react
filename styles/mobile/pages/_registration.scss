@@ -1,0 +1,91 @@
+.registration-step {
+	text-align: center;
+}
+
+.registration-step .section-title {
+	font-weight: 300;
+	margin-bottom: 0;
+}
+
+.registration-step p {
+	margin-bottom: $grid-gutter-width;
+	font-size: $font-size-large;
+}
+
+.registration-content .section-title {
+} 
+
+.registration-content .section-block .section-title {
+	margin-top: $grid-gutter-width*1.5;
+	margin-bottom: 0;
+}
+
+.registration-content .form-group .section-title {
+
+}
+
+.registration-content .section-block .form-group:first-child {
+	margin-top: 0;
+}
+
+.registration-content .section-block + .section-block {
+	margin-top: 0;
+}
+
+.regstration-agreement {
+	margin: $grid-gutter-width 0 $grid-gutter-width/2 0;
+	padding: 0 $grid-gutter-width/2;
+	text-align: center;
+}
+
+.registration-already-member {
+	margin-top: $grid-gutter-width*3;
+	text-align: center;
+}
+
+.registration-referral-options {
+	display: flex;
+	flex-flow: row wrap;
+	justify-items: space-between;
+	margin-top: sp(15);
+}
+
+.registration-referral-options > * {
+	flex-grow: 1;
+	flex-shrink: 1;
+}
+
+.registration-referral-options .checkbox,
+.registration-referral-options .checkbox + .checkbox {
+	margin-top: sp(-5);
+	margin-bottom: sp(10);
+}
+
+.registration-referral-options .right {
+	flex-grow: 0;
+	align-self: flex-end;
+}
+
+.promotion_code.section-block {
+	margin-bottom: $grid-gutter-width;
+}
+
+.registration-content .promotion_code.section-block .section-title {
+	margin-top: $grid-gutter-width;
+	margin-bottom: 0;
+}
+
+.promotion_code.section-block.has-apply input {
+	padding-right: 5em;
+}
+
+.promotion_code.section-block .btn-link {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: $font-size-large;
+}
+
+.promotion_code.section-block.has-apply .form-control-feedback {
+	right: 10em;
+}

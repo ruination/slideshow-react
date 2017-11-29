@@ -1,0 +1,19 @@
+.preference {
+	fill: #FFFFFF;
+	color: #FFFFFF;
+	@include transition(fill, stroke, color, background-color);
+	@include transition-duration(400ms);
+	@include transition-timing-function(cubic-bezier(0.365, 0.45, 0.23, 0.95));
+}
+
+.preference-white {
+	@include preference-white();
+}
+
+.preference-black {
+	@include preference-black();
+}
+
+.preference-grayscale {
+	@include preference-grayscale();
+}

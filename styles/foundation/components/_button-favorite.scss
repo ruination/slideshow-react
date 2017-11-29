@@ -1,0 +1,52 @@
+.add-favorite,
+.remove-favorite { 
+	border: none;
+	width: auto;
+	display: inline-block;
+	background: $video-highlight-color;
+	color: $video-footer-color;
+	padding: 1% 2%;
+	text-decoration: none;
+}
+
+.favorite {
+	background: transparent;
+	text-decoration: none;
+	padding: 1% 2%;
+	width: auto;
+	display: inline-block;
+	border: none;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.favorite:hover .icon {
+    -webkit-transform-origin: 50% 80%;
+    transform-origin: 50% 80%;
+  	-webkit-animation: icon-pulse 1.2s infinite steps(12);
+  	animation: icon-pulse 1.2s infinite steps(12);
+}
+
+.favorite.favorite-progress .icon {
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+	-webkit-animation: icon-spin 2s infinite linear;
+	animation: icon-spin 2s infinite linear;
+}
+
+.favorite .icon {
+	margin-right: 0.5em;
+	padding: 0 0.2em;
+}
+
+.favorite-remove .icon {
+	color: $brand-secondary;
+}
+
+.favorite.favorite-icononly .icon {
+	margin-right: 0;
+}
+
+.favorite.favorite-icononly .icon:before {
+    text-shadow: spw(1) spw(1) spw(2) rgba(0,0,0,0.30), spw(0) spw(0) spw(4) rgba(0,0,0,0.10);
+}

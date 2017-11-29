@@ -1,0 +1,360 @@
+///////////////////////////
+// Navbar Common
+///////////////////////////
+.navbar-vertical {
+	@include box-sizing(border-box);
+	background-color: $navbar-default-bg;
+
+	height: $navbar-vertical-height;
+	padding: $navbar-vertical-padding-vertical $navbar-vertical-padding-horizontal;
+}
+
+.navbar-vertical.left.closed {
+	left: 0 !important;
+}
+
+.navbar-vertical.left.closed {
+	right: 0 !important;
+}
+
+.navbar-vertical.left.closed,
+.navbar-vertical.right.closed {
+	width: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.navbar-vertical-container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.navbar-vertical.closed .navbar-vertical-container {
+	display: none;
+}
+
+.navbar-vertical.inverse {
+	background-color: $navbar-inverse-bg;	
+}
+
+.navbar-vertical ul {
+	margin: 0;
+	padding: 0;
+}
+
+.navbar-vertical li a {	
+	color: $navbar-default-link-color;
+	text-decoration: none;
+	display: block;
+	padding: $navbar-link-padding-vertical $navbar-link-padding-horizontal;
+}
+
+.navbar-vertical li:hover a:not(.btn) {	
+	color: $navbar-default-link-hover-color;
+	background-color: $navbar-default-link-hover-bg;
+}
+
+.navbar-vertical.inverse a:not(.btn) {
+	color: $navbar-inverse-link-color;
+}
+
+.navbar-vertical.inverse li:hover a:not(.btn) {
+	color: $navbar-inverse-link-hover-color;
+	background-color: $navbar-inverse-link-hover-bg;
+}
+
+.navbar-vertical.inverse li.active:hover a {
+	color: $navbar-inverse-link-color;
+}
+
+.navbar-vertical li {
+	display: block;
+	font-size: $navbar-vertical-link-font-size;
+	font-weight: $navbar-default-link-font-weight;
+	list-style: none;
+	cursor: pointer;
+	text-indent: $page-padding-left * 1.65;
+}
+
+
+.navbar-vertical li.active {
+	background-color: $navbar-inverse-link-active-bg;
+}
+
+.navbar-vertical li.active a {
+	color: $header-main-link-active-color;
+}
+
+
+///////////////////////////
+// Fullscreen Navbar
+///////////////////////////
+.container-full .navbar-vertical {
+	height: svh(100);
+	position: fixed;
+	width: $navbar-vertical-width;
+	left: -$navbar-vertical-width;
+	z-index: $zindex-navbar-fixed;
+	padding: 0;
+	top: 0;
+
+/*	@include transition(opacity 500ms);
+	@include transition(left 500ms);
+*/
+}
+
+.container-full .navbar-vertical.active {
+	/*left: 0;*/
+}
+
+
+///////////////////////////
+// Left Navbar
+///////////////////////////
+.navbar-vertical.left {
+	float:left;	
+}
+
+
+///////////////////////////
+// Right Navbar
+///////////////////////////
+.navbar-vertical.right {
+	float:right;	
+}
+
+
+///////////////////////////
+// Navbar Vertical
+///////////////////////////
+.navbar-vertical .navbar-vertical-header {
+	height: $navbar-header-height;
+	position: absolute;
+	z-index: 3;
+}
+
+.navbar-vertical .navbar-vertical-header .brand {
+	text-align: center;
+}
+
+
+
+///////////////////////////
+// Navbar Footer
+///////////////////////////
+.navbar-vertical .navbar-vertical-footer {	
+	height: $navbar-footer-height;
+	margin: $navbar-footer-margin-vertical $navbar-footer-margin-horizontal;
+	float: right;
+}
+
+
+///////////////////////////
+// Fullscreen Navbar Vertical Content
+///////////////////////////
+.container-full .navbar-vertical .navbar-vertical-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	padding-top: $navbar-header-height-computed + $navbar-content-margin-top;
+}
+
+.container-full .navbar-vertical .navbar-vertical-footer + .navbar-vertical-content {
+	padding-bottom: $navbar-footer-height-computed;
+}
+
+.container-full .navbar-vertical .navbar-vertical-content ul {
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.container-full .navbar-vertical .navbar-vertical-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.navbar-vertical .navbar-vertical-header,
+.navbar-vertical .navbar-vertical-footer {
+	width: 100%;
+}
+
+.navbar-vertical {
+}
+
+
+///////////////////////////
+// Navbar Active
+///////////////////////////
+.navbar-vertical-activeitem,
+.navbar-vertical-activeitem:hover,
+.navbar-vertical-activeitem:focus {
+	color: $navbar-inverse-link-color;
+	text-decoration: none;
+}
+
+.navbar-vertical-activeitem:focus {
+	outline: none;
+}
+
+.navbar-vertical-activeitem {
+	height: svh(100);	
+	pointer-events: none;
+	width: $navbar-vertical-activeitem-width;
+	position: absolute;
+	right: -$navbar-vertical-activeitem-width;
+	top: 0;
+	text-align: center;
+	font-size: $navbar-vertical-link-font-size * 0.9;
+	font-weight: $navbar-default-link-font-weight;
+	z-index: 2;
+	background: $navbar-vertical-activeitem-bg;
+}
+
+.navbar-vertical-activeitem .option,
+.navbar-vertical-activeitem .option-icon {
+	pointer-events: auto;
+}
+
+.navbar-vertical.closed .navbar-vertical-activeitem {
+	background: transparent;
+	right: -$navbar-vertical-activeitem-width - $page-padding-left;
+}
+
+.navbar-vertical.closed .navbar-vertical-activeitem .option-icon {
+	color: $brand-tertiary;
+}
+
+.navbar-vertical .navbar-vertical-activeitem .option-icon.context-icon {
+	color: $brand-secondary;
+}
+
+.navbar-vertical-options {
+	height: 100%;
+	width: 100%;
+	padding-top: $navbar-header-height-computed;
+	/*background-color: rgba(#000, 0.1);*/
+}
+
+.navbar-vertical-options .option-icon {
+	width: 100%;
+	display: block;
+	height: 3.5em;
+	float: left;
+	line-height: 3.5em;
+	text-align: center;
+}
+
+.option-icon.brand {
+	position: absolute;
+	top: $page-padding-top;
+	display: none;
+	@include opacity(0);
+	@include transition(opacity 200ms);
+}
+
+.option-icon.brand.visible {
+	@include opacity(1);
+}
+
+.navbar-vertical.closed .option-icon.brand {
+	display: block;
+}
+
+.navbar-vertical.active .navbar-vertical-options .option.active .option-icon {
+	background-color: $navbar-inverse-link-active-bg;
+}
+
+.navbar-vertical-options .option-icon:hover {
+	background-color: $navbar-inverse-link-hover-bg;
+}
+
+.navbar-vertical-options .option-container {
+	position: absolute;
+	top: 0;
+	left: -2*$navbar-vertical-width;
+	height: 100%;
+	overflow: hidden;
+	width: $navbar-vertical-width;
+	padding: ($navbar-header-height-computed + $navbar-content-margin-top) 0 $page-padding-bottom 0;
+}
+
+.option.active .option-container {
+	z-index: 4;
+	left: -$navbar-vertical-width;
+	background-color: rgba($navbar-default-bg, 1);
+}
+
+.navbar-vertical-options .option-content {
+	background-color: rgba($navbar-default-bg, 1);
+	height: 100%;
+	font-size: $font-size-base;
+	text-align: left;
+	overflow-y: auto;
+	@include opacity(0);
+	margin-right: -$grid-gutter-width;
+	padding-right: -$grid-gutter-width;
+	@include transition(opacity 300ms ease 0ms);
+}
+
+.option.active .option-content {
+	@include opacity(1);
+}
+
+
+.navbar-vertical .option-content .option-content-body {
+	padding: 0 $grid-gutter-width 0 $page-padding-left;
+	width: 100%;
+	height: 100%;
+}
+
+.option.active .option-container,
+.navbar-vertical.inverse .option-content {
+	background-color: $navbar-inverse-bg;	
+}
+ 
+.navbar-vertical .option-content h2 {	
+	color: $navbar-default-link-color;
+	padding: 0 $grid-gutter-width 0 $page-padding-left;
+	margin: 0 0 $line-height-computed 0;
+	text-align: left;
+}
+
+.navbar-vertical.inverse .option-content h2 {	
+	color: $navbar-inverse-link-color;
+}
+
+.navbar-vertical.closed .option .option-container {
+	display: none;
+}
+
+///////////////////////////
+// Navbar Push
+///////////////////////////
+.main.navbar-vertical.left ~ .navbar-push,
+.main.navbar-vertical.left ~ .page-container .navbar-push,
+.main.navbar-vertical.left ~ .page-content .navbar-push {
+	padding-left: $navbar-vertical-activeitem-width;
+
+	@include transition(padding-left 500ms ease-out 10ms);
+}
+
+.main.navbar-vertical.left.active ~ .navbar-push,
+.main.navbar-vertical.left.active ~ .page-container .navbar-push,
+.main.navbar-vertical.left.active ~ .page-content .navbar-push {
+	padding-left: $navbar-vertical-width;
+}
+
+.main.navbar-vertical.right.active ~ .navbar-push,
+.main.navbar-vertical.right.active ~ .page-container .navbar-push,
+.main.navbar-vertical.right.active ~ .page-content .navbar-push {
+	padding-right: $navbar-vertical-width;
+
+	@include transition(padding-right 500ms ease-out 10ms);
+}
